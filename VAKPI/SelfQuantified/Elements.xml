@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Elements xmlns="http://schemas.microsoft.com/sharepoint/" >
+  <Module Name="SelfQuantified" List="113" Url="_catalogs/wp">
+    <File Path="SelfQuantified\SelfQuantified.webpart" Url="VAKPI_SelfQuantified.webpart" Type="GhostableInLibrary" >
+      <Property Name="Group" Value="VA项目研发" />
+    </File>
+  </Module>
+</Elements>

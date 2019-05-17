@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<webParts>
+  <webPart xmlns="http://schemas.microsoft.com/WebPart/v3">
+    <metaData>
+      <type name="VAKPI.ActivityKPI.ActivityKPI, $SharePoint.Project.AssemblyFullName$" />
+      <importErrorMessage>$Resources:core,ImportErrorMessage;</importErrorMessage>
+    </metaData>
+    <data>
+      <properties>
+        <property name="Title" type="string">站内活动KPI</property>
+        <property name="Description" type="string">统计一个用户在网站上的活动量及每项活动的比重</property>
+      </properties>
+    </data>
+  </webPart>
+</webParts>

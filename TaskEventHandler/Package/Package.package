@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" dslVersion="1.0.0.0" Id="6db288ef-1e9c-4d5e-9e87-ccaa47e2fe91" solutionId="6db288ef-1e9c-4d5e-9e87-ccaa47e2fe91" resetWebServer="false" sharePointProductVersion="15.0" name="TaskEventHandler" xmlns="http://schemas.microsoft.com/VisualStudio/2008/SharePointTools/PackageModel">
+  <features>
+    <featureReference itemId="0490d907-dd08-4e58-8149-211dd152ec75" />
+  </features>
+</package>

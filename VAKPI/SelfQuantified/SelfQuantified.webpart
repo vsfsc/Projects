@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<webParts>
+  <webPart xmlns="http://schemas.microsoft.com/WebPart/v3">
+    <metaData>
+      <type name="VAKPI.SelfQuantified.SelfQuantified, $SharePoint.Project.AssemblyFullName$" />
+      <importErrorMessage>$Resources:core,ImportErrorMessage;</importErrorMessage>
+    </metaData>
+    <data>
+      <properties>
+        <property name="Title" type="string">VAKPI - SelfQuantified</property>
+        <property name="Description" type="string">通过记录个人活动，与系统标准做对比，形成量化自我，塑造最好的自己</property>
+      </properties>
+    </data>
+  </webPart>
+</webParts>

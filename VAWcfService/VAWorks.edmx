@@ -1,0 +1,866 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="VAExtensionModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Course">
+          <Key>
+            <PropertyRef Name="CourseID" />
+          </Key>
+          <Property Name="CourseID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CourseName" Type="varchar" MaxLength="100" />
+          <Property Name="Guid" Type="uniqueidentifier" />
+          <Property Name="SubjiectID" Type="bigint" />
+          <Property Name="Url" Type="varchar" MaxLength="200" />
+          <Property Name="Flag" Type="int" />
+        </EntityType>
+        <EntityType Name="Favorites">
+          <Key>
+            <PropertyRef Name="UserID" />
+            <PropertyRef Name="ItemID" />
+            <PropertyRef Name="DomainID" />
+          </Key>
+          <Property Name="UserID" Type="bigint" Nullable="false" />
+          <Property Name="ItemID" Type="bigint" Nullable="false" />
+          <Property Name="DomainID" Type="bigint" Nullable="false" />
+          <Property Name="FavDate" Type="datetime" />
+          <Property Name="ModifyDate" Type="datetime" />
+          <Property Name="Flag" Type="int" />
+        </EntityType>
+        <EntityType Name="FileType">
+          <Key>
+            <PropertyRef Name="FileTypeID" />
+          </Key>
+          <Property Name="FileTypeID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="TypeName" Type="varchar" MaxLength="10" />
+          <Property Name="ParentID" Type="int" />
+        </EntityType>
+        <EntityType Name="Periods">
+          <Key>
+            <PropertyRef Name="PeriodID" />
+          </Key>
+          <Property Name="PeriodID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="PeriodTitle" Type="varchar" MaxLength="100" />
+          <Property Name="PeriodCode" Type="varchar" MaxLength="20" />
+          <Property Name="CourseID" Type="bigint" />
+          <Property Name="Require" Type="varchar(max)" />
+          <Property Name="WorksTypeID" Type="int" />
+          <Property Name="Number" Type="int" />
+          <Property Name="StartSubmit" Type="datetime" />
+          <Property Name="EndSubmit" Type="datetime" />
+          <Property Name="StartScore" Type="datetime" />
+          <Property Name="EndScore" Type="datetime" />
+          <Property Name="StartPublic" Type="datetime" />
+          <Property Name="EndPublic" Type="datetime" />
+          <Property Name="CreatedBy" Type="bigint" />
+          <Property Name="Created" Type="datetime" />
+          <Property Name="ModifiedBy" Type="bigint" />
+          <Property Name="Modified" Type="datetime" />
+          <Property Name="Flag" Type="int" />
+        </EntityType>
+        <EntityType Name="User">
+          <Key>
+            <PropertyRef Name="UserID" />
+          </Key>
+          <Property Name="UserID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Account" Type="varchar" MaxLength="50" />
+          <Property Name="Name" Type="varchar" MaxLength="50" />
+          <Property Name="IDCard" Type="varchar" MaxLength="18" />
+          <Property Name="Sex" Type="bit" />
+          <Property Name="Telephone" Type="varchar" MaxLength="50" />
+          <Property Name="Email" Type="varchar" MaxLength="100" />
+          <Property Name="Duty" Type="varchar" MaxLength="100" />
+          <Property Name="ProfessionalTitle" Type="varchar" MaxLength="100" />
+          <Property Name="Department" Type="varchar" MaxLength="100" />
+          <Property Name="Major" Type="varchar" MaxLength="100" />
+          <Property Name="Class" Type="varchar" MaxLength="50" />
+          <Property Name="Grade" Type="varchar" MaxLength="50" />
+          <Property Name="RoleID" Type="int" />
+          <Property Name="DegreeID" Type="int" />
+          <Property Name="SchoolID" Type="int" />
+          <Property Name="CreatedBy" Type="bigint" />
+          <Property Name="Created" Type="datetime" />
+          <Property Name="ModifiedBy" Type="bigint" />
+          <Property Name="Modified" Type="datetime" />
+          <Property Name="StateID" Type="int" />
+          <Property Name="ApprovedBy" Type="bigint" />
+          <Property Name="Approved" Type="datetime" />
+          <Property Name="Flag" Type="bigint" />
+          <Property Name="AppPwd" Type="varchar" MaxLength="16" />
+          <Property Name="AppUserScore" Type="varchar" MaxLength="10" />
+        </EntityType>
+        <EntityType Name="UserWorks">
+          <Key>
+            <PropertyRef Name="UserWorksID" />
+          </Key>
+          <Property Name="UserWorksID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="UserID" Type="bigint" />
+          <Property Name="WorksID" Type="bigint" />
+          <Property Name="Relationship" Type="int" />
+          <Property Name="Flag" Type="int" />
+        </EntityType>
+        <EntityType Name="Works">
+          <Key>
+            <PropertyRef Name="WorksID" />
+          </Key>
+          <Property Name="WorksID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="PeriodID" Type="bigint" />
+          <Property Name="DomainID" Type="bigint" />
+          <Property Name="WorksName" Type="varchar" MaxLength="100" />
+          <Property Name="TeamName" Type="varchar" MaxLength="100" />
+          <Property Name="WorksTypeID" Type="int" />
+          <Property Name="WorksCode" Type="varchar" MaxLength="50" />
+          <Property Name="OrgID" Type="int" />
+          <Property Name="IsSample" Type="int" />
+          <Property Name="Comment" Type="varchar" MaxLength="2000" />
+          <Property Name="Profile" Type="varchar" MaxLength="8000" />
+          <Property Name="SubmitProfile" Type="varchar" MaxLength="8000" />
+          <Property Name="Suggestion" Type="varchar" MaxLength="2000" />
+          <Property Name="InstallationGuide" Type="varchar" MaxLength="2000" />
+          <Property Name="DesignIdeas" Type="varchar(max)" />
+          <Property Name="KeyPoints" Type="varchar" MaxLength="2500" />
+          <Property Name="SelfAssessment" Type="varchar" MaxLength="2000" />
+          <Property Name="DemoURL" Type="varchar" MaxLength="2000" />
+          <Property Name="BackReason" Type="varchar" MaxLength="2000" />
+          <Property Name="Score" Type="real" />
+          <Property Name="CreatedBy" Type="bigint" />
+          <Property Name="Created" Type="datetime" />
+          <Property Name="ModifiedBy" Type="bigint" />
+          <Property Name="Modified" Type="datetime" />
+          <Property Name="Hits" Type="varchar" MaxLength="10" />
+          <Property Name="AllotTimes" Type="int" />
+          <Property Name="WorksState" Type="int" />
+          <Property Name="Flag" Type="bigint" />
+        </EntityType>
+        <EntityType Name="WorksFile">
+          <Key>
+            <PropertyRef Name="WorksFileID" />
+          </Key>
+          <Property Name="WorksFileID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="WorksID" Type="bigint" Nullable="false" />
+          <Property Name="Type" Type="int" />
+          <Property Name="FileName" Type="varchar" MaxLength="200" />
+          <Property Name="FilePath" Type="varchar" MaxLength="1000" />
+          <Property Name="FileSize" Type="int" />
+          <Property Name="CreatedBy" Type="bigint" />
+          <Property Name="Created" Type="datetime" />
+          <Property Name="ModifiedBy" Type="bigint" />
+          <Property Name="Modified" Type="datetime" />
+          <Property Name="Flag" Type="bigint" />
+        </EntityType>
+        <EntityType Name="WorksType">
+          <Key>
+            <PropertyRef Name="WorksTypeID" />
+          </Key>
+          <Property Name="WorksTypeID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="WorksTypeName" Type="varchar" MaxLength="100" />
+          <Property Name="Description" Type="varchar" MaxLength="500" />
+          <Property Name="ParentID" Type="int" />
+          <Property Name="LevelID" Type="int" />
+          <Property Name="CreatedBy" Type="bigint" />
+          <Property Name="Created" Type="datetime" />
+          <Property Name="ModifiedBy" Type="bigint" />
+          <Property Name="Modified" Type="datetime" />
+          <Property Name="Flag" Type="int" />
+        </EntityType>
+        <!--生成过程中发现错误:
+警告 6002: 表/视图“VAExtension.dbo.CSMyWorks”未定义主键。已推断出该键，并将定义创建为只读的表/视图。-->
+        <EntityType Name="CSMyWorks">
+          <Key>
+            <PropertyRef Name="WorksID" />
+          </Key>
+          <Property Name="WorksID" Type="bigint" Nullable="false" />
+          <Property Name="WorksName" Type="varchar" MaxLength="100" />
+          <Property Name="CourseName" Type="varchar" MaxLength="100" />
+          <Property Name="PeriodTitle" Type="varchar" MaxLength="100" />
+          <Property Name="WorksTypeName" Type="varchar" MaxLength="100" />
+          <Property Name="StateName" Type="varchar" MaxLength="50" />
+          <Property Name="Score" Type="real" />
+          <Property Name="Relationship" Type="int" />
+          <Property Name="UserID" Type="bigint" />
+          <Property Name="PeriodID" Type="bigint" />
+          <Property Name="WorksTypeID" Type="int" />
+          <Property Name="UserWorksID" Type="bigint" />
+          <Property Name="StateID" Type="int" />
+          <Property Name="CourseID" Type="bigint" />
+          <Property Name="DomainID" Type="bigint" />
+          <Property Name="WorksCode" Type="varchar" MaxLength="50" />
+          <Property Name="DesignIdeas" Type="varchar(max)" />
+          <Property Name="Created" Type="datetime" />
+          <Property Name="Hits" Type="varchar" MaxLength="10" />
+        </EntityType>
+        <!--生成过程中发现错误:
+警告 6002: 表/视图“VAExtension.dbo.FavoriteWorks”未定义主键。已推断出该键，并将定义创建为只读的表/视图。-->
+        <EntityType Name="FavoriteWorks">
+          <Key>
+            <PropertyRef Name="UserID" />
+          </Key>
+          <Property Name="UserID" Type="bigint" Nullable="false" />
+          <Property Name="DomainID" Type="bigint" />
+          <Property Name="WorksID" Type="bigint" />
+          <Property Name="WorksName" Type="varchar" MaxLength="100" />
+          <Property Name="AuthorID" Type="bigint" />
+          <Property Name="AuthorName" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <Association Name="FK_Periods_Course">
+          <End Role="Course" Type="Self.Course" Multiplicity="0..1" />
+          <End Role="Periods" Type="Self.Periods" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Course">
+              <PropertyRef Name="CourseID" />
+            </Principal>
+            <Dependent Role="Periods">
+              <PropertyRef Name="CourseID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UserWorks_User">
+          <End Role="User" Type="Self.User" Multiplicity="0..1" />
+          <End Role="UserWorks" Type="Self.UserWorks" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="UserID" />
+            </Principal>
+            <Dependent Role="UserWorks">
+              <PropertyRef Name="UserID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UserWorks_Works">
+          <End Role="Works" Type="Self.Works" Multiplicity="0..1" />
+          <End Role="UserWorks" Type="Self.UserWorks" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Works">
+              <PropertyRef Name="WorksID" />
+            </Principal>
+            <Dependent Role="UserWorks">
+              <PropertyRef Name="WorksID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Works_Periods">
+          <End Role="Periods" Type="Self.Periods" Multiplicity="0..1" />
+          <End Role="Works" Type="Self.Works" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Periods">
+              <PropertyRef Name="PeriodID" />
+            </Principal>
+            <Dependent Role="Works">
+              <PropertyRef Name="PeriodID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_WorksFile_Works">
+          <End Role="Works" Type="Self.Works" Multiplicity="1" />
+          <End Role="WorksFile" Type="Self.WorksFile" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Works">
+              <PropertyRef Name="WorksID" />
+            </Principal>
+            <Dependent Role="WorksFile">
+              <PropertyRef Name="WorksID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="VAExtensionModelStoreContainer">
+          <EntitySet Name="Course" EntityType="Self.Course" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Favorites" EntityType="Self.Favorites" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="FileType" EntityType="Self.FileType" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Periods" EntityType="Self.Periods" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="User" EntityType="Self.User" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="UserWorks" EntityType="Self.UserWorks" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Works" EntityType="Self.Works" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="WorksFile" EntityType="Self.WorksFile" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="WorksType" EntityType="Self.WorksType" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="CSMyWorks" EntityType="Self.CSMyWorks" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [CSMyWorks].[WorksID] AS [WorksID], 
+    [CSMyWorks].[WorksName] AS [WorksName], 
+    [CSMyWorks].[CourseName] AS [CourseName], 
+    [CSMyWorks].[PeriodTitle] AS [PeriodTitle], 
+    [CSMyWorks].[WorksTypeName] AS [WorksTypeName], 
+    [CSMyWorks].[StateName] AS [StateName], 
+    [CSMyWorks].[Score] AS [Score], 
+    [CSMyWorks].[Relationship] AS [Relationship], 
+    [CSMyWorks].[UserID] AS [UserID], 
+    [CSMyWorks].[PeriodID] AS [PeriodID], 
+    [CSMyWorks].[WorksTypeID] AS [WorksTypeID], 
+    [CSMyWorks].[UserWorksID] AS [UserWorksID], 
+    [CSMyWorks].[StateID] AS [StateID], 
+    [CSMyWorks].[CourseID] AS [CourseID], 
+    [CSMyWorks].[DomainID] AS [DomainID], 
+    [CSMyWorks].[WorksCode] AS [WorksCode], 
+    [CSMyWorks].[DesignIdeas] AS [DesignIdeas], 
+    [CSMyWorks].[Created] AS [Created], 
+    [CSMyWorks].[Hits] AS [Hits]
+    FROM [dbo].[CSMyWorks] AS [CSMyWorks]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="FavoriteWorks" EntityType="Self.FavoriteWorks" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [FavoriteWorks].[UserID] AS [UserID], 
+    [FavoriteWorks].[DomainID] AS [DomainID], 
+    [FavoriteWorks].[WorksID] AS [WorksID], 
+    [FavoriteWorks].[WorksName] AS [WorksName], 
+    [FavoriteWorks].[AuthorID] AS [AuthorID], 
+    [FavoriteWorks].[AuthorName] AS [AuthorName]
+    FROM [dbo].[FavoriteWorks] AS [FavoriteWorks]</DefiningQuery>
+          </EntitySet>
+          <AssociationSet Name="FK_Periods_Course" Association="Self.FK_Periods_Course">
+            <End Role="Course" EntitySet="Course" />
+            <End Role="Periods" EntitySet="Periods" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UserWorks_User" Association="Self.FK_UserWorks_User">
+            <End Role="User" EntitySet="User" />
+            <End Role="UserWorks" EntitySet="UserWorks" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UserWorks_Works" Association="Self.FK_UserWorks_Works">
+            <End Role="Works" EntitySet="Works" />
+            <End Role="UserWorks" EntitySet="UserWorks" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Works_Periods" Association="Self.FK_Works_Periods">
+            <End Role="Periods" EntitySet="Periods" />
+            <End Role="Works" EntitySet="Works" />
+          </AssociationSet>
+          <AssociationSet Name="FK_WorksFile_Works" Association="Self.FK_WorksFile_Works">
+            <End Role="Works" EntitySet="Works" />
+            <End Role="WorksFile" EntitySet="WorksFile" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="VAExtensionModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="FileType">
+          <Key>
+            <PropertyRef Name="FileTypeID" />
+          </Key>
+          <Property Name="FileTypeID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TypeName" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="ParentID" Type="Int32" />
+        </EntityType>
+        <EntityType Name="Works">
+          <Key>
+            <PropertyRef Name="WorksID" />
+          </Key>
+          <Property Name="WorksID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="PeriodID" Type="Int64" />
+          <Property Name="WorksName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="TeamName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="WorksTypeID" Type="Int32" />
+          <Property Name="WorksCode" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="OrgID" Type="Int32" />
+          <Property Name="IsSample" Type="Int32" />
+          <Property Name="Comment" Type="String" MaxLength="2000" FixedLength="false" Unicode="false" />
+          <Property Name="Profile" Type="String" MaxLength="8000" FixedLength="false" Unicode="false" />
+          <Property Name="SubmitProfile" Type="String" MaxLength="8000" FixedLength="false" Unicode="false" />
+          <Property Name="Suggestion" Type="String" MaxLength="2000" FixedLength="false" Unicode="false" />
+          <Property Name="InstallationGuide" Type="String" MaxLength="2000" FixedLength="false" Unicode="false" />
+          <Property Name="DesignIdeas" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="KeyPoints" Type="String" MaxLength="2500" FixedLength="false" Unicode="false" />
+          <Property Name="SelfAssessment" Type="String" MaxLength="2000" FixedLength="false" Unicode="false" />
+          <Property Name="DemoURL" Type="String" MaxLength="2000" FixedLength="false" Unicode="false" />
+          <Property Name="BackReason" Type="String" MaxLength="2000" FixedLength="false" Unicode="false" />
+          <Property Name="Score" Type="Single" />
+          <Property Name="CreatedBy" Type="Int64" />
+          <Property Name="Created" Type="DateTime" Precision="3" />
+          <Property Name="ModifiedBy" Type="Int64" />
+          <Property Name="Modified" Type="DateTime" Precision="3" />
+          <Property Name="AllotTimes" Type="Int32" />
+          <Property Name="WorksState" Type="Int32" />
+          <Property Name="Flag" Type="Int64" />
+          <NavigationProperty Name="WorksFile" Relationship="Self.FK_WorksFile_Works" FromRole="Works" ToRole="WorksFile" />
+          <NavigationProperty Name="Periods" Relationship="VAExtensionModel.FK_Works_Periods" FromRole="Works" ToRole="Periods" />
+          <Property Name="DomainID" Type="Int64" />
+          <NavigationProperty Name="UserWorks" Relationship="VAExtensionModel.FK_UserWorks_Works" FromRole="Works" ToRole="UserWorks" />
+          <Property Name="Hits" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="WorksFile">
+          <Key>
+            <PropertyRef Name="WorksFileID" />
+          </Key>
+          <Property Name="WorksFileID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="WorksID" Type="Int64" Nullable="false" />
+          <Property Name="Type" Type="Int32" />
+          <Property Name="FileName" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="FilePath" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+          <Property Name="FileSize" Type="Int32" />
+          <Property Name="CreatedBy" Type="Int64" />
+          <Property Name="Created" Type="DateTime" Precision="3" />
+          <Property Name="ModifiedBy" Type="Int64" />
+          <Property Name="Modified" Type="DateTime" Precision="3" />
+          <Property Name="Flag" Type="Int64" />
+          <NavigationProperty Name="Works" Relationship="Self.FK_WorksFile_Works" FromRole="WorksFile" ToRole="Works" />
+        </EntityType>
+        <EntityType Name="WorksType">
+          <Key>
+            <PropertyRef Name="WorksTypeID" />
+          </Key>
+          <Property Name="WorksTypeID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="WorksTypeName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Description" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="ParentID" Type="Int32" />
+          <Property Name="LevelID" Type="Int32" />
+          <Property Name="CreatedBy" Type="Int64" />
+          <Property Name="Created" Type="DateTime" Precision="3" />
+          <Property Name="ModifiedBy" Type="Int64" />
+          <Property Name="Modified" Type="DateTime" Precision="3" />
+          <Property Name="Flag" Type="Int32" />
+        </EntityType>
+        <Association Name="FK_WorksFile_Works">
+          <End Role="Works" Type="Self.Works" Multiplicity="1" />
+          <End Role="WorksFile" Type="Self.WorksFile" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Works">
+              <PropertyRef Name="WorksID" />
+            </Principal>
+            <Dependent Role="WorksFile">
+              <PropertyRef Name="WorksID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="VAExtensionWorks" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="FileType" EntityType="Self.FileType" />
+          <EntitySet Name="Works" EntityType="Self.Works" />
+          <EntitySet Name="WorksFile" EntityType="Self.WorksFile" />
+          <EntitySet Name="WorksType" EntityType="Self.WorksType" />
+          <AssociationSet Name="FK_WorksFile_Works" Association="Self.FK_WorksFile_Works">
+            <End Role="Works" EntitySet="Works" />
+            <End Role="WorksFile" EntitySet="WorksFile" />
+          </AssociationSet>
+          <EntitySet Name="Course" EntityType="VAExtensionModel.Course" />
+          <EntitySet Name="Periods" EntityType="VAExtensionModel.Periods" />
+          <AssociationSet Name="FK_Periods_Course" Association="VAExtensionModel.FK_Periods_Course">
+            <End Role="Course" EntitySet="Course" />
+            <End Role="Periods" EntitySet="Periods" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Works_Periods" Association="VAExtensionModel.FK_Works_Periods">
+            <End Role="Periods" EntitySet="Periods" />
+            <End Role="Works" EntitySet="Works" />
+          </AssociationSet>
+          <EntitySet Name="User" EntityType="VAExtensionModel.User" />
+          <EntitySet Name="UserWorks" EntityType="VAExtensionModel.UserWorks" />
+          <AssociationSet Name="FK_UserWorks_User" Association="VAExtensionModel.FK_UserWorks_User">
+            <End Role="User" EntitySet="User" />
+            <End Role="UserWorks" EntitySet="UserWorks" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UserWorks_Works" Association="VAExtensionModel.FK_UserWorks_Works">
+            <End Role="Works" EntitySet="Works" />
+            <End Role="UserWorks" EntitySet="UserWorks" />
+          </AssociationSet>
+          <EntitySet Name="Favorites" EntityType="VAExtensionModel.Favorites" />
+          <EntitySet Name="FavoriteWorks" EntityType="VAExtensionModel.FavoriteWorks" />
+          <EntitySet Name="CSMyWorks" EntityType="VAExtensionModel.CSMyWorks" />
+        </EntityContainer>
+        <EntityType Name="Course">
+          <Key>
+            <PropertyRef Name="CourseID" />
+          </Key>
+          <Property Name="CourseID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CourseName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Guid" Type="Guid" />
+          <Property Name="SubjiectID" Type="Int64" />
+          <Property Name="Url" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="Flag" Type="Int32" />
+          <NavigationProperty Name="Periods" Relationship="VAExtensionModel.FK_Periods_Course" FromRole="Course" ToRole="Periods" />
+        </EntityType>
+        <EntityType Name="Periods">
+          <Key>
+            <PropertyRef Name="PeriodID" />
+          </Key>
+          <Property Name="PeriodID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="PeriodTitle" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="PeriodCode" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="CourseID" Type="Int64" />
+          <Property Name="Require" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="WorksTypeID" Type="Int32" />
+          <Property Name="Number" Type="Int32" />
+          <Property Name="StartSubmit" Type="DateTime" Precision="3" />
+          <Property Name="EndSubmit" Type="DateTime" Precision="3" />
+          <Property Name="StartScore" Type="DateTime" Precision="3" />
+          <Property Name="EndScore" Type="DateTime" Precision="3" />
+          <Property Name="StartPublic" Type="DateTime" Precision="3" />
+          <Property Name="EndPublic" Type="DateTime" Precision="3" />
+          <Property Name="CreatedBy" Type="Int64" />
+          <Property Name="Created" Type="DateTime" Precision="3" />
+          <Property Name="ModifiedBy" Type="Int64" />
+          <Property Name="Modified" Type="DateTime" Precision="3" />
+          <Property Name="Flag" Type="Int32" />
+          <NavigationProperty Name="Course" Relationship="VAExtensionModel.FK_Periods_Course" FromRole="Periods" ToRole="Course" />
+          <NavigationProperty Name="Works" Relationship="VAExtensionModel.FK_Works_Periods" FromRole="Periods" ToRole="Works" />
+        </EntityType>
+        <Association Name="FK_Periods_Course">
+          <End Type="VAExtensionModel.Course" Role="Course" Multiplicity="0..1" />
+          <End Type="VAExtensionModel.Periods" Role="Periods" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Course">
+              <PropertyRef Name="CourseID" />
+            </Principal>
+            <Dependent Role="Periods">
+              <PropertyRef Name="CourseID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Works_Periods">
+          <End Type="VAExtensionModel.Periods" Role="Periods" Multiplicity="0..1" />
+          <End Type="VAExtensionModel.Works" Role="Works" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Periods">
+              <PropertyRef Name="PeriodID" />
+            </Principal>
+            <Dependent Role="Works">
+              <PropertyRef Name="PeriodID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="User">
+          <Key>
+            <PropertyRef Name="UserID" />
+          </Key>
+          <Property Name="UserID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Account" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="IDCard" Type="String" MaxLength="18" FixedLength="false" Unicode="false" />
+          <Property Name="Sex" Type="Boolean" />
+          <Property Name="Telephone" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Email" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Duty" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="ProfessionalTitle" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Department" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Major" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Class" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Grade" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="RoleID" Type="Int32" />
+          <Property Name="DegreeID" Type="Int32" />
+          <Property Name="SchoolID" Type="Int32" />
+          <Property Name="CreatedBy" Type="Int64" />
+          <Property Name="Created" Type="DateTime" Precision="3" />
+          <Property Name="ModifiedBy" Type="Int64" />
+          <Property Name="Modified" Type="DateTime" Precision="3" />
+          <Property Name="StateID" Type="Int32" />
+          <Property Name="ApprovedBy" Type="Int64" />
+          <Property Name="Approved" Type="DateTime" Precision="3" />
+          <Property Name="Flag" Type="Int64" />
+          <Property Name="AppPwd" Type="String" MaxLength="16" FixedLength="false" Unicode="false" />
+          <Property Name="AppUserScore" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="UserWorks" Relationship="VAExtensionModel.FK_UserWorks_User" FromRole="User" ToRole="UserWorks" />
+        </EntityType>
+        <EntityType Name="UserWorks">
+          <Key>
+            <PropertyRef Name="UserWorksID" />
+          </Key>
+          <Property Name="UserWorksID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="UserID" Type="Int64" />
+          <Property Name="WorksID" Type="Int64" />
+          <Property Name="Relationship" Type="Int32" />
+          <Property Name="Flag" Type="Int32" />
+          <NavigationProperty Name="User" Relationship="VAExtensionModel.FK_UserWorks_User" FromRole="UserWorks" ToRole="User" />
+          <NavigationProperty Name="Works" Relationship="VAExtensionModel.FK_UserWorks_Works" FromRole="UserWorks" ToRole="Works" />
+        </EntityType>
+        <Association Name="FK_UserWorks_User">
+          <End Type="VAExtensionModel.User" Role="User" Multiplicity="0..1" />
+          <End Type="VAExtensionModel.UserWorks" Role="UserWorks" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="UserID" />
+            </Principal>
+            <Dependent Role="UserWorks">
+              <PropertyRef Name="UserID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UserWorks_Works">
+          <End Type="VAExtensionModel.Works" Role="Works" Multiplicity="0..1" />
+          <End Type="VAExtensionModel.UserWorks" Role="UserWorks" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Works">
+              <PropertyRef Name="WorksID" />
+            </Principal>
+            <Dependent Role="UserWorks">
+              <PropertyRef Name="WorksID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="Favorites">
+          <Key>
+            <PropertyRef Name="UserID" />
+            <PropertyRef Name="ItemID" />
+            <PropertyRef Name="DomainID" />
+          </Key>
+          <Property Name="UserID" Type="Int64" Nullable="false" />
+          <Property Name="ItemID" Type="Int64" Nullable="false" />
+          <Property Name="DomainID" Type="Int64" Nullable="false" />
+          <Property Name="FavDate" Type="DateTime" Precision="3" />
+          <Property Name="Flag" Type="Int32" />
+          <Property Name="ModifyDate" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="FavoriteWorks">
+          <Key>
+            <PropertyRef Name="UserID" />
+          </Key>
+          <Property Name="WorksName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="WorksID" Type="Int64" />
+          <Property Name="UserID" Type="Int64" Nullable="false" />
+          <Property Name="DomainID" Type="Int64" />
+          <Property Name="AuthorID" Type="Int64" />
+          <Property Name="AuthorName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="CSMyWorks">
+          <Key>
+            <PropertyRef Name="WorksID" />
+          </Key>
+          <Property Name="WorksID" Type="Int64" Nullable="false" />
+          <Property Name="WorksName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="CourseName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="PeriodTitle" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="WorksTypeName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="StateName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Score" Type="Single" />
+          <Property Name="Relationship" Type="Int32" />
+          <Property Name="UserID" Type="Int64" />
+          <Property Name="PeriodID" Type="Int64" />
+          <Property Name="WorksTypeID" Type="Int32" />
+          <Property Name="UserWorksID" Type="Int64" />
+          <Property Name="StateID" Type="Int32" />
+          <Property Name="CourseID" Type="Int64" />
+          <Property Name="DomainID" Type="Int64" />
+          <Property Name="WorksCode" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="DesignIdeas" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Created" Type="DateTime" Precision="3" />
+          <Property Name="Hits" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="VAExtensionModelStoreContainer" CdmEntityContainer="VAExtensionWorks">
+          <EntitySetMapping Name="FileType">
+            <EntityTypeMapping TypeName="VAExtensionModel.FileType">
+              <MappingFragment StoreEntitySet="FileType">
+                <ScalarProperty Name="FileTypeID" ColumnName="FileTypeID" />
+                <ScalarProperty Name="TypeName" ColumnName="TypeName" />
+                <ScalarProperty Name="ParentID" ColumnName="ParentID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Works">
+            <EntityTypeMapping TypeName="VAExtensionModel.Works">
+              <MappingFragment StoreEntitySet="Works">
+                <ScalarProperty Name="Hits" ColumnName="Hits" />
+                <ScalarProperty Name="DomainID" ColumnName="DomainID" />
+                <ScalarProperty Name="WorksID" ColumnName="WorksID" />
+                <ScalarProperty Name="PeriodID" ColumnName="PeriodID" />
+                <ScalarProperty Name="WorksName" ColumnName="WorksName" />
+                <ScalarProperty Name="TeamName" ColumnName="TeamName" />
+                <ScalarProperty Name="WorksTypeID" ColumnName="WorksTypeID" />
+                <ScalarProperty Name="WorksCode" ColumnName="WorksCode" />
+                <ScalarProperty Name="OrgID" ColumnName="OrgID" />
+                <ScalarProperty Name="IsSample" ColumnName="IsSample" />
+                <ScalarProperty Name="Comment" ColumnName="Comment" />
+                <ScalarProperty Name="Profile" ColumnName="Profile" />
+                <ScalarProperty Name="SubmitProfile" ColumnName="SubmitProfile" />
+                <ScalarProperty Name="Suggestion" ColumnName="Suggestion" />
+                <ScalarProperty Name="InstallationGuide" ColumnName="InstallationGuide" />
+                <ScalarProperty Name="DesignIdeas" ColumnName="DesignIdeas" />
+                <ScalarProperty Name="KeyPoints" ColumnName="KeyPoints" />
+                <ScalarProperty Name="SelfAssessment" ColumnName="SelfAssessment" />
+                <ScalarProperty Name="DemoURL" ColumnName="DemoURL" />
+                <ScalarProperty Name="BackReason" ColumnName="BackReason" />
+                <ScalarProperty Name="Score" ColumnName="Score" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="Created" ColumnName="Created" />
+                <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+                <ScalarProperty Name="Modified" ColumnName="Modified" />
+                <ScalarProperty Name="AllotTimes" ColumnName="AllotTimes" />
+                <ScalarProperty Name="WorksState" ColumnName="WorksState" />
+                <ScalarProperty Name="Flag" ColumnName="Flag" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="WorksFile">
+            <EntityTypeMapping TypeName="VAExtensionModel.WorksFile">
+              <MappingFragment StoreEntitySet="WorksFile">
+                <ScalarProperty Name="WorksFileID" ColumnName="WorksFileID" />
+                <ScalarProperty Name="WorksID" ColumnName="WorksID" />
+                <ScalarProperty Name="Type" ColumnName="Type" />
+                <ScalarProperty Name="FileName" ColumnName="FileName" />
+                <ScalarProperty Name="FilePath" ColumnName="FilePath" />
+                <ScalarProperty Name="FileSize" ColumnName="FileSize" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="Created" ColumnName="Created" />
+                <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+                <ScalarProperty Name="Modified" ColumnName="Modified" />
+                <ScalarProperty Name="Flag" ColumnName="Flag" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="WorksType">
+            <EntityTypeMapping TypeName="VAExtensionModel.WorksType">
+              <MappingFragment StoreEntitySet="WorksType">
+                <ScalarProperty Name="WorksTypeID" ColumnName="WorksTypeID" />
+                <ScalarProperty Name="WorksTypeName" ColumnName="WorksTypeName" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="ParentID" ColumnName="ParentID" />
+                <ScalarProperty Name="LevelID" ColumnName="LevelID" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="Created" ColumnName="Created" />
+                <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+                <ScalarProperty Name="Modified" ColumnName="Modified" />
+                <ScalarProperty Name="Flag" ColumnName="Flag" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Course">
+            <EntityTypeMapping TypeName="VAExtensionModel.Course">
+              <MappingFragment StoreEntitySet="Course">
+                <ScalarProperty Name="Flag" ColumnName="Flag" />
+                <ScalarProperty Name="Url" ColumnName="Url" />
+                <ScalarProperty Name="SubjiectID" ColumnName="SubjiectID" />
+                <ScalarProperty Name="Guid" ColumnName="Guid" />
+                <ScalarProperty Name="CourseName" ColumnName="CourseName" />
+                <ScalarProperty Name="CourseID" ColumnName="CourseID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Periods">
+            <EntityTypeMapping TypeName="VAExtensionModel.Periods">
+              <MappingFragment StoreEntitySet="Periods">
+                <ScalarProperty Name="Flag" ColumnName="Flag" />
+                <ScalarProperty Name="Modified" ColumnName="Modified" />
+                <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+                <ScalarProperty Name="Created" ColumnName="Created" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="EndPublic" ColumnName="EndPublic" />
+                <ScalarProperty Name="StartPublic" ColumnName="StartPublic" />
+                <ScalarProperty Name="EndScore" ColumnName="EndScore" />
+                <ScalarProperty Name="StartScore" ColumnName="StartScore" />
+                <ScalarProperty Name="EndSubmit" ColumnName="EndSubmit" />
+                <ScalarProperty Name="StartSubmit" ColumnName="StartSubmit" />
+                <ScalarProperty Name="Number" ColumnName="Number" />
+                <ScalarProperty Name="WorksTypeID" ColumnName="WorksTypeID" />
+                <ScalarProperty Name="Require" ColumnName="Require" />
+                <ScalarProperty Name="CourseID" ColumnName="CourseID" />
+                <ScalarProperty Name="PeriodCode" ColumnName="PeriodCode" />
+                <ScalarProperty Name="PeriodTitle" ColumnName="PeriodTitle" />
+                <ScalarProperty Name="PeriodID" ColumnName="PeriodID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="User">
+            <EntityTypeMapping TypeName="VAExtensionModel.User">
+              <MappingFragment StoreEntitySet="User">
+                <ScalarProperty Name="AppUserScore" ColumnName="AppUserScore" />
+                <ScalarProperty Name="AppPwd" ColumnName="AppPwd" />
+                <ScalarProperty Name="Flag" ColumnName="Flag" />
+                <ScalarProperty Name="Approved" ColumnName="Approved" />
+                <ScalarProperty Name="ApprovedBy" ColumnName="ApprovedBy" />
+                <ScalarProperty Name="StateID" ColumnName="StateID" />
+                <ScalarProperty Name="Modified" ColumnName="Modified" />
+                <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+                <ScalarProperty Name="Created" ColumnName="Created" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="SchoolID" ColumnName="SchoolID" />
+                <ScalarProperty Name="DegreeID" ColumnName="DegreeID" />
+                <ScalarProperty Name="RoleID" ColumnName="RoleID" />
+                <ScalarProperty Name="Grade" ColumnName="Grade" />
+                <ScalarProperty Name="Class" ColumnName="Class" />
+                <ScalarProperty Name="Major" ColumnName="Major" />
+                <ScalarProperty Name="Department" ColumnName="Department" />
+                <ScalarProperty Name="ProfessionalTitle" ColumnName="ProfessionalTitle" />
+                <ScalarProperty Name="Duty" ColumnName="Duty" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Telephone" ColumnName="Telephone" />
+                <ScalarProperty Name="Sex" ColumnName="Sex" />
+                <ScalarProperty Name="IDCard" ColumnName="IDCard" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Account" ColumnName="Account" />
+                <ScalarProperty Name="UserID" ColumnName="UserID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="UserWorks">
+            <EntityTypeMapping TypeName="VAExtensionModel.UserWorks">
+              <MappingFragment StoreEntitySet="UserWorks">
+                <ScalarProperty Name="Flag" ColumnName="Flag" />
+                <ScalarProperty Name="Relationship" ColumnName="Relationship" />
+                <ScalarProperty Name="WorksID" ColumnName="WorksID" />
+                <ScalarProperty Name="UserID" ColumnName="UserID" />
+                <ScalarProperty Name="UserWorksID" ColumnName="UserWorksID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Favorites">
+            <EntityTypeMapping TypeName="VAExtensionModel.Favorites">
+              <MappingFragment StoreEntitySet="Favorites">
+                <ScalarProperty Name="ModifyDate" ColumnName="ModifyDate" />
+                <ScalarProperty Name="Flag" ColumnName="Flag" />
+                <ScalarProperty Name="FavDate" ColumnName="FavDate" />
+                <ScalarProperty Name="DomainID" ColumnName="DomainID" />
+                <ScalarProperty Name="ItemID" ColumnName="ItemID" />
+                <ScalarProperty Name="UserID" ColumnName="UserID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="FavoriteWorks">
+            <EntityTypeMapping TypeName="VAExtensionModel.FavoriteWorks">
+              <MappingFragment StoreEntitySet="FavoriteWorks">
+                <ScalarProperty Name="AuthorName" ColumnName="AuthorName" />
+                <ScalarProperty Name="AuthorID" ColumnName="AuthorID" />
+                <ScalarProperty Name="DomainID" ColumnName="DomainID" />
+                <ScalarProperty Name="UserID" ColumnName="UserID" />
+                <ScalarProperty Name="WorksID" ColumnName="WorksID" />
+                <ScalarProperty Name="WorksName" ColumnName="WorksName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CSMyWorks">
+            <EntityTypeMapping TypeName="VAExtensionModel.CSMyWorks">
+              <MappingFragment StoreEntitySet="CSMyWorks">
+                <ScalarProperty Name="Hits" ColumnName="Hits" />
+                <ScalarProperty Name="Created" ColumnName="Created" />
+                <ScalarProperty Name="DesignIdeas" ColumnName="DesignIdeas" />
+                <ScalarProperty Name="WorksCode" ColumnName="WorksCode" />
+                <ScalarProperty Name="DomainID" ColumnName="DomainID" />
+                <ScalarProperty Name="CourseID" ColumnName="CourseID" />
+                <ScalarProperty Name="StateID" ColumnName="StateID" />
+                <ScalarProperty Name="UserWorksID" ColumnName="UserWorksID" />
+                <ScalarProperty Name="WorksTypeID" ColumnName="WorksTypeID" />
+                <ScalarProperty Name="PeriodID" ColumnName="PeriodID" />
+                <ScalarProperty Name="UserID" ColumnName="UserID" />
+                <ScalarProperty Name="Relationship" ColumnName="Relationship" />
+                <ScalarProperty Name="Score" ColumnName="Score" />
+                <ScalarProperty Name="StateName" ColumnName="StateName" />
+                <ScalarProperty Name="WorksTypeName" ColumnName="WorksTypeName" />
+                <ScalarProperty Name="PeriodTitle" ColumnName="PeriodTitle" />
+                <ScalarProperty Name="CourseName" ColumnName="CourseName" />
+                <ScalarProperty Name="WorksName" ColumnName="WorksName" />
+                <ScalarProperty Name="WorksID" ColumnName="WorksID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="无" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

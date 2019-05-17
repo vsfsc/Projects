@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<webParts>
+  <webPart xmlns="http://schemas.microsoft.com/WebPart/v3">
+    <metaData>
+      <type name="VSProject.ActionOption.ActionOption, $SharePoint.Project.AssemblyFullName$" />
+      <importErrorMessage>$Resources:core,ImportErrorMessage;</importErrorMessage>
+    </metaData>
+    <data>
+      <properties>
+        <property name="Title" type="string">VSProject - 操作设置</property>
+        <property name="Description" type="string">用户自定义设置个人操作</property>
+      </properties>
+    </data>
+  </webPart>
+</webParts>

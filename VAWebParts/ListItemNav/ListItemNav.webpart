@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<webParts>
+  <webPart xmlns="http://schemas.microsoft.com/WebPart/v3">
+    <metaData>
+      <type name="VAWebParts.ListItemNav.ListItemNav, $SharePoint.Project.AssemblyFullName$" />
+      <importErrorMessage>$Resources:core,ImportErrorMessage;</importErrorMessage>
+    </metaData>
+    <data>
+      <properties>
+        <property name="Title" type="string">列表项目上下文导航</property>
+        <property name="Description" type="string">列表项目导航，上一条，下一条</property>
+      </properties>
+    </data>
+  </webPart>
+</webParts>

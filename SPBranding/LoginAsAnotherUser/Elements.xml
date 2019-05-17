@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Elements xmlns="http://schemas.microsoft.com/sharepoint/">
+  <CustomAction
+    Id="LoginAsAnotherUser"
+    Location="Microsoft.SharePoint.StandardMenu" 
+    GroupId="PersonalActions" 
+    Sequence="2110" 
+    Title="切换用户"
+    >
+    <UrlAction Url="{SiteUrl}/_layouts/closeConnection.aspx?loginasanthoruser=true"/>
+  </CustomAction>
+</Elements>

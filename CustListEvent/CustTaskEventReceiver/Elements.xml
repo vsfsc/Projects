@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Elements xmlns="http://schemas.microsoft.com/sharepoint/">
+  <Receivers ListUrl="Lists/List3">
+    <Receiver>
+      <Name>CustTaskEventReceiverItemAdding</Name>
+      <Type>ItemAdding</Type>
+      <Assembly>$SharePoint.Project.AssemblyFullName$</Assembly>
+      <Class>CustListEvent.CustTaskEventReceiver.CustTaskEventReceiver</Class>
+      <SequenceNumber>10000</SequenceNumber>
+    </Receiver>
+    <Receiver>
+      <Name>CustTaskEventReceiverItemAdded</Name>
+      <Type>ItemAdded</Type>
+      <Assembly>$SharePoint.Project.AssemblyFullName$</Assembly>
+      <Class>CustListEvent.CustTaskEventReceiver.CustTaskEventReceiver</Class>
+      <SequenceNumber>10000</SequenceNumber>
+    </Receiver>
+      <Receiver>
+        <Name>CustTaskEventReceiverItemUpdated</Name>
+        <Type>ItemUpdated</Type>
+        <Assembly>$SharePoint.Project.AssemblyFullName$</Assembly>
+        <Class>CustListEvent.CustTaskEventReceiver.CustTaskEventReceiver</Class>
+        <SequenceNumber>10000</SequenceNumber>
+      </Receiver>
+  </Receivers>
+</Elements>

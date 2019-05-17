@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Elements xmlns="http://schemas.microsoft.com/sharepoint/">
+  <CustomAction Id="BackToHome"
+                GroupId="SiteActions"
+                Location="Microsoft.SharePoint.StandardMenu"
+                Sequence="2110"
+                Title="回到首页"
+                >
+    <UrlAction Url="{SiteUrl}"/>
+  </CustomAction>
+</Elements>

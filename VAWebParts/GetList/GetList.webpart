@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<webParts>
+  <webPart xmlns="http://schemas.microsoft.com/WebPart/v3">
+    <metaData>
+      <type name="VAWebParts.GetList.GetList, $SharePoint.Project.AssemblyFullName$" />
+      <importErrorMessage>$Resources:core,ImportErrorMessage;</importErrorMessage>
+    </metaData>
+    <data>
+      <properties>
+        <property name="Title" type="string">列表整合</property>
+        <property name="Description" type="string">列表数据整合：将多个列表中的数据显示在一个表格视图中</property>
+      </properties>
+    </data>
+  </webPart>
+</webParts>

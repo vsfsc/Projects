@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<webParts>
+  <webPart xmlns="http://schemas.microsoft.com/WebPart/v3">
+    <metaData>
+      <type name="PowerPA.PersonalizedSettings.PersonalizedSettings, $SharePoint.Project.AssemblyFullName$" />
+      <importErrorMessage>$Resources:core,ImportErrorMessage;</importErrorMessage>
+    </metaData>
+    <data>
+      <properties>
+        <property name="Title" type="string">VS个性化设置</property>
+        <property name="Description" type="string">用户的个性化设置，包括：操作、活动类型、模板、指标等</property>
+      </properties>
+    </data>
+  </webPart>
+</webParts>

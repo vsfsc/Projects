@@ -1,0 +1,153 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{1E7C691C-87E0-4195-AAAB-4972E66DD1C2}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SPBranding</RootNamespace>
+    <AssemblyName>SPBranding</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetOfficeVersion>15.0</TargetOfficeVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{C1CDDADD-2546-481F-9697-4EA41081F2FC};{14822709-B5A1-4724-98CA-57A101D1B079};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <SandboxedSolution>False</SandboxedSolution>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>key.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="Microsoft.SharePoint" />
+    <Reference Include="Microsoft.SharePoint.Client.ServerRuntime" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CONTROLTEMPLATES\DelegateControlDemo\AdditionalPageHead.ascx.cs">
+      <DependentUpon>AdditionalPageHead.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CONTROLTEMPLATES\DelegateControlDemo\AdditionalPageHead.ascx.designer.cs">
+      <DependentUpon>AdditionalPageHead.ascx.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CONTROLTEMPLATES\DelegateControlDemo\LeftSuiteBar.ascx.cs">
+      <DependentUpon>LeftSuiteBar.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CONTROLTEMPLATES\DelegateControlDemo\LeftSuiteBar.ascx.designer.cs">
+      <DependentUpon>LeftSuiteBar.ascx.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CONTROLTEMPLATES\FooterControl\Footer.ascx.cs">
+      <DependentUpon>Footer.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CONTROLTEMPLATES\FooterControl\Footer.ascx.designer.cs">
+      <DependentUpon>Footer.ascx.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="AdditionalPageHead\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{50714473-999d-43b0-8df0-2e806125b3a4}</SharePointProjectItemId>
+    </None>
+    <None Include="BackToHome\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{725639e4-57b3-48c6-9727-a14c93e5e5d6}</SharePointProjectItemId>
+    </None>
+    <None Include="CONTROLTEMPLATES\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{552dade1-4d8e-4553-ad12-d9054a37711e}</SharePointProjectItemId>
+    </None>
+    <None Include="Features\SPBranding\SPBranding.feature">
+      <FeatureId>{388e7871-42f3-44e9-a796-551756965087}</FeatureId>
+    </None>
+    <None Include="key.snk" />
+    <None Include="Layouts\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{08da3251-45c7-4d7b-b9fd-065a6feb3a16}</SharePointProjectItemId>
+    </None>
+    <None Include="Layouts\SPBranding\style\bootstrap\css\bootstrap-theme.css.map" />
+    <None Include="Layouts\SPBranding\style\bootstrap\css\bootstrap.css.map" />
+    <None Include="Layouts\SPBranding\style\bootstrap\fonts\glyphicons-halflings-regular.eot" />
+    <None Include="Layouts\SPBranding\style\bootstrap\fonts\glyphicons-halflings-regular.ttf" />
+    <None Include="Layouts\SPBranding\style\bootstrap\fonts\glyphicons-halflings-regular.woff" />
+    <None Include="LeftSuiteBar\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{5f46788e-5407-4ad7-971c-a17e6ecc13ab}</SharePointProjectItemId>
+    </None>
+    <None Include="LoginAsAnotherUser\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{7da09d80-1979-4ee6-b625-a589b50ce7a2}</SharePointProjectItemId>
+    </None>
+    <None Include="MasterPages\Branding.master" />
+    <None Include="MasterPages\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{4eb4a699-7f71-438d-85d9-a6996412cad0}</SharePointProjectItemId>
+    </None>
+    <None Include="Package\Package.package">
+      <PackageId>{e0d155c4-f81a-468d-ac1c-c6d4e918f396}</PackageId>
+    </None>
+    <None Include="Package\Package.Template.xml">
+      <DependentUpon>Package.package</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Content Include="AdditionalPageHead\Elements.xml" />
+    <Content Include="BackToHome\Elements.xml" />
+    <Content Include="CONTROLTEMPLATES\DelegateControlDemo\AdditionalPageHead.ascx" />
+    <Content Include="CONTROLTEMPLATES\DelegateControlDemo\LeftSuiteBar.ascx" />
+    <Content Include="CONTROLTEMPLATES\FooterControl\Footer.ascx" />
+    <Content Include="Features\SPBranding\SPBranding.Template.xml">
+      <DependentUpon>SPBranding.feature</DependentUpon>
+    </Content>
+    <Content Include="Layouts\SPBranding\style\bootstrap\css\bootstrap-theme.css" />
+    <Content Include="Layouts\SPBranding\style\bootstrap\css\bootstrap-theme.min.css" />
+    <Content Include="Layouts\SPBranding\style\bootstrap\css\bootstrap.css" />
+    <Content Include="Layouts\SPBranding\style\bootstrap\css\bootstrap.min.css" />
+    <Content Include="Layouts\SPBranding\style\bootstrap\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Layouts\SPBranding\style\bootstrap\js\bootstrap.js" />
+    <Content Include="Layouts\SPBranding\style\bootstrap\js\bootstrap.min.js" />
+    <Content Include="Layouts\SPBranding\style\bootstrap\js\npm.js" />
+    <Content Include="Layouts\SPBranding\style\jquery\jquery-3.1.0.js" />
+    <Content Include="Layouts\SPBranding\style\jquery\jquery-ui.min.js" />
+    <Content Include="Layouts\SPBranding\style\jquery\jquery.color-2.1.2.js" />
+    <Content Include="Layouts\SPBranding\style\jquery\jquery.mobile-1.4.5.js" />
+    <Content Include="LeftSuiteBar\Elements.xml" />
+    <Content Include="LoginAsAnotherUser\Elements.xml" />
+    <Content Include="MasterPages\Elements.xml" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(VSToolsPath)\SharePointTools\Microsoft.VisualStudio.SharePoint.targets" Condition="'$(VSToolsPath)' != ''" />
+</Project>

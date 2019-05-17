@@ -1,0 +1,265 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{5D492B00-4884-4B58-B36A-3D90BBA6C949}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>PowerPA</RootNamespace>
+    <AssemblyName>PowerPA</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetOfficeVersion>15.0</TargetOfficeVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{C1CDDADD-2546-481F-9697-4EA41081F2FC};{14822709-B5A1-4724-98CA-57A101D1B079};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <SandboxedSolution>False</SandboxedSolution>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>key.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="NPOI">
+      <HintPath>..\..\VAProjects\dll\NPOI.dll</HintPath>
+    </Reference>
+    <Reference Include="NPOI.OOXML">
+      <HintPath>..\..\VAProjects\dll\NPOI.OOXML.dll</HintPath>
+    </Reference>
+    <Reference Include="NPOI.OpenXml4Net">
+      <HintPath>..\..\VAProjects\dll\NPOI.OpenXml4Net.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="Microsoft.SharePoint" />
+    <Reference Include="Microsoft.SharePoint.Client.ServerRuntime" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ActivityStatistics\ActivityStatistics.cs" />
+    <Compile Include="ActivityStatistics\ActivityStatisticsUserControl.ascx.cs">
+      <DependentUpon>ActivityStatisticsUserControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ActivityStatistics\ActivityStatisticsUserControl.ascx.designer.cs">
+      <DependentUpon>ActivityStatisticsUserControl.ascx.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CaculateIndexJob.cs" />
+    <Compile Include="CurrentActivity\CurrentActivity.cs" />
+    <Compile Include="CurrentActivity\CurrentActivityUserControl.ascx.cs">
+      <DependentUpon>CurrentActivityUserControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CurrentActivity\CurrentActivityUserControl.ascx.designer.cs">
+      <DependentUpon>CurrentActivityUserControl.ascx.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CustNewForm\CustNewForm.cs" />
+    <Compile Include="CustNewForm\CustNewFormUserControl.ascx.cs">
+      <DependentUpon>CustNewFormUserControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CustNewForm\CustNewFormUserControl.ascx.designer.cs">
+      <DependentUpon>CustNewFormUserControl.ascx.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Features\Feature1\Feature1.EventReceiver.cs">
+      <DependentUpon>Feature1.feature</DependentUpon>
+    </Compile>
+    <Compile Include="ImportActivity\ImportActivity.cs" />
+    <Compile Include="ImportActivity\ImportActivityUserControl.ascx.cs">
+      <DependentUpon>ImportActivityUserControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ImportActivity\ImportActivityUserControl.ascx.designer.cs">
+      <DependentUpon>ImportActivityUserControl.ascx.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PeriodActivity\PeriodActivity.cs" />
+    <Compile Include="PeriodActivity\PeriodActivityUserControl.ascx.cs">
+      <DependentUpon>PeriodActivityUserControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PeriodActivity\PeriodActivityUserControl.ascx.designer.cs">
+      <DependentUpon>PeriodActivityUserControl.ascx.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PersonalInfor\PersonalInfor.cs" />
+    <Compile Include="PersonalInfor\PersonalInforUserControl.ascx.cs">
+      <DependentUpon>PersonalInforUserControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PersonalInfor\PersonalInforUserControl.ascx.designer.cs">
+      <DependentUpon>PersonalInforUserControl.ascx.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PersonalizedSettings\MyTemplate.cs" />
+    <Compile Include="PersonalizedSettings\PersonalizedSettings.cs" />
+    <Compile Include="PersonalizedSettings\PersonalizedSettingsUserControl.ascx.cs">
+      <DependentUpon>PersonalizedSettingsUserControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PersonalizedSettings\PersonalizedSettingsUserControl.ascx.designer.cs">
+      <DependentUpon>PersonalizedSettingsUserControl.ascx.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="QuickEditing\QuickEditing.cs" />
+    <Compile Include="QuickEditing\QuickEditingUserControl.ascx.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ShowBlogByCategory\ShowBlogByCategory.cs" />
+    <Compile Include="ShowBlogByCategory\ShowBlogByCategoryUserControl.ascx.cs">
+      <DependentUpon>ShowBlogByCategoryUserControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ShowBlogByCategory\ShowBlogByCategoryUserControl.ascx.designer.cs">
+      <DependentUpon>ShowBlogByCategoryUserControl.ascx.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TimeLinePerDay\TimeLinePerDay.cs" />
+    <Compile Include="TimeLinePerDay\TimeLinePerDayUserControl.ascx.cs">
+      <DependentUpon>TimeLinePerDayUserControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TimeLinePerDay\TimeLinePerDayUserControl.ascx.designer.cs">
+      <DependentUpon>TimeLinePerDayUserControl.ascx.cs</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ActivityStatistics\ActivityStatistics.webpart" />
+    <None Include="ActivityStatistics\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{321ef75e-633a-4b8b-9368-ee80ac1b85c2}</SharePointProjectItemId>
+    </None>
+    <None Include="CurrentActivity\CurrentActivity.webpart" />
+    <None Include="CurrentActivity\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{6d82f6e8-b133-40b3-a5da-4dc010bc501f}</SharePointProjectItemId>
+    </None>
+    <None Include="CustNewForm\CustNewForm.webpart" />
+    <None Include="CustNewForm\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{f0c10248-478d-4c4f-887c-4beaf14a083e}</SharePointProjectItemId>
+    </None>
+    <None Include="Features\Feature1\Feature1.feature">
+      <FeatureId>{23c64d67-ed42-4b0a-a448-abd80cd36dbf}</FeatureId>
+    </None>
+    <None Include="ImportActivity\ImportActivity.webpart" />
+    <None Include="ImportActivity\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{e565f032-dfd2-4059-91ff-5b9228d038ac}</SharePointProjectItemId>
+    </None>
+    <None Include="key.snk" />
+    <None Include="Layouts\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{5bb0d533-2441-4787-a960-13c9602a3e29}</SharePointProjectItemId>
+    </None>
+    <None Include="Package\Package.package">
+      <PackageId>{c864fdcf-0768-40c1-8f6e-18471f6a626e}</PackageId>
+    </None>
+    <None Include="Package\Package.Template.xml">
+      <DependentUpon>Package.package</DependentUpon>
+    </None>
+    <None Include="PeriodActivity\PeriodActivity.webpart" />
+    <None Include="PeriodActivity\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{6f90fc9e-e58f-4aa6-977c-f154cb8dbc58}</SharePointProjectItemId>
+    </None>
+    <None Include="PersonalInfor\PersonalInfor.webpart" />
+    <None Include="PersonalInfor\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{948f59ec-e7f4-4a3e-a0c8-f84ef4780c67}</SharePointProjectItemId>
+    </None>
+    <None Include="PersonalizedSettings\PersonalizedSettings.webpart" />
+    <None Include="PersonalizedSettings\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{6009a292-f003-4953-9a6b-5ab7bf72f1c9}</SharePointProjectItemId>
+    </None>
+    <None Include="QuickEditing\QuickEditing.webpart" />
+    <None Include="QuickEditing\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{2641010a-0610-40b5-ad63-f5eec7bf02ad}</SharePointProjectItemId>
+    </None>
+    <None Include="ShowBlogByCategory\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{47924e7e-f76b-43c6-9091-310cd957bd4b}</SharePointProjectItemId>
+    </None>
+    <None Include="ShowBlogByCategory\ShowBlogByCategory.webpart" />
+    <None Include="TimeLinePerDay\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{30a3f2d7-5034-41ac-84cd-590c4f16cafa}</SharePointProjectItemId>
+    </None>
+    <None Include="TimeLinePerDay\TimeLinePerDay.webpart" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="ActivityStatistics\ActivityStatisticsUserControl.ascx" />
+    <Content Include="ActivityStatistics\Elements.xml" />
+    <Content Include="CurrentActivity\CurrentActivityUserControl.ascx" />
+    <Content Include="CurrentActivity\Elements.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="CustNewForm\CustNewFormUserControl.ascx" />
+    <Content Include="CustNewForm\Elements.xml" />
+    <Content Include="Features\Feature1\Feature1.Template.xml">
+      <DependentUpon>Feature1.feature</DependentUpon>
+    </Content>
+    <Content Include="ImportActivity\Elements.xml" />
+    <Content Include="ImportActivity\ImportActivityUserControl.ascx" />
+    <Content Include="Layouts\PowerPA\css\an-skill-bar.css" />
+    <Content Include="Layouts\PowerPA\css\base.css" />
+    <Content Include="Layouts\PowerPA\css\main.css" />
+    <Content Include="Layouts\PowerPA\css\style.css" />
+    <Content Include="Layouts\PowerPA\images\book.svg" />
+    <Content Include="Layouts\PowerPA\images\icon7.png" />
+    <Content Include="Layouts\PowerPA\images\icon9.png" />
+    <Content Include="Layouts\PowerPA\images\line4.png" />
+    <Content Include="Layouts\PowerPA\images\star.svg" />
+    <Content Include="Layouts\PowerPA\js\AddAttachRel.js" />
+    <Content Include="Layouts\PowerPA\js\an-skill-bar.js" />
+    <Content Include="Layouts\PowerPA\js\gv.js" />
+    <Content Include="Layouts\PowerPA\js\jquery-1.11.0.min.js" />
+    <Content Include="Layouts\PowerPA\js\jquery-1.7.2.min.js" />
+    <Content Include="Layouts\PowerPA\js\main.js" />
+    <Content Include="PeriodActivity\Elements.xml" />
+    <Content Include="PeriodActivity\PeriodActivityUserControl.ascx" />
+    <Content Include="PersonalInfor\Elements.xml" />
+    <Content Include="PersonalInfor\PersonalInforUserControl.ascx" />
+    <Content Include="PersonalizedSettings\Elements.xml" />
+    <Content Include="PersonalizedSettings\PersonalizedSettingsUserControl.ascx" />
+    <Content Include="QuickEditing\Elements.xml" />
+    <Content Include="QuickEditing\QuickEditingUserControl.ascx" />
+    <Content Include="ShowBlogByCategory\Elements.xml" />
+    <Content Include="ShowBlogByCategory\ShowBlogByCategoryUserControl.ascx" />
+    <Content Include="TimeLinePerDay\Elements.xml" />
+    <Content Include="TimeLinePerDay\TimeLinePerDayUserControl.ascx" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\VSDLL\VSDLL.csproj">
+      <Project>{3a25a4ba-b495-464d-b9e5-b21c112c4cf8}</Project>
+      <Name>VSDLL</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(VSToolsPath)\SharePointTools\Microsoft.VisualStudio.SharePoint.targets" Condition="'$(VSToolsPath)' != ''" />
+</Project>

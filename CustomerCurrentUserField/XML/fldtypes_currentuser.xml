@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FieldTypes>
+  <FieldType>
+    <Field Name="TypeName">CurrentUser</Field>
+    <Field Name="ParentType">User</Field>
+    <Field Name="TypeDisplayName">当前用户</Field>
+    <Field Name="TypeShortDescription">用户或用户组(默认为当前用户)</Field>
+    <Field Name="UserCreatable">TRUE</Field>
+    <Field Name="ShowInListCreate">TRUE</Field>
+    <Field Name="ShowInSurveyCreate">TRUE</Field>
+    <Field Name="ShowInDocumentLibraryCreate">TRUE</Field>
+    <Field Name="ShowInColumnTemplateCreate">TRUE</Field>
+    <Field Name="FieldTypeClass">CustomerCurrentUserField.CurrentUserField,$SharePoint.Project.AssemblyFullName$</Field>
+    <Field Name="FieldEditorUserControl">/_controltemplates/UserFieldEditor.ascx</Field>
+    <PropertySchema>
+    </PropertySchema>
+  </FieldType>
+</FieldTypes>

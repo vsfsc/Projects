@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" dslVersion="1.0.0.0" Id="0eaa0c52-2562-45e0-b674-b4242bd1ff73" solutionId="0eaa0c52-2562-45e0-b674-b4242bd1ff73" resetWebServer="false" sharePointProductVersion="15.0" name="PlantoActivity" xmlns="http://schemas.microsoft.com/VisualStudio/2008/SharePointTools/PackageModel">
+  <features>
+    <featureReference itemId="c9cede66-7482-4ff4-9cf8-179632193dcd" />
+  </features>
+</package>

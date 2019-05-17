@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Elements xmlns="http://schemas.microsoft.com/sharepoint/">
+  <CustomActionGroup
+     Id="SPMIPNavigation"
+     Title="SPMIP导航"
+     Description = "SPMIP导航"
+     Location = "Microsoft.SharePoint.SiteSettings"
+     Sequence = "1999"
+     ImageUrl="/_layouts/Images/SiteSettings_SPMIPNavigation_48x48.png">
+  </CustomActionGroup>
+  <CustomAction
+    Id="SPMIPTopNav"
+    GroupId="SPMIPNavigation"
+    Location="Microsoft.SharePoint.SiteSettings"
+    Rights="ManageWeb"
+    Sequence="2000"
+    Title="顶部导航"
+    Description="顶部导航">
+    <UrlAction Url="{SiteUrl}/_layouts/SP_MIP/TopNav.aspx" />
+  </CustomAction>
+  <CustomAction
+    Id="SPMIPLeftNav"
+    GroupId="SPMIPNavigation"
+    Location="Microsoft.SharePoint.SiteSettings"
+    Rights="ManageWeb"
+    Sequence="2010"
+    Title="左侧导航"
+    Description="左侧导航">
+    <UrlAction Url="{SiteUrl}/_layouts/SP_MIP/LeftNav.aspx" />
+  </CustomAction>
+  <CustomAction
+    Id="SPMIPChangePassword"
+    GroupId="PersonalActions"
+    Location="Microsoft.SharePoint.StandardMenu"
+    Sequence="1000"
+    Title="修改密码"
+    Description="修改密码"
+    ImageUrl="{SiteUrl}/_layouts/images/Welcome_SPMIPChangePwd_32x32.png">
+    <UrlAction Url="javascript:Show();"/>
+  </CustomAction>
+</Elements>

@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<webParts>
+  <webPart xmlns="http://schemas.microsoft.com/WebPart/v3">
+    <metaData>
+      <type name="VAKPI.OAPoint.OAPoint, $SharePoint.Project.AssemblyFullName$" />
+      <importErrorMessage>$Resources:core,ImportErrorMessage;</importErrorMessage>
+    </metaData>
+    <data>
+      <properties>
+        <property name="Title" type="string">用户活动积分</property>
+        <property name="Description" type="string">统计用户在该网站以及其所有子网站上的所有在线活动类型的积分</property>
+      </properties>
+    </data>
+  </webPart>
+</webParts>

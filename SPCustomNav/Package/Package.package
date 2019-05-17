@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" dslVersion="1.0.0.0" Id="326da498-d056-4298-aa68-0376c224b382" solutionId="326da498-d056-4298-aa68-0376c224b382" resetWebServer="false" sharePointProductVersion="15.0" name="SPCustomNav" xmlns="http://schemas.microsoft.com/VisualStudio/2008/SharePointTools/PackageModel">
+  <features>
+    <featureReference itemId="7a5bb9d9-e809-49c4-8af6-6a7326b8a880" />
+  </features>
+  <projectItems>
+    <projectItemReference itemId="7f04d521-8b8f-459a-bc64-5679b49d09d0" />
+  </projectItems>
+</package>

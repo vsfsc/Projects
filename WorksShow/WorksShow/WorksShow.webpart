@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<webParts>
+  <webPart xmlns="http://schemas.microsoft.com/WebPart/v3">
+    <metaData>
+      <type name="WorksShow.WorksShow.WorksShow, $SharePoint.Project.AssemblyFullName$" />
+      <importErrorMessage>$Resources:core,ImportErrorMessage;</importErrorMessage>
+    </metaData>
+    <data>
+      <properties>
+        <property name="Title" type="string">作品秀</property>
+        <property name="Description" type="string">作品秀：展示作品的详细页面</property>
+      </properties>
+    </data>
+  </webPart>
+</webParts>

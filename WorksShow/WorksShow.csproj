@@ -1,0 +1,284 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{70D65565-0CD4-4918-8688-9377AED7379F}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>WorksShow</RootNamespace>
+    <AssemblyName>WorksShow</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetOfficeVersion>15.0</TargetOfficeVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{C1CDDADD-2546-481F-9697-4EA41081F2FC};{14822709-B5A1-4724-98CA-57A101D1B079};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <SandboxedSolution>False</SandboxedSolution>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>key.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.SharePoint.Linq, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.DataVisualization" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="Microsoft.SharePoint" />
+    <Reference Include="Microsoft.SharePoint.Client.ServerRuntime" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Layouts\WorksShow\test.aspx.cs">
+      <DependentUpon>test.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Layouts\WorksShow\test.aspx.designer.cs">
+      <DependentUpon>test.aspx.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="WorksShow\WorksShow.cs" />
+    <Compile Include="WorksShow\WorksShowUserControl.ascx.cs">
+      <DependentUpon>WorksShowUserControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WorksShow\WorksShowUserControl.ascx.designer.cs">
+      <DependentUpon>WorksShowUserControl.ascx.cs</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Features\Feature1\Feature1.feature">
+      <FeatureId>{f3347ef1-6fae-429e-af85-88a1de43f191}</FeatureId>
+    </None>
+    <None Include="key.snk" />
+    <None Include="Layouts\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{1f32324f-2b2b-4ab8-802f-4b0e7d59c43b}</SharePointProjectItemId>
+    </None>
+    <None Include="Layouts\WorksShow\gallery\css\iconfont.eot" />
+    <None Include="Layouts\WorksShow\gallery\css\iconfont.ttf" />
+    <None Include="Layouts\WorksShow\gallery\css\iconfont.woff" />
+    <None Include="Layouts\WorksShow\ListView\fonts\bpicons\bpicons.eot" />
+    <None Include="Layouts\WorksShow\ListView\fonts\bpicons\bpicons.ttf" />
+    <None Include="Layouts\WorksShow\ListView\fonts\bpicons\bpicons.woff" />
+    <None Include="Layouts\WorksShow\ListView\fonts\fontawesome\fontawesome.eot" />
+    <None Include="Layouts\WorksShow\ListView\fonts\fontawesome\fontawesome.ttf" />
+    <None Include="Layouts\WorksShow\ListView\fonts\fontawesome\fontawesome.woff" />
+    <None Include="Layouts\WorksShow\More\images\Thumbs.db" />
+    <None Include="Package\Package.package">
+      <PackageId>{b5794d28-9527-4b8c-8883-6d5e8dc219d9}</PackageId>
+    </None>
+    <None Include="Package\Package.Template.xml">
+      <DependentUpon>Package.package</DependentUpon>
+    </None>
+    <None Include="WorksShow\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{05f25148-6d98-47d2-8375-bd2f1892d69c}</SharePointProjectItemId>
+    </None>
+    <None Include="WorksShow\WorksShow.webpart" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Content Include="Features\Feature1\Feature1.Template.xml">
+      <DependentUpon>Feature1.feature</DependentUpon>
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Layouts\WorksShow\common\common.css" />
+    <Content Include="Layouts\WorksShow\common\cuplayerLight.js" />
+    <Content Include="Layouts\WorksShow\common\jquery172.js" />
+    <Content Include="Layouts\WorksShow\common\slides.min.jquery.js" />
+    <Content Include="Layouts\WorksShow\common\style.css" />
+    <Content Include="Layouts\WorksShow\css\default.css" />
+    <Content Include="Layouts\WorksShow\CuPlayerMiniV4.swf" />
+    <Content Include="Layouts\WorksShow\CuPlayerSetFile.xml" />
+    <Content Include="Layouts\WorksShow\gallery\css\default-skin\default-skin.css" />
+    <Content Include="Layouts\WorksShow\gallery\css\default-skin\default-skin.png" />
+    <Content Include="Layouts\WorksShow\gallery\css\default-skin\default-skin.svg" />
+    <Content Include="Layouts\WorksShow\gallery\css\default-skin\preloader.gif" />
+    <Content Include="Layouts\WorksShow\gallery\css\demo.css" />
+    <Content Include="Layouts\WorksShow\gallery\css\iconfont.css" />
+    <Content Include="Layouts\WorksShow\gallery\css\iconfont.svg" />
+    <Content Include="Layouts\WorksShow\gallery\css\photoswipe.css" />
+    <Content Include="Layouts\WorksShow\gallery\images\1.jpg" />
+    <Content Include="Layouts\WorksShow\gallery\images\2.jpg" />
+    <Content Include="Layouts\WorksShow\gallery\images\3.jpg" />
+    <Content Include="Layouts\WorksShow\gallery\images\4.jpg" />
+    <Content Include="Layouts\WorksShow\gallery\images\sb1.jpg" />
+    <Content Include="Layouts\WorksShow\gallery\images\sb2.jpg" />
+    <Content Include="Layouts\WorksShow\gallery\images\sb3.jpg" />
+    <Content Include="Layouts\WorksShow\gallery\images\sb4.jpg" />
+    <Content Include="Layouts\WorksShow\gallery\js\extend\layer.ext.js" />
+    <Content Include="Layouts\WorksShow\gallery\js\jquery.min.js" />
+    <Content Include="Layouts\WorksShow\gallery\js\layer.min.js" />
+    <Content Include="Layouts\WorksShow\gallery\js\photoswipe-ui-default.min.js" />
+    <Content Include="Layouts\WorksShow\gallery\js\photoswipe.js" />
+    <Content Include="Layouts\WorksShow\gallery\js\photoswipe.min.js" />
+    <Content Include="Layouts\WorksShow\gallery\js\skin\default\icon_ext.png" />
+    <Content Include="Layouts\WorksShow\gallery\js\skin\default\textbg.png" />
+    <Content Include="Layouts\WorksShow\gallery\js\skin\default\xubox_ico0.png" />
+    <Content Include="Layouts\WorksShow\gallery\js\skin\default\xubox_loading0.gif" />
+    <Content Include="Layouts\WorksShow\gallery\js\skin\default\xubox_loading1.gif" />
+    <Content Include="Layouts\WorksShow\gallery\js\skin\default\xubox_loading2.gif" />
+    <Content Include="Layouts\WorksShow\gallery\js\skin\default\xubox_loading3.gif" />
+    <Content Include="Layouts\WorksShow\gallery\js\skin\default\xubox_title0.png" />
+    <Content Include="Layouts\WorksShow\gallery\js\skin\layer.css" />
+    <Content Include="Layouts\WorksShow\gallery\js\skin\layer.ext.css" />
+    <Content Include="Layouts\WorksShow\Icons\256_FOLDER.PNG" />
+    <Content Include="Layouts\WorksShow\Icons\256_ICACCDB.PNG" />
+    <Content Include="Layouts\WorksShow\Icons\256_ICAUDIO.png" />
+    <Content Include="Layouts\WorksShow\Icons\256_ICDOCX.PNG" />
+    <Content Include="Layouts\WorksShow\Icons\256_ICGEN.PNG" />
+    <Content Include="Layouts\WorksShow\Icons\256_ICONE.PNG" />
+    <Content Include="Layouts\WorksShow\Icons\256_ICPACKGE.PNG" />
+    <Content Include="Layouts\WorksShow\Icons\256_ICPDF.png" />
+    <Content Include="Layouts\WorksShow\Icons\256_ICPPTX.PNG" />
+    <Content Include="Layouts\WorksShow\Icons\256_ICVIDEO.png" />
+    <Content Include="Layouts\WorksShow\Icons\256_ICXLSX.PNG" />
+    <Content Include="Layouts\WorksShow\images\close.gif" />
+    <Content Include="Layouts\WorksShow\images\close.png" />
+    <Content Include="Layouts\WorksShow\images\delete.png" />
+    <Content Include="Layouts\WorksShow\images\fav.png" />
+    <Content Include="Layouts\WorksShow\images\favorite.png" />
+    <Content Include="Layouts\WorksShow\images\floatng.gif" />
+    <Content Include="Layouts\WorksShow\images\hits.png" />
+    <Content Include="Layouts\WorksShow\images\ico_play.png" />
+    <Content Include="Layouts\WorksShow\images\jquery.js" />
+    <Content Include="Layouts\WorksShow\images\like.png" />
+    <Content Include="Layouts\WorksShow\images\loading.gif" />
+    <Content Include="Layouts\WorksShow\images\logo.png" />
+    <Content Include="Layouts\WorksShow\images\Next.png" />
+    <Content Include="Layouts\WorksShow\images\palay.gif" />
+    <Content Include="Layouts\WorksShow\images\palayon.gif" />
+    <Content Include="Layouts\WorksShow\images\pic1.jpg" />
+    <Content Include="Layouts\WorksShow\images\pic2.jpg" />
+    <Content Include="Layouts\WorksShow\images\pic3.jpg" />
+    <Content Include="Layouts\WorksShow\images\pic4.jpg" />
+    <Content Include="Layouts\WorksShow\images\pic5.jpg" />
+    <Content Include="Layouts\WorksShow\images\pic6.jpg" />
+    <Content Include="Layouts\WorksShow\images\Prev.png" />
+    <Content Include="Layouts\WorksShow\images\star.png" />
+    <Content Include="Layouts\WorksShow\images\start.jpg" />
+    <Content Include="Layouts\WorksShow\images\startpic.jpg" />
+    <Content Include="Layouts\WorksShow\images\swfobject.js" />
+    <Content Include="Layouts\WorksShow\images\titlebg.gif" />
+    <Content Include="Layouts\WorksShow\images\titlebga.gif" />
+    <Content Include="Layouts\WorksShow\images\unfav.png" />
+    <Content Include="Layouts\WorksShow\images\unlike.png" />
+    <Content Include="Layouts\WorksShow\images\video.css" />
+    <Content Include="Layouts\WorksShow\images\view.png" />
+    <Content Include="Layouts\WorksShow\images\works.png" />
+    <Content Include="Layouts\WorksShow\js\draggable.js" />
+    <Content Include="Layouts\WorksShow\js\EZView.js" />
+    <Content Include="Layouts\WorksShow\js\jquery-1.11.0.min.js" />
+    <Content Include="Layouts\WorksShow\js\jquery-latest.js" />
+    <Content Include="Layouts\WorksShow\ListView\css\component.css" />
+    <Content Include="Layouts\WorksShow\ListView\css\default.css" />
+    <Content Include="Layouts\WorksShow\ListView\fonts\bpicons\bpicons.svg" />
+    <Content Include="Layouts\WorksShow\ListView\fonts\bpicons\license.txt" />
+    <Content Include="Layouts\WorksShow\ListView\fonts\fontawesome\fontawesome.dev.svg" />
+    <Content Include="Layouts\WorksShow\ListView\fonts\fontawesome\fontawesome.svg" />
+    <Content Include="Layouts\WorksShow\ListView\fonts\fontawesome\license.txt" />
+    <Content Include="Layouts\WorksShow\ListView\fonts\fontawesome\Read Me.txt" />
+    <Content Include="Layouts\WorksShow\ListView\images\1.jpg" />
+    <Content Include="Layouts\WorksShow\ListView\images\10.jpg" />
+    <Content Include="Layouts\WorksShow\ListView\images\2.jpg" />
+    <Content Include="Layouts\WorksShow\ListView\images\3.jpg" />
+    <Content Include="Layouts\WorksShow\ListView\images\4.jpg" />
+    <Content Include="Layouts\WorksShow\ListView\images\5.jpg" />
+    <Content Include="Layouts\WorksShow\ListView\images\6.jpg" />
+    <Content Include="Layouts\WorksShow\ListView\images\7.jpg" />
+    <Content Include="Layouts\WorksShow\ListView\images\8.jpg" />
+    <Content Include="Layouts\WorksShow\ListView\images\9.jpg" />
+    <Content Include="Layouts\WorksShow\ListView\js\cbpViewModeSwitch.js" />
+    <Content Include="Layouts\WorksShow\ListView\js\classie.js" />
+    <Content Include="Layouts\WorksShow\ListView\js\modernizr.custom.js" />
+    <Content Include="Layouts\WorksShow\More\css\jquery.ui.core.css" />
+    <Content Include="Layouts\WorksShow\More\css\jquery.ui.slider.css" />
+    <Content Include="Layouts\WorksShow\More\css\jquery.ui.theme.css" />
+    <Content Include="Layouts\WorksShow\More\css\style.css" />
+    <Content Include="Layouts\WorksShow\More\images\1.jpg" />
+    <Content Include="Layouts\WorksShow\More\images\10.jpg" />
+    <Content Include="Layouts\WorksShow\More\images\11.jpg" />
+    <Content Include="Layouts\WorksShow\More\images\12.jpg" />
+    <Content Include="Layouts\WorksShow\More\images\13.jpg" />
+    <Content Include="Layouts\WorksShow\More\images\14.jpg" />
+    <Content Include="Layouts\WorksShow\More\images\15.jpg" />
+    <Content Include="Layouts\WorksShow\More\images\16.jpg" />
+    <Content Include="Layouts\WorksShow\More\images\17.jpg" />
+    <Content Include="Layouts\WorksShow\More\images\18.jpg" />
+    <Content Include="Layouts\WorksShow\More\images\19.jpg" />
+    <Content Include="Layouts\WorksShow\More\images\2.jpg" />
+    <Content Include="Layouts\WorksShow\More\images\20.jpg" />
+    <Content Include="Layouts\WorksShow\More\images\21.jpg" />
+    <Content Include="Layouts\WorksShow\More\images\22.jpg" />
+    <Content Include="Layouts\WorksShow\More\images\23.jpg" />
+    <Content Include="Layouts\WorksShow\More\images\24.jpg" />
+    <Content Include="Layouts\WorksShow\More\images\25.jpg" />
+    <Content Include="Layouts\WorksShow\More\images\26.jpg" />
+    <Content Include="Layouts\WorksShow\More\images\27.jpg" />
+    <Content Include="Layouts\WorksShow\More\images\28.jpg" />
+    <Content Include="Layouts\WorksShow\More\images\29.jpg" />
+    <Content Include="Layouts\WorksShow\More\images\3.jpg" />
+    <Content Include="Layouts\WorksShow\More\images\30.jpg" />
+    <Content Include="Layouts\WorksShow\More\images\31.jpg" />
+    <Content Include="Layouts\WorksShow\More\images\4.jpg" />
+    <Content Include="Layouts\WorksShow\More\images\5.jpg" />
+    <Content Include="Layouts\WorksShow\More\images\6.jpg" />
+    <Content Include="Layouts\WorksShow\More\images\7.jpg" />
+    <Content Include="Layouts\WorksShow\More\images\8.jpg" />
+    <Content Include="Layouts\WorksShow\More\images\9.jpg" />
+    <Content Include="Layouts\WorksShow\More\images\bgSlide.png" />
+    <Content Include="Layouts\WorksShow\More\images\close.gif" />
+    <Content Include="Layouts\WorksShow\More\images\collapse.gif" />
+    <Content Include="Layouts\WorksShow\More\images\expand.gif" />
+    <Content Include="Layouts\WorksShow\More\js\jquery-ui.min.js" />
+    <Content Include="Layouts\WorksShow\More\js\jquery.min.js" />
+    <Content Include="Layouts\WorksShow\ShowWorks.aspx" />
+    <Content Include="Layouts\WorksShow\test.aspx" />
+    <Content Include="Layouts\WorksShow\test.mp4" />
+    <Content Include="Layouts\WorksShow\WorksList.aspx" />
+    <Content Include="Layouts\WorksShow\WorksShow.aspx" />
+    <Content Include="WorksShow\Elements.xml" />
+    <Content Include="WorksShow\WorksShowUserControl.ascx" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\WorksShowDll\WorksShowDll.csproj">
+      <Project>{e2a4f247-1093-456e-8861-e4eb23d86ac7}</Project>
+      <Name>WorksShowDll</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(VSToolsPath)\SharePointTools\Microsoft.VisualStudio.SharePoint.targets" Condition="'$(VSToolsPath)' != ''" />
+</Project>

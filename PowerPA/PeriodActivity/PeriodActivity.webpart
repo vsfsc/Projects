@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<webParts>
+  <webPart xmlns="http://schemas.microsoft.com/WebPart/v3">
+    <metaData>
+      <type name="PowerPA.PeriodActivity.PeriodActivity, $SharePoint.Project.AssemblyFullName$" />
+      <importErrorMessage>$Resources:core,ImportErrorMessage;</importErrorMessage>
+    </metaData>
+    <data>
+      <properties>
+        <property name="Title" type="string">PowerPA - 周期活动生成</property>
+        <property name="Description" type="string">根据日历生成周期活动</property>
+      </properties>
+    </data>
+  </webPart>
+</webParts>

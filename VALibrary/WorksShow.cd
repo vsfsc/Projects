@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="VALibrary.Works">
+    <Position X="8.5" Y="0.5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AABAAgAAARKAAEAQAQAAAAAABGAAAAQEAAAAAAQggAQ=</HashCode>
+      <FileName>Works.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="WorksType" />
+      <Property Name="WorksFile" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="VALibrary.WorksFile">
+    <Position X="4.75" Y="1.25" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAgAAAEAAAABAAAAIAAgAAAAIAAAAAkBAAAJECAA=</HashCode>
+      <FileName>WorksFile.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="FileType" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="VALibrary.WorksType">
+    <Position X="11.75" Y="1.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAIAAAAACAAAAAAAAAAAAAAAABAgAAAQoAAAAAA=</HashCode>
+      <FileName>WorksType.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="VALibrary.FileType">
+    <Position X="1.75" Y="1.25" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAIAAAAACAAAAAAAAAAAAAAAABAgAAAQoAAAAIA=</HashCode>
+      <FileName>FileType.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Microsoft YaHei UI" Size="9" />
+</ClassDiagram>

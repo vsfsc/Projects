@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" dslVersion="1.0.0.0" Id="c864fdcf-0768-40c1-8f6e-18471f6a626e" solutionId="c864fdcf-0768-40c1-8f6e-18471f6a626e" resetWebServer="false" sharePointProductVersion="15.0" name="PowerPA" xmlns="http://schemas.microsoft.com/VisualStudio/2008/SharePointTools/PackageModel">
+  <features>
+    <featureReference itemId="23c64d67-ed42-4b0a-a448-abd80cd36dbf" />
+  </features>
+  <projectItems>
+    <projectItemReference itemId="5bb0d533-2441-4787-a960-13c9602a3e29" />
+  </projectItems>
+</package>

@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<FieldTypes>
+  <FieldType>
+    <Field Name="TypeName">CustomMyActionField</Field>
+    <Field Name="ParentType">Choice</Field>
+    <Field Name="TypeDisplayName">我的操作(按频次显示)</Field>
+    <Field Name="UserCreatable">TRUE</Field>
+    <Field Name="ShowOnListCreate">TRUE</Field>
+    <Field Name="ShowOnDocumentLibraryCreate">TRUE</Field>
+    <Field Name="ShowOnSurveyCreate">TRUE</Field>
+    <Field Name="ShowOnColumnTemplateCreate">TRUE</Field>
+    <Field Name="Sortable">TRUE</Field>
+    <Field Name="Filterable">TRUE</Field>
+    <Field Name="FieldTypeClass">MyTasks.CustomMyActionField, $SharePoint.Project.AssemblyFullName$</Field>
+  </FieldType>
+</FieldTypes>

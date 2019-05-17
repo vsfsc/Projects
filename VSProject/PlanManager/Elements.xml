@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Elements xmlns="http://schemas.microsoft.com/sharepoint/" >
+  <Module Name="PlanManager" List="113" Url="_catalogs/wp">
+    <File Path="PlanManager\PlanManager.webpart" Url="VSProject_PlanManager.webpart" Type="GhostableInLibrary" >
+      <Property Name="Group" Value="VS" />
+    </File>
+  </Module>
+</Elements>

@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" dslVersion="1.0.0.0" Id="e4c973e5-b0bc-48b1-8970-542b1a662290" solutionId="e4c973e5-b0bc-48b1-8970-542b1a662290" resetWebServer="false" sharePointProductVersion="15.0" name="VADocumentOnline" xmlns="http://schemas.microsoft.com/VisualStudio/2008/SharePointTools/PackageModel">
+  <features>
+    <featureReference itemId="1d59bce8-d500-4eda-af3a-ad5cd2e7d87b" />
+    <featureReference itemId="1f91e21e-eb69-41b4-8b48-5d82cb031a9d" />
+  </features>
+  <projectItems>
+    <projectItemReference itemId="5c13706c-7d13-4951-9e3e-7195febd4b9e" />
+  </projectItems>
+</package>

@@ -1,0 +1,2155 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="VAExtensionModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Course">
+          <Key>
+            <PropertyRef Name="CourseID" />
+          </Key>
+          <Property Name="CourseID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CourseName" Type="varchar" MaxLength="100" />
+          <Property Name="Guid" Type="uniqueidentifier" />
+          <Property Name="SubjiectID" Type="bigint" />
+          <Property Name="Url" Type="varchar" MaxLength="200" />
+          <Property Name="Flag" Type="int" />
+        </EntityType>
+        <EntityType Name="Favorites">
+          <Key>
+            <PropertyRef Name="UserID" />
+            <PropertyRef Name="ItemID" />
+            <PropertyRef Name="DomainID" />
+          </Key>
+          <Property Name="UserID" Type="bigint" Nullable="false" />
+          <Property Name="ItemID" Type="bigint" Nullable="false" />
+          <Property Name="DomainID" Type="bigint" Nullable="false" />
+          <Property Name="FavDate" Type="datetime" />
+          <Property Name="ModifyDate" Type="datetime" />
+          <Property Name="Flag" Type="int" />
+        </EntityType>
+        <EntityType Name="FileType">
+          <Key>
+            <PropertyRef Name="FileTypeID" />
+          </Key>
+          <Property Name="FileTypeID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="TypeName" Type="varchar" MaxLength="10" />
+          <Property Name="ParentID" Type="int" />
+        </EntityType>
+        <EntityType Name="Periods">
+          <Key>
+            <PropertyRef Name="PeriodID" />
+          </Key>
+          <Property Name="PeriodID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="PeriodTitle" Type="varchar" MaxLength="100" />
+          <Property Name="PeriodCode" Type="varchar" MaxLength="20" />
+          <Property Name="CourseID" Type="bigint" />
+          <Property Name="Require" Type="varchar(max)" />
+          <Property Name="WorksTypeID" Type="int" />
+          <Property Name="Number" Type="int" />
+          <Property Name="StartSubmit" Type="datetime" />
+          <Property Name="EndSubmit" Type="datetime" />
+          <Property Name="StartScore" Type="datetime" />
+          <Property Name="EndScore" Type="datetime" />
+          <Property Name="StartPublic" Type="datetime" />
+          <Property Name="EndPublic" Type="datetime" />
+          <Property Name="CreatedBy" Type="bigint" />
+          <Property Name="Created" Type="datetime" />
+          <Property Name="ModifiedBy" Type="bigint" />
+          <Property Name="Modified" Type="datetime" />
+          <Property Name="Flag" Type="int" />
+        </EntityType>
+        <EntityType Name="User">
+          <Key>
+            <PropertyRef Name="UserID" />
+          </Key>
+          <Property Name="UserID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Account" Type="varchar" MaxLength="50" />
+          <Property Name="Name" Type="varchar" MaxLength="50" />
+          <Property Name="IDCard" Type="varchar" MaxLength="18" />
+          <Property Name="Sex" Type="bit" />
+          <Property Name="Telephone" Type="varchar" MaxLength="50" />
+          <Property Name="Email" Type="varchar" MaxLength="100" />
+          <Property Name="Duty" Type="varchar" MaxLength="100" />
+          <Property Name="ProfessionalTitle" Type="varchar" MaxLength="100" />
+          <Property Name="Department" Type="varchar" MaxLength="100" />
+          <Property Name="Major" Type="varchar" MaxLength="100" />
+          <Property Name="Class" Type="varchar" MaxLength="50" />
+          <Property Name="Grade" Type="varchar" MaxLength="50" />
+          <Property Name="RoleID" Type="int" />
+          <Property Name="DegreeID" Type="int" />
+          <Property Name="SchoolID" Type="int" />
+          <Property Name="CreatedBy" Type="bigint" />
+          <Property Name="Created" Type="datetime" />
+          <Property Name="ModifiedBy" Type="bigint" />
+          <Property Name="Modified" Type="datetime" />
+          <Property Name="StateID" Type="int" />
+          <Property Name="ApprovedBy" Type="bigint" />
+          <Property Name="Approved" Type="datetime" />
+          <Property Name="Flag" Type="bigint" />
+          <Property Name="AppPwd" Type="varchar" MaxLength="16" />
+          <Property Name="AppUserScore" Type="varchar" MaxLength="10" />
+          <Property Name="OrgID" Type="int" />
+        </EntityType>
+        <EntityType Name="UserWorks">
+          <Key>
+            <PropertyRef Name="UserWorksID" />
+          </Key>
+          <Property Name="UserWorksID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="UserID" Type="bigint" />
+          <Property Name="WorksID" Type="bigint" />
+          <Property Name="Relationship" Type="int" />
+          <Property Name="Flag" Type="int" />
+        </EntityType>
+        <EntityType Name="Works">
+          <Key>
+            <PropertyRef Name="WorksID" />
+          </Key>
+          <Property Name="WorksID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="PeriodID" Type="bigint" />
+          <Property Name="DomainID" Type="bigint" />
+          <Property Name="WorksName" Type="varchar" MaxLength="100" />
+          <Property Name="TeamName" Type="varchar" MaxLength="100" />
+          <Property Name="WorksTypeID" Type="int" />
+          <Property Name="WorksCode" Type="varchar" MaxLength="50" />
+          <Property Name="OrgID" Type="int" />
+          <Property Name="IsSample" Type="int" />
+          <Property Name="Comment" Type="varchar" MaxLength="2000" />
+          <Property Name="Profile" Type="varchar" MaxLength="8000" />
+          <Property Name="SubmitProfile" Type="varchar" MaxLength="8000" />
+          <Property Name="Suggestion" Type="varchar" MaxLength="2000" />
+          <Property Name="InstallationGuide" Type="varchar" MaxLength="2000" />
+          <Property Name="DesignIdeas" Type="varchar(max)" />
+          <Property Name="KeyPoints" Type="varchar" MaxLength="2500" />
+          <Property Name="SelfAssessment" Type="varchar" MaxLength="2000" />
+          <Property Name="DemoURL" Type="varchar" MaxLength="2000" />
+          <Property Name="BackReason" Type="varchar" MaxLength="2000" />
+          <Property Name="Score" Type="real" />
+          <Property Name="CreatedBy" Type="bigint" />
+          <Property Name="Created" Type="datetime" />
+          <Property Name="ModifiedBy" Type="bigint" />
+          <Property Name="Modified" Type="datetime" />
+          <Property Name="Hits" Type="varchar" MaxLength="10" />
+          <Property Name="AllotTimes" Type="int" />
+          <Property Name="WorksState" Type="int" />
+          <Property Name="Flag" Type="bigint" />
+        </EntityType>
+        <EntityType Name="WorksFile">
+          <Key>
+            <PropertyRef Name="WorksFileID" />
+          </Key>
+          <Property Name="WorksFileID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="WorksID" Type="bigint" Nullable="false" />
+          <Property Name="Type" Type="int" />
+          <Property Name="FileName" Type="varchar" MaxLength="200" />
+          <Property Name="FilePath" Type="varchar" MaxLength="1000" />
+          <Property Name="FileSize" Type="int" />
+          <Property Name="CreatedBy" Type="bigint" />
+          <Property Name="Created" Type="datetime" />
+          <Property Name="ModifiedBy" Type="bigint" />
+          <Property Name="Modified" Type="datetime" />
+          <Property Name="Flag" Type="bigint" />
+        </EntityType>
+        <EntityType Name="WorksType">
+          <Key>
+            <PropertyRef Name="WorksTypeID" />
+          </Key>
+          <Property Name="WorksTypeID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="WorksTypeName" Type="varchar" MaxLength="100" />
+          <Property Name="Description" Type="varchar" MaxLength="500" />
+          <Property Name="ParentID" Type="int" />
+          <Property Name="LevelID" Type="int" />
+          <Property Name="CreatedBy" Type="bigint" />
+          <Property Name="Created" Type="datetime" />
+          <Property Name="ModifiedBy" Type="bigint" />
+          <Property Name="Modified" Type="datetime" />
+          <Property Name="Flag" Type="int" />
+        </EntityType>
+        <!--生成过程中发现错误:
+警告 6002: 表/视图“VAExtension.dbo.CSMyWorks”未定义主键。已推断出该键，并将定义创建为只读的表/视图。-->
+        <EntityType Name="CSMyWorks">
+          <Key>
+            <PropertyRef Name="WorksID" />
+          </Key>
+          <Property Name="WorksID" Type="bigint" Nullable="false" />
+          <Property Name="WorksName" Type="varchar" MaxLength="100" />
+          <Property Name="CourseName" Type="varchar" MaxLength="100" />
+          <Property Name="PeriodTitle" Type="varchar" MaxLength="100" />
+          <Property Name="WorksTypeName" Type="varchar" MaxLength="100" />
+          <Property Name="StateName" Type="varchar" MaxLength="50" />
+          <Property Name="Score" Type="real" />
+          <Property Name="Relationship" Type="int" />
+          <Property Name="UserID" Type="bigint" />
+          <Property Name="PeriodID" Type="bigint" />
+          <Property Name="WorksTypeID" Type="int" />
+          <Property Name="UserWorksID" Type="bigint" />
+          <Property Name="StateID" Type="int" />
+          <Property Name="CourseID" Type="bigint" />
+          <Property Name="DomainID" Type="bigint" />
+          <Property Name="WorksCode" Type="varchar" MaxLength="50" />
+          <Property Name="DesignIdeas" Type="varchar(max)" />
+          <Property Name="Created" Type="datetime" />
+          <Property Name="Hits" Type="varchar" MaxLength="10" />
+        </EntityType>
+        <!--生成过程中发现错误:
+警告 6002: 表/视图“VAExtension.dbo.FavoriteWorks”未定义主键。已推断出该键，并将定义创建为只读的表/视图。-->
+        <EntityType Name="FavoriteWorks">
+          <Key>
+            <PropertyRef Name="UserID" />
+          </Key>
+          <Property Name="UserID" Type="bigint" Nullable="false" />
+          <Property Name="DomainID" Type="bigint" />
+          <Property Name="WorksID" Type="bigint" />
+          <Property Name="WorksName" Type="varchar" MaxLength="100" />
+          <Property Name="AuthorID" Type="bigint" />
+          <Property Name="AuthorName" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <Association Name="FK_Periods_Course">
+          <End Role="Course" Type="Self.Course" Multiplicity="0..1" />
+          <End Role="Periods" Type="Self.Periods" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Course">
+              <PropertyRef Name="CourseID" />
+            </Principal>
+            <Dependent Role="Periods">
+              <PropertyRef Name="CourseID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UserWorks_User">
+          <End Role="User" Type="Self.User" Multiplicity="0..1" />
+          <End Role="UserWorks" Type="Self.UserWorks" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="UserID" />
+            </Principal>
+            <Dependent Role="UserWorks">
+              <PropertyRef Name="UserID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UserWorks_Works">
+          <End Role="Works" Type="Self.Works" Multiplicity="0..1" />
+          <End Role="UserWorks" Type="Self.UserWorks" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Works">
+              <PropertyRef Name="WorksID" />
+            </Principal>
+            <Dependent Role="UserWorks">
+              <PropertyRef Name="WorksID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Works_Periods">
+          <End Role="Periods" Type="Self.Periods" Multiplicity="0..1" />
+          <End Role="Works" Type="Self.Works" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Periods">
+              <PropertyRef Name="PeriodID" />
+            </Principal>
+            <Dependent Role="Works">
+              <PropertyRef Name="PeriodID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_WorksFile_Works">
+          <End Role="Works" Type="Self.Works" Multiplicity="1" />
+          <End Role="WorksFile" Type="Self.WorksFile" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Works">
+              <PropertyRef Name="WorksID" />
+            </Principal>
+            <Dependent Role="WorksFile">
+              <PropertyRef Name="WorksID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Function Name="GetUserByUserID" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="UserID" Type="bigint" Mode="In" />
+        </Function>
+        <Function Name="GetUserByWorksID" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="WorksID" Type="bigint" Mode="In" />
+        </Function>
+        <Function Name="GetUserIdWorksIdByPeriodId" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="PeriodID" Type="bigint" Mode="In" />
+        </Function>
+        <Function Name="GetUserRoleByUserID" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="UserID" Type="bigint" Mode="In" />
+        </Function>
+        <Function Name="GetUsersIDByPeriodID" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="PeriodID" Type="bigint" Mode="In" />
+        </Function>
+        <Function Name="GetWorksAllotTimesByWorsID" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="WorksID" Type="bigint" Mode="In" />
+        </Function>
+        <Function Name="GetWorksByAccount" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="PeriodID" Type="bigint" Mode="In" />
+          <Parameter Name="Account" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="GetWorksByPeriodID" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="PeriodID" Type="bigint" Mode="In" />
+        </Function>
+        <Function Name="GetWorksByWorksID" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="WorksID" Type="bigint" Mode="In" />
+        </Function>
+        <Function Name="GetWorksCheck" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="WorksName" Type="varchar" Mode="In" />
+          <Parameter Name="AreaID" Type="int" Mode="In" />
+          <Parameter Name="SchoolID" Type="int" Mode="In" />
+          <Parameter Name="StateID" Type="int" Mode="In" />
+          <Parameter Name="OneWorksTypeID" Type="int" Mode="In" />
+          <Parameter Name="TwoWorksTypeID" Type="int" Mode="In" />
+          <Parameter Name="WorksCode" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="GetWorksCommentsByWorksID" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="WorksID" Type="bigint" Mode="In" />
+        </Function>
+        <Function Name="GetWorksEvaluated" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="WorksID" Type="bigint" Mode="In" />
+        </Function>
+        <Function Name="GetWorksExpertByID" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="WorksExpertID" Type="bigint" Mode="In" />
+        </Function>
+        <Function Name="GetWorksExpertByWorksID" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="WorksID" Type="bigint" Mode="In" />
+        </Function>
+        <Function Name="GetWorksFile" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="WorksID" Type="bigint" Mode="In" />
+          <Parameter Name="Type" Type="int" Mode="In" />
+        </Function>
+        <Function Name="GetWorksForCheck" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="WorksName" Type="varchar" Mode="In" />
+          <Parameter Name="AreaID" Type="int" Mode="In" />
+          <Parameter Name="SchoolID" Type="int" Mode="In" />
+          <Parameter Name="StateID" Type="int" Mode="In" />
+        </Function>
+        <Function Name="GetWorksForMeByPeriodID" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="PeriodID" Type="bigint" Mode="In" />
+          <Parameter Name="userID" Type="bigint" Mode="In" />
+        </Function>
+        <Function Name="GetWorksForMeToScore" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="userAccount" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="GetWorksForSummary" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="SchoolID" Type="int" Mode="In" />
+          <Parameter Name="OneWorksTypeID" Type="int" Mode="In" />
+          <Parameter Name="TwoWorksTypeID" Type="int" Mode="In" />
+          <Parameter Name="IsSubmit" Type="int" Mode="In" />
+        </Function>
+        <Function Name="GetWorksIDByPeriodIDAndUserID" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="userID" Type="bigint" Mode="In" />
+          <Parameter Name="PeriodID" Type="bigint" Mode="In" />
+          <Parameter Name="allotTimes" Type="bigint" Mode="In" />
+        </Function>
+        <Function Name="GetWorksIDByUserAccountAndPeriodTitle" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Account" Type="bigint" Mode="In" />
+          <Parameter Name="PeriodTitle" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="GetWorksNumByPeriodID" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="PeriodID" Type="bigint" Mode="In" />
+        </Function>
+        <Function Name="GetWorksPublic" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="GetWorksSubmitByID" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="WorksID" Type="bigint" Mode="In" />
+        </Function>
+        <Function Name="GetWorksToEvaluate" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="ExpertID" Type="bigint" Mode="In" />
+          <Parameter Name="PeriodID" Type="bigint" Mode="In" />
+          <Parameter Name="IsSample" Type="int" Mode="In" />
+        </Function>
+        <Function Name="GetWorksType" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="GetWorksTypeByUserID" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="UserID" Type="bigint" Mode="In" />
+        </Function>
+        <Function Name="GetWorksTypeForEnroll" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="GetWorksTypeScoreStandardByTypeID" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="WorksTypeID" Type="int" Mode="In" />
+        </Function>
+        <Function Name="InsertUser" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="UserID" Type="bigint" Mode="InOut" />
+          <Parameter Name="Account" Type="varchar" Mode="In" />
+          <Parameter Name="Name" Type="varchar" Mode="In" />
+          <Parameter Name="IDCard" Type="varchar" Mode="In" />
+          <Parameter Name="Sex" Type="bit" Mode="In" />
+          <Parameter Name="Telephone" Type="varchar" Mode="In" />
+          <Parameter Name="Email" Type="varchar" Mode="In" />
+          <Parameter Name="Duty" Type="varchar" Mode="In" />
+          <Parameter Name="ProfessionalTitle" Type="varchar" Mode="In" />
+          <Parameter Name="Department" Type="varchar" Mode="In" />
+          <Parameter Name="Major" Type="varchar" Mode="In" />
+          <Parameter Name="Class" Type="varchar" Mode="In" />
+          <Parameter Name="Grade" Type="varchar" Mode="In" />
+          <Parameter Name="RoleID" Type="int" Mode="In" />
+          <Parameter Name="SchoolID" Type="int" Mode="In" />
+          <Parameter Name="CreatedBy" Type="bigint" Mode="In" />
+          <Parameter Name="Created" Type="datetime" Mode="In" />
+          <Parameter Name="ModifiedBy" Type="bigint" Mode="In" />
+          <Parameter Name="Modified" Type="datetime" Mode="In" />
+          <Parameter Name="StateID" Type="int" Mode="In" />
+          <Parameter Name="ApprovedBy" Type="bigint" Mode="In" />
+          <Parameter Name="Approved" Type="datetime" Mode="In" />
+          <Parameter Name="Flag" Type="bigint" Mode="In" />
+          <Parameter Name="OrgID" Type="int" Mode="In" />
+        </Function>
+        <Function Name="InsertWorks" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="WorksID" Type="bigint" Mode="InOut" />
+          <Parameter Name="WorksName" Type="varchar" Mode="In" />
+          <Parameter Name="WorksTypeID" Type="int" Mode="In" />
+          <Parameter Name="PeriodID" Type="bigint" Mode="In" />
+          <Parameter Name="WorksCode" Type="varchar" Mode="In" />
+          <Parameter Name="IsSample" Type="int" Mode="In" />
+          <Parameter Name="SubmitProfile" Type="varchar" Mode="In" />
+          <Parameter Name="DesignIdeas" Type="varchar(max)" Mode="In" />
+          <Parameter Name="KeyPoints" Type="varchar" Mode="In" />
+          <Parameter Name="DemoURL" Type="varchar" Mode="In" />
+          <Parameter Name="Flag" Type="bigint" Mode="In" />
+          <Parameter Name="WorksState" Type="int" Mode="In" />
+          <Parameter Name="Score" Type="real" Mode="In" />
+          <Parameter Name="CreatedBy" Type="bigint" Mode="In" />
+          <Parameter Name="Created" Type="datetime" Mode="In" />
+        </Function>
+        <Function Name="InsertWorksComments" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="CommentsID" Type="bigint" Mode="InOut" />
+          <Parameter Name="WorksID" Type="bigint" Mode="In" />
+          <Parameter Name="UserID" Type="bigint" Mode="In" />
+          <Parameter Name="Flag" Type="bigint" Mode="In" />
+        </Function>
+        <Function Name="InsertWorksExpert" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="WorksExpertID" Type="bigint" Mode="InOut" />
+          <Parameter Name="WorksID" Type="bigint" Mode="In" />
+          <Parameter Name="ExpertID" Type="bigint" Mode="In" />
+          <Parameter Name="Score" Type="real" Mode="In" />
+          <Parameter Name="Comments" Type="varchar" Mode="In" />
+          <Parameter Name="Created" Type="datetime" Mode="In" />
+          <Parameter Name="ScoreState" Type="int" Mode="In" />
+          <Parameter Name="Flag" Type="bigint" Mode="In" />
+        </Function>
+        <Function Name="InsertWorksImages" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="WorksFileID" Type="bigint" Mode="InOut" />
+          <Parameter Name="WorksID" Type="bigint" Mode="In" />
+          <Parameter Name="Type" Type="int" Mode="In" />
+          <Parameter Name="FileName" Type="varchar" Mode="In" />
+          <Parameter Name="FilePath" Type="varchar" Mode="In" />
+          <Parameter Name="FileSize" Type="int" Mode="In" />
+          <Parameter Name="CreatedBy" Type="bigint" Mode="In" />
+          <Parameter Name="Created" Type="datetime" Mode="In" />
+          <Parameter Name="Flag" Type="bigint" Mode="In" />
+        </Function>
+        <Function Name="InsertWorksSubmit" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="WorksSubmitID" Type="bigint" Mode="InOut" />
+          <Parameter Name="WorksID" Type="bigint" Mode="In" />
+          <Parameter Name="WorksCode" Type="varchar" Mode="In" />
+          <Parameter Name="SubmitProfile" Type="varchar" Mode="In" />
+          <Parameter Name="Suggestion" Type="varchar" Mode="In" />
+          <Parameter Name="InstallationGuide" Type="varchar" Mode="In" />
+          <Parameter Name="DesignIdeas" Type="varchar(max)" Mode="In" />
+          <Parameter Name="KeyPoints" Type="varchar" Mode="In" />
+          <Parameter Name="SelfAssessment" Type="varchar" Mode="In" />
+          <Parameter Name="WorksShow" Type="varchar" Mode="In" />
+          <Parameter Name="Comment" Type="varchar" Mode="In" />
+          <Parameter Name="DemoURL" Type="varchar" Mode="In" />
+          <Parameter Name="StateID" Type="int" Mode="In" />
+          <Parameter Name="CreatedBy" Type="bigint" Mode="In" />
+          <Parameter Name="Created" Type="datetime" Mode="In" />
+          <Parameter Name="Flag" Type="bigint" Mode="In" />
+        </Function>
+        <Function Name="InsertWorksType" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="WorksTypeID" Type="int" Mode="InOut" />
+          <Parameter Name="WorksTypeName" Type="varchar" Mode="In" />
+          <Parameter Name="ParentID" Type="int" Mode="In" />
+          <Parameter Name="LevelID" Type="int" Mode="In" />
+          <Parameter Name="CreatedBy" Type="bigint" Mode="In" />
+          <Parameter Name="Created" Type="datetime" Mode="In" />
+          <Parameter Name="Flag" Type="int" Mode="In" />
+          <Parameter Name="F" Type="int" Mode="In" />
+        </Function>
+        <Function Name="InsertWorksTypeScoreStandard" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="WorkTypeID" Type="int" Mode="In" />
+          <Parameter Name="StandardID" Type="int" Mode="In" />
+          <Parameter Name="Score" Type="int" Mode="In" />
+          <Parameter Name="StandardDescription" Type="varchar" Mode="In" />
+          <Parameter Name="Flag" Type="int" Mode="In" />
+        </Function>
+        <Function Name="JudgeWorksSubmit" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="WorksSubmitID" Type="bigint" Mode="In" />
+          <Parameter Name="StateID" Type="int" Mode="In" />
+        </Function>
+        <Function Name="UpdateUser" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="UserID" Type="bigint" Mode="In" />
+          <Parameter Name="Account" Type="varchar" Mode="In" />
+          <Parameter Name="Name" Type="varchar" Mode="In" />
+          <Parameter Name="IDCard" Type="varchar" Mode="In" />
+          <Parameter Name="Sex" Type="bit" Mode="In" />
+          <Parameter Name="Telephone" Type="varchar" Mode="In" />
+          <Parameter Name="Email" Type="varchar" Mode="In" />
+          <Parameter Name="Duty" Type="varchar" Mode="In" />
+          <Parameter Name="ProfessionalTitle" Type="varchar" Mode="In" />
+          <Parameter Name="Department" Type="varchar" Mode="In" />
+          <Parameter Name="Major" Type="varchar" Mode="In" />
+          <Parameter Name="Class" Type="varchar" Mode="In" />
+          <Parameter Name="Grade" Type="varchar" Mode="In" />
+          <Parameter Name="RoleID" Type="int" Mode="In" />
+          <Parameter Name="SchoolID" Type="int" Mode="In" />
+          <Parameter Name="CreatedBy" Type="bigint" Mode="In" />
+          <Parameter Name="Created" Type="datetime" Mode="In" />
+          <Parameter Name="ModifiedBy" Type="bigint" Mode="In" />
+          <Parameter Name="Modified" Type="datetime" Mode="In" />
+          <Parameter Name="StateID" Type="int" Mode="In" />
+          <Parameter Name="ApprovedBy" Type="bigint" Mode="In" />
+          <Parameter Name="Approved" Type="datetime" Mode="In" />
+          <Parameter Name="Flag" Type="bigint" Mode="In" />
+          <Parameter Name="OrgID" Type="int" Mode="In" />
+        </Function>
+        <Function Name="UpdateUserWorks" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="UserID" Type="bigint" Mode="In" />
+          <Parameter Name="WorksID" Type="bigint" Mode="In" />
+          <Parameter Name="Relationship" Type="int" Mode="In" />
+          <Parameter Name="Flag" Type="int" Mode="In" />
+        </Function>
+        <Function Name="UpdateWorksAllotTimes" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="WorksID" Type="bigint" Mode="In" />
+          <Parameter Name="AllotTimes" Type="bigint" Mode="In" />
+          <Parameter Name="WorksState" Type="int" Mode="In" />
+        </Function>
+        <Function Name="UpdateWorksCheck" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="WorksSubmitID" Type="bigint" Mode="In" />
+          <Parameter Name="StateID" Type="int" Mode="In" />
+          <Parameter Name="ApprovedBy" Type="bigint" Mode="In" />
+          <Parameter Name="Approved" Type="datetime" Mode="In" />
+          <Parameter Name="BackReason" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="UpdateWorksCode" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="WorksID" Type="bigint" Mode="In" />
+          <Parameter Name="SubmitProfile" Type="varchar" Mode="In" />
+          <Parameter Name="DesignIdeas" Type="varchar(max)" Mode="In" />
+          <Parameter Name="KeyPoints" Type="varchar" Mode="In" />
+          <Parameter Name="DemoURL" Type="varchar" Mode="In" />
+          <Parameter Name="WorksCode" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="UpdateWorksExpert" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="WorksExpertID" Type="bigint" Mode="In" />
+          <Parameter Name="WorksID" Type="bigint" Mode="In" />
+          <Parameter Name="ExpertID" Type="bigint" Mode="In" />
+          <Parameter Name="Score" Type="real" Mode="In" />
+          <Parameter Name="Comments" Type="varchar" Mode="In" />
+          <Parameter Name="Modified" Type="datetime" Mode="In" />
+          <Parameter Name="Flag" Type="bigint" Mode="In" />
+        </Function>
+        <Function Name="UpdateWorksFile" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="WorksFileID" Type="bigint" Mode="In" />
+          <Parameter Name="Type" Type="int" Mode="In" />
+          <Parameter Name="FileName" Type="varchar" Mode="In" />
+          <Parameter Name="ModifiedBy" Type="bigint" Mode="In" />
+          <Parameter Name="Modified" Type="datetime" Mode="In" />
+          <Parameter Name="FilePath" Type="varchar" Mode="In" />
+          <Parameter Name="FileSize" Type="int" Mode="In" />
+          <Parameter Name="Flag" Type="bigint" Mode="In" />
+        </Function>
+        <Function Name="UpdateWorksFileForSize" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="WorksFileID" Type="bigint" Mode="In" />
+          <Parameter Name="Type" Type="int" Mode="In" />
+          <Parameter Name="FileName" Type="varchar" Mode="In" />
+          <Parameter Name="ModifiedBy" Type="bigint" Mode="In" />
+          <Parameter Name="Modified" Type="datetime" Mode="In" />
+          <Parameter Name="FilePath" Type="varchar" Mode="In" />
+          <Parameter Name="FileSize" Type="int" Mode="In" />
+          <Parameter Name="Flag" Type="bigint" Mode="In" />
+        </Function>
+        <Function Name="UpdateWorksImages" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="WorksImagesID" Type="bigint" Mode="In" />
+          <Parameter Name="ModifiedBy" Type="bigint" Mode="In" />
+          <Parameter Name="Modified" Type="datetime" Mode="In" />
+        </Function>
+        <Function Name="UpdateWorksInfo" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="WorksID" Type="bigint" Mode="In" />
+          <Parameter Name="WorksName" Type="varchar" Mode="In" />
+          <Parameter Name="WorksTypeID" Type="int" Mode="In" />
+          <Parameter Name="WorksCode" Type="varchar" Mode="In" />
+          <Parameter Name="Members" Type="varchar" Mode="In" />
+          <Parameter Name="PeriodID" Type="bigint" Mode="In" />
+          <Parameter Name="SubmitProfile" Type="varchar" Mode="In" />
+          <Parameter Name="DesignIdeas" Type="varchar(max)" Mode="In" />
+          <Parameter Name="KeyPoints" Type="varchar" Mode="In" />
+          <Parameter Name="DemoURL" Type="varchar" Mode="In" />
+          <Parameter Name="Flag" Type="bigint" Mode="In" />
+          <Parameter Name="WorksState" Type="int" Mode="In" />
+          <Parameter Name="Score" Type="real" Mode="In" />
+          <Parameter Name="CreatedBy" Type="bigint" Mode="In" />
+          <Parameter Name="Created" Type="datetime" Mode="In" />
+        </Function>
+        <Function Name="UpdateWorksSubmit" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="WorksID" Type="bigint" Mode="In" />
+          <Parameter Name="Score" Type="real" Mode="In" />
+          <Parameter Name="WorksState" Type="int" Mode="In" />
+        </Function>
+        <Function Name="UpdateWorksType" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="WorksTypeID" Type="int" Mode="In" />
+          <Parameter Name="WorksTypeName" Type="varchar" Mode="In" />
+          <Parameter Name="ParentID" Type="int" Mode="In" />
+          <Parameter Name="LevelID" Type="int" Mode="In" />
+          <Parameter Name="CreatedBy" Type="bigint" Mode="In" />
+          <Parameter Name="Created" Type="datetime" Mode="In" />
+          <Parameter Name="Flag" Type="int" Mode="In" />
+          <Parameter Name="F" Type="int" Mode="In" />
+        </Function>
+        <Function Name="UpdateWorksTypeForSubmit" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="WorksID" Type="bigint" Mode="In" />
+          <Parameter Name="WorksTypeID" Type="int" Mode="In" />
+          <Parameter Name="ModifiedBy" Type="bigint" Mode="In" />
+          <Parameter Name="Modified" Type="datetime" Mode="In" />
+        </Function>
+        <Function Name="UpdateWorksTypeScoreStandard" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="WorkTypeID" Type="int" Mode="In" />
+          <Parameter Name="StandardID" Type="int" Mode="In" />
+          <Parameter Name="Score" Type="int" Mode="In" />
+          <Parameter Name="StandardDescription" Type="varchar" Mode="In" />
+          <Parameter Name="Flag" Type="int" Mode="In" />
+        </Function>
+        <EntityContainer Name="VAExtensionModelStoreContainer">
+          <EntitySet Name="Course" EntityType="Self.Course" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Favorites" EntityType="Self.Favorites" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="FileType" EntityType="Self.FileType" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Periods" EntityType="Self.Periods" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="User" EntityType="Self.User" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="UserWorks" EntityType="Self.UserWorks" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Works" EntityType="Self.Works" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="WorksFile" EntityType="Self.WorksFile" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="WorksType" EntityType="Self.WorksType" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="CSMyWorks" EntityType="Self.CSMyWorks" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [CSMyWorks].[WorksID] AS [WorksID], 
+    [CSMyWorks].[WorksName] AS [WorksName], 
+    [CSMyWorks].[CourseName] AS [CourseName], 
+    [CSMyWorks].[PeriodTitle] AS [PeriodTitle], 
+    [CSMyWorks].[WorksTypeName] AS [WorksTypeName], 
+    [CSMyWorks].[StateName] AS [StateName], 
+    [CSMyWorks].[Score] AS [Score], 
+    [CSMyWorks].[Relationship] AS [Relationship], 
+    [CSMyWorks].[UserID] AS [UserID], 
+    [CSMyWorks].[PeriodID] AS [PeriodID], 
+    [CSMyWorks].[WorksTypeID] AS [WorksTypeID], 
+    [CSMyWorks].[UserWorksID] AS [UserWorksID], 
+    [CSMyWorks].[StateID] AS [StateID], 
+    [CSMyWorks].[CourseID] AS [CourseID], 
+    [CSMyWorks].[DomainID] AS [DomainID], 
+    [CSMyWorks].[WorksCode] AS [WorksCode], 
+    [CSMyWorks].[DesignIdeas] AS [DesignIdeas], 
+    [CSMyWorks].[Created] AS [Created], 
+    [CSMyWorks].[Hits] AS [Hits]
+    FROM [dbo].[CSMyWorks] AS [CSMyWorks]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="FavoriteWorks" EntityType="Self.FavoriteWorks" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [FavoriteWorks].[UserID] AS [UserID], 
+    [FavoriteWorks].[DomainID] AS [DomainID], 
+    [FavoriteWorks].[WorksID] AS [WorksID], 
+    [FavoriteWorks].[WorksName] AS [WorksName], 
+    [FavoriteWorks].[AuthorID] AS [AuthorID], 
+    [FavoriteWorks].[AuthorName] AS [AuthorName]
+    FROM [dbo].[FavoriteWorks] AS [FavoriteWorks]</DefiningQuery>
+          </EntitySet>
+          <AssociationSet Name="FK_Periods_Course" Association="Self.FK_Periods_Course">
+            <End Role="Course" EntitySet="Course" />
+            <End Role="Periods" EntitySet="Periods" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UserWorks_User" Association="Self.FK_UserWorks_User">
+            <End Role="User" EntitySet="User" />
+            <End Role="UserWorks" EntitySet="UserWorks" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UserWorks_Works" Association="Self.FK_UserWorks_Works">
+            <End Role="Works" EntitySet="Works" />
+            <End Role="UserWorks" EntitySet="UserWorks" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Works_Periods" Association="Self.FK_Works_Periods">
+            <End Role="Periods" EntitySet="Periods" />
+            <End Role="Works" EntitySet="Works" />
+          </AssociationSet>
+          <AssociationSet Name="FK_WorksFile_Works" Association="Self.FK_WorksFile_Works">
+            <End Role="Works" EntitySet="Works" />
+            <End Role="WorksFile" EntitySet="WorksFile" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="VAExtensionModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="FileType">
+          <Key>
+            <PropertyRef Name="FileTypeID" />
+          </Key>
+          <Property Name="FileTypeID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TypeName" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="ParentID" Type="Int32" />
+        </EntityType>
+        <EntityType Name="Works">
+          <Key>
+            <PropertyRef Name="WorksID" />
+          </Key>
+          <Property Name="WorksID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="PeriodID" Type="Int64" />
+          <Property Name="DomainID" Type="Int64" />
+          <Property Name="WorksName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="TeamName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="WorksTypeID" Type="Int32" />
+          <Property Name="WorksCode" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="OrgID" Type="Int32" />
+          <Property Name="IsSample" Type="Int32" />
+          <Property Name="Comment" Type="String" MaxLength="2000" FixedLength="false" Unicode="false" />
+          <Property Name="Profile" Type="String" MaxLength="8000" FixedLength="false" Unicode="false" />
+          <Property Name="SubmitProfile" Type="String" MaxLength="8000" FixedLength="false" Unicode="false" />
+          <Property Name="Suggestion" Type="String" MaxLength="2000" FixedLength="false" Unicode="false" />
+          <Property Name="InstallationGuide" Type="String" MaxLength="2000" FixedLength="false" Unicode="false" />
+          <Property Name="DesignIdeas" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="KeyPoints" Type="String" MaxLength="2500" FixedLength="false" Unicode="false" />
+          <Property Name="SelfAssessment" Type="String" MaxLength="2000" FixedLength="false" Unicode="false" />
+          <Property Name="DemoURL" Type="String" MaxLength="2000" FixedLength="false" Unicode="false" />
+          <Property Name="BackReason" Type="String" MaxLength="2000" FixedLength="false" Unicode="false" />
+          <Property Name="Score" Type="Single" />
+          <Property Name="CreatedBy" Type="Int64" />
+          <Property Name="Created" Type="DateTime" Precision="3" />
+          <Property Name="ModifiedBy" Type="Int64" />
+          <Property Name="Modified" Type="DateTime" Precision="3" />
+          <Property Name="Hits" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="AllotTimes" Type="Int32" />
+          <Property Name="WorksState" Type="Int32" />
+          <Property Name="Flag" Type="Int64" />
+          <NavigationProperty Name="WorksFile" Relationship="Self.FK_WorksFile_Works" FromRole="Works" ToRole="WorksFile" />
+          <NavigationProperty Name="Periods" Relationship="VAExtensionModel.FK_Works_Periods" FromRole="Works" ToRole="Periods" />
+          <NavigationProperty Name="UserWorks" Relationship="VAExtensionModel.FK_UserWorks_Works" FromRole="Works" ToRole="UserWorks" />
+        </EntityType>
+        <EntityType Name="WorksFile">
+          <Key>
+            <PropertyRef Name="WorksFileID" />
+          </Key>
+          <Property Name="WorksFileID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="WorksID" Type="Int64" Nullable="false" />
+          <Property Name="Type" Type="Int32" />
+          <Property Name="FileName" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="FilePath" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+          <Property Name="FileSize" Type="Int32" />
+          <Property Name="CreatedBy" Type="Int64" />
+          <Property Name="Created" Type="DateTime" Precision="3" />
+          <Property Name="ModifiedBy" Type="Int64" />
+          <Property Name="Modified" Type="DateTime" Precision="3" />
+          <Property Name="Flag" Type="Int64" />
+          <NavigationProperty Name="Works" Relationship="Self.FK_WorksFile_Works" FromRole="WorksFile" ToRole="Works" />
+        </EntityType>
+        <EntityType Name="WorksType">
+          <Key>
+            <PropertyRef Name="WorksTypeID" />
+          </Key>
+          <Property Name="WorksTypeID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="WorksTypeName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Description" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="ParentID" Type="Int32" />
+          <Property Name="LevelID" Type="Int32" />
+          <Property Name="CreatedBy" Type="Int64" />
+          <Property Name="Created" Type="DateTime" Precision="3" />
+          <Property Name="ModifiedBy" Type="Int64" />
+          <Property Name="Modified" Type="DateTime" Precision="3" />
+          <Property Name="Flag" Type="Int32" />
+        </EntityType>
+        <Association Name="FK_WorksFile_Works">
+          <End Role="Works" Type="Self.Works" Multiplicity="1" />
+          <End Role="WorksFile" Type="Self.WorksFile" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Works">
+              <PropertyRef Name="WorksID" />
+            </Principal>
+            <Dependent Role="WorksFile">
+              <PropertyRef Name="WorksID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="VAExtensionEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="FileType" EntityType="Self.FileType" />
+          <EntitySet Name="Works" EntityType="Self.Works" />
+          <EntitySet Name="WorksFile" EntityType="Self.WorksFile" />
+          <EntitySet Name="WorksType" EntityType="Self.WorksType" />
+          <AssociationSet Name="FK_WorksFile_Works" Association="Self.FK_WorksFile_Works">
+            <End Role="Works" EntitySet="Works" />
+            <End Role="WorksFile" EntitySet="WorksFile" />
+          </AssociationSet>
+          <EntitySet Name="CSMyWorks" EntityType="VAExtensionModel.CSMyWorks" />
+          <FunctionImport Name="GetUserByUserID" ReturnType="Collection(VAExtensionModel.GetUserByUserID_Result)">
+          <Parameter Name="UserID" Mode="In" Type="Int64" />
+          </FunctionImport>
+          <FunctionImport Name="GetUserByWorksID" ReturnType="Collection(VAExtensionModel.GetUserByWorksID_Result)">
+          <Parameter Name="WorksID" Mode="In" Type="Int64" />
+          </FunctionImport>
+          <FunctionImport Name="GetUserIdWorksIdByPeriodId" ReturnType="Collection(VAExtensionModel.GetUserIdWorksIdByPeriodId_Result)">
+          <Parameter Name="PeriodID" Mode="In" Type="Int64" />
+          </FunctionImport>
+          <FunctionImport Name="GetUserRoleByUserID" ReturnType="Collection(VAExtensionModel.GetUserRoleByUserID_Result)">
+          <Parameter Name="UserID" Mode="In" Type="Int64" />
+          </FunctionImport>
+          <FunctionImport Name="GetUsersIDByPeriodID" ReturnType="Collection(Int64)">
+          <Parameter Name="PeriodID" Mode="In" Type="Int64" />
+          </FunctionImport>
+          <FunctionImport Name="GetWorksAllotTimesByWorsID" ReturnType="Collection(VAExtensionModel.GetWorksAllotTimesByWorsID_Result)">
+          <Parameter Name="WorksID" Mode="In" Type="Int64" />
+          </FunctionImport>
+          <FunctionImport Name="GetWorksByAccount" ReturnType="Collection(VAExtensionModel.GetWorksByAccount_Result)">
+            <Parameter Name="PeriodID" Mode="In" Type="Int64" />
+            <Parameter Name="Account" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="GetWorksByPeriodID" ReturnType="Collection(VAExtensionModel.GetWorksByPeriodID_Result)">
+          <Parameter Name="PeriodID" Mode="In" Type="Int64" />
+          </FunctionImport>
+          <FunctionImport Name="GetWorksByWorksID" ReturnType="Collection(VAExtensionModel.GetWorksByWorksID_Result)">
+          <Parameter Name="WorksID" Mode="In" Type="Int64" />
+          </FunctionImport>
+          <FunctionImport Name="GetWorksCheck">
+            <Parameter Name="WorksName" Mode="In" Type="String" />
+            <Parameter Name="AreaID" Mode="In" Type="Int32" />
+            <Parameter Name="SchoolID" Mode="In" Type="Int32" />
+            <Parameter Name="StateID" Mode="In" Type="Int32" />
+            <Parameter Name="OneWorksTypeID" Mode="In" Type="Int32" />
+            <Parameter Name="TwoWorksTypeID" Mode="In" Type="Int32" />
+            <Parameter Name="WorksCode" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="GetWorksCommentsByWorksID" ReturnType="Collection(VAExtensionModel.GetWorksCommentsByWorksID_Result)">
+          <Parameter Name="WorksID" Mode="In" Type="Int64" />
+          </FunctionImport>
+          <FunctionImport Name="GetWorksEvaluated" ReturnType="Collection(VAExtensionModel.GetWorksEvaluated_Result)">
+          <Parameter Name="WorksID" Mode="In" Type="Int64" />
+          </FunctionImport>
+          <FunctionImport Name="GetWorksExpertByID" ReturnType="Collection(VAExtensionModel.GetWorksExpertByID_Result)">
+          <Parameter Name="WorksExpertID" Mode="In" Type="Int64" />
+          </FunctionImport>
+          <FunctionImport Name="GetWorksExpertByWorksID" ReturnType="Collection(VAExtensionModel.GetWorksExpertByWorksID_Result)">
+          <Parameter Name="WorksID" Mode="In" Type="Int64" />
+          </FunctionImport>
+          <FunctionImport Name="GetWorksFile" ReturnType="Collection(VAExtensionModel.GetWorksFile_Result)">
+            <Parameter Name="WorksID" Mode="In" Type="Int64" />
+            <Parameter Name="Type" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="GetWorksForCheck">
+            <Parameter Name="WorksName" Mode="In" Type="String" />
+            <Parameter Name="AreaID" Mode="In" Type="Int32" />
+            <Parameter Name="SchoolID" Mode="In" Type="Int32" />
+            <Parameter Name="StateID" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="GetWorksForMeByPeriodID" ReturnType="Collection(VAExtensionModel.GetWorksForMeByPeriodID_Result)">
+            <Parameter Name="PeriodID" Mode="In" Type="Int64" />
+            <Parameter Name="userID" Mode="In" Type="Int64" />
+          </FunctionImport>
+          <FunctionImport Name="GetWorksForMeToScore" ReturnType="Collection(VAExtensionModel.GetWorksForMeToScore_Result)">
+          <Parameter Name="userAccount" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="GetWorksForSummary">
+            <Parameter Name="SchoolID" Mode="In" Type="Int32" />
+            <Parameter Name="OneWorksTypeID" Mode="In" Type="Int32" />
+            <Parameter Name="TwoWorksTypeID" Mode="In" Type="Int32" />
+            <Parameter Name="IsSubmit" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="GetWorksIDByPeriodIDAndUserID" ReturnType="Collection(VAExtensionModel.GetWorksIDByPeriodIDAndUserID_Result)">
+            <Parameter Name="userID" Mode="In" Type="Int64" />
+            <Parameter Name="PeriodID" Mode="In" Type="Int64" />
+            <Parameter Name="allotTimes" Mode="In" Type="Int64" />
+          </FunctionImport>
+          <FunctionImport Name="GetWorksIDByUserAccountAndPeriodTitle" ReturnType="Collection(Int64)">
+            <Parameter Name="Account" Mode="In" Type="Int64" />
+            <Parameter Name="PeriodTitle" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="GetWorksNumByPeriodID" ReturnType="Collection(Int32)">
+          <Parameter Name="PeriodID" Mode="In" Type="Int64" />
+          </FunctionImport>
+          <FunctionImport Name="GetWorksPublic" />
+          <FunctionImport Name="GetWorksSubmitByID" ReturnType="Collection(VAExtensionModel.GetWorksSubmitByID_Result)">
+          <Parameter Name="WorksID" Mode="In" Type="Int64" />
+          </FunctionImport>
+          <FunctionImport Name="GetWorksToEvaluate" ReturnType="Collection(VAExtensionModel.GetWorksToEvaluate_Result)">
+            <Parameter Name="ExpertID" Mode="In" Type="Int64" />
+            <Parameter Name="PeriodID" Mode="In" Type="Int64" />
+            <Parameter Name="IsSample" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="GetWorksType" ReturnType="Collection(VAExtensionModel.GetWorksType_Result)" />
+          <FunctionImport Name="GetWorksTypeByUserID" ReturnType="Collection(VAExtensionModel.GetWorksTypeByUserID_Result)">
+          <Parameter Name="UserID" Mode="In" Type="Int64" />
+          </FunctionImport>
+          <FunctionImport Name="GetWorksTypeForEnroll" ReturnType="Collection(VAExtensionModel.GetWorksTypeForEnroll_Result)" />
+          <FunctionImport Name="GetWorksTypeScoreStandardByTypeID" ReturnType="Collection(VAExtensionModel.GetWorksTypeScoreStandardByTypeID_Result)">
+          <Parameter Name="WorksTypeID" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="InsertUser">
+            <Parameter Name="UserID" Mode="InOut" Type="Int64" />
+            <Parameter Name="Account" Mode="In" Type="String" />
+            <Parameter Name="Name" Mode="In" Type="String" />
+            <Parameter Name="IDCard" Mode="In" Type="String" />
+            <Parameter Name="Sex" Mode="In" Type="Boolean" />
+            <Parameter Name="Telephone" Mode="In" Type="String" />
+            <Parameter Name="Email" Mode="In" Type="String" />
+            <Parameter Name="Duty" Mode="In" Type="String" />
+            <Parameter Name="ProfessionalTitle" Mode="In" Type="String" />
+            <Parameter Name="Department" Mode="In" Type="String" />
+            <Parameter Name="Major" Mode="In" Type="String" />
+            <Parameter Name="Class" Mode="In" Type="String" />
+            <Parameter Name="Grade" Mode="In" Type="String" />
+            <Parameter Name="RoleID" Mode="In" Type="Int32" />
+            <Parameter Name="SchoolID" Mode="In" Type="Int32" />
+            <Parameter Name="CreatedBy" Mode="In" Type="Int64" />
+            <Parameter Name="Created" Mode="In" Type="DateTime" />
+            <Parameter Name="ModifiedBy" Mode="In" Type="Int64" />
+            <Parameter Name="Modified" Mode="In" Type="DateTime" />
+            <Parameter Name="StateID" Mode="In" Type="Int32" />
+            <Parameter Name="ApprovedBy" Mode="In" Type="Int64" />
+            <Parameter Name="Approved" Mode="In" Type="DateTime" />
+            <Parameter Name="Flag" Mode="In" Type="Int64" />
+            <Parameter Name="OrgID" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="InsertWorks">
+            <Parameter Name="WorksID" Mode="InOut" Type="Int64" />
+            <Parameter Name="WorksName" Mode="In" Type="String" />
+            <Parameter Name="WorksTypeID" Mode="In" Type="Int32" />
+            <Parameter Name="PeriodID" Mode="In" Type="Int64" />
+            <Parameter Name="WorksCode" Mode="In" Type="String" />
+            <Parameter Name="IsSample" Mode="In" Type="Int32" />
+            <Parameter Name="SubmitProfile" Mode="In" Type="String" />
+            <Parameter Name="DesignIdeas" Mode="In" Type="String" />
+            <Parameter Name="KeyPoints" Mode="In" Type="String" />
+            <Parameter Name="DemoURL" Mode="In" Type="String" />
+            <Parameter Name="Flag" Mode="In" Type="Int64" />
+            <Parameter Name="WorksState" Mode="In" Type="Int32" />
+            <Parameter Name="Score" Mode="In" Type="Single" />
+            <Parameter Name="CreatedBy" Mode="In" Type="Int64" />
+            <Parameter Name="Created" Mode="In" Type="DateTime" />
+          </FunctionImport>
+          <FunctionImport Name="InsertWorksComments">
+            <Parameter Name="CommentsID" Mode="InOut" Type="Int64" />
+            <Parameter Name="WorksID" Mode="In" Type="Int64" />
+            <Parameter Name="UserID" Mode="In" Type="Int64" />
+            <Parameter Name="Flag" Mode="In" Type="Int64" />
+          </FunctionImport>
+          <FunctionImport Name="InsertWorksExpert">
+            <Parameter Name="WorksExpertID" Mode="InOut" Type="Int64" />
+            <Parameter Name="WorksID" Mode="In" Type="Int64" />
+            <Parameter Name="ExpertID" Mode="In" Type="Int64" />
+            <Parameter Name="Score" Mode="In" Type="Single" />
+            <Parameter Name="Comments" Mode="In" Type="String" />
+            <Parameter Name="Created" Mode="In" Type="DateTime" />
+            <Parameter Name="ScoreState" Mode="In" Type="Int32" />
+            <Parameter Name="Flag" Mode="In" Type="Int64" />
+          </FunctionImport>
+          <FunctionImport Name="InsertWorksImages">
+            <Parameter Name="WorksFileID" Mode="InOut" Type="Int64" />
+            <Parameter Name="WorksID" Mode="In" Type="Int64" />
+            <Parameter Name="Type" Mode="In" Type="Int32" />
+            <Parameter Name="FileName" Mode="In" Type="String" />
+            <Parameter Name="FilePath" Mode="In" Type="String" />
+            <Parameter Name="FileSize" Mode="In" Type="Int32" />
+            <Parameter Name="CreatedBy" Mode="In" Type="Int64" />
+            <Parameter Name="Created" Mode="In" Type="DateTime" />
+            <Parameter Name="Flag" Mode="In" Type="Int64" />
+          </FunctionImport>
+          <FunctionImport Name="InsertWorksSubmit">
+            <Parameter Name="WorksSubmitID" Mode="InOut" Type="Int64" />
+            <Parameter Name="WorksID" Mode="In" Type="Int64" />
+            <Parameter Name="WorksCode" Mode="In" Type="String" />
+            <Parameter Name="SubmitProfile" Mode="In" Type="String" />
+            <Parameter Name="Suggestion" Mode="In" Type="String" />
+            <Parameter Name="InstallationGuide" Mode="In" Type="String" />
+            <Parameter Name="DesignIdeas" Mode="In" Type="String" />
+            <Parameter Name="KeyPoints" Mode="In" Type="String" />
+            <Parameter Name="SelfAssessment" Mode="In" Type="String" />
+            <Parameter Name="WorksShow" Mode="In" Type="String" />
+            <Parameter Name="Comment" Mode="In" Type="String" />
+            <Parameter Name="DemoURL" Mode="In" Type="String" />
+            <Parameter Name="StateID" Mode="In" Type="Int32" />
+            <Parameter Name="CreatedBy" Mode="In" Type="Int64" />
+            <Parameter Name="Created" Mode="In" Type="DateTime" />
+            <Parameter Name="Flag" Mode="In" Type="Int64" />
+          </FunctionImport>
+          <FunctionImport Name="InsertWorksType">
+            <Parameter Name="WorksTypeID" Mode="InOut" Type="Int32" />
+            <Parameter Name="WorksTypeName" Mode="In" Type="String" />
+            <Parameter Name="ParentID" Mode="In" Type="Int32" />
+            <Parameter Name="LevelID" Mode="In" Type="Int32" />
+            <Parameter Name="CreatedBy" Mode="In" Type="Int64" />
+            <Parameter Name="Created" Mode="In" Type="DateTime" />
+            <Parameter Name="Flag" Mode="In" Type="Int32" />
+            <Parameter Name="F" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="InsertWorksTypeScoreStandard">
+            <Parameter Name="WorkTypeID" Mode="In" Type="Int32" />
+            <Parameter Name="StandardID" Mode="In" Type="Int32" />
+            <Parameter Name="Score" Mode="In" Type="Int32" />
+            <Parameter Name="StandardDescription" Mode="In" Type="String" />
+            <Parameter Name="Flag" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="JudgeWorksSubmit">
+            <Parameter Name="WorksSubmitID" Mode="In" Type="Int64" />
+            <Parameter Name="StateID" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="UpdateUser">
+            <Parameter Name="UserID" Mode="In" Type="Int64" />
+            <Parameter Name="Account" Mode="In" Type="String" />
+            <Parameter Name="Name" Mode="In" Type="String" />
+            <Parameter Name="IDCard" Mode="In" Type="String" />
+            <Parameter Name="Sex" Mode="In" Type="Boolean" />
+            <Parameter Name="Telephone" Mode="In" Type="String" />
+            <Parameter Name="Email" Mode="In" Type="String" />
+            <Parameter Name="Duty" Mode="In" Type="String" />
+            <Parameter Name="ProfessionalTitle" Mode="In" Type="String" />
+            <Parameter Name="Department" Mode="In" Type="String" />
+            <Parameter Name="Major" Mode="In" Type="String" />
+            <Parameter Name="Class" Mode="In" Type="String" />
+            <Parameter Name="Grade" Mode="In" Type="String" />
+            <Parameter Name="RoleID" Mode="In" Type="Int32" />
+            <Parameter Name="SchoolID" Mode="In" Type="Int32" />
+            <Parameter Name="CreatedBy" Mode="In" Type="Int64" />
+            <Parameter Name="Created" Mode="In" Type="DateTime" />
+            <Parameter Name="ModifiedBy" Mode="In" Type="Int64" />
+            <Parameter Name="Modified" Mode="In" Type="DateTime" />
+            <Parameter Name="StateID" Mode="In" Type="Int32" />
+            <Parameter Name="ApprovedBy" Mode="In" Type="Int64" />
+            <Parameter Name="Approved" Mode="In" Type="DateTime" />
+            <Parameter Name="Flag" Mode="In" Type="Int64" />
+            <Parameter Name="OrgID" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="UpdateUserWorks">
+            <Parameter Name="UserID" Mode="In" Type="Int64" />
+            <Parameter Name="WorksID" Mode="In" Type="Int64" />
+            <Parameter Name="Relationship" Mode="In" Type="Int32" />
+            <Parameter Name="Flag" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="UpdateWorksAllotTimes">
+            <Parameter Name="WorksID" Mode="In" Type="Int64" />
+            <Parameter Name="AllotTimes" Mode="In" Type="Int64" />
+            <Parameter Name="WorksState" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="UpdateWorksCheck">
+            <Parameter Name="WorksSubmitID" Mode="In" Type="Int64" />
+            <Parameter Name="StateID" Mode="In" Type="Int32" />
+            <Parameter Name="ApprovedBy" Mode="In" Type="Int64" />
+            <Parameter Name="Approved" Mode="In" Type="DateTime" />
+            <Parameter Name="BackReason" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="UpdateWorksCode">
+            <Parameter Name="WorksID" Mode="In" Type="Int64" />
+            <Parameter Name="SubmitProfile" Mode="In" Type="String" />
+            <Parameter Name="DesignIdeas" Mode="In" Type="String" />
+            <Parameter Name="KeyPoints" Mode="In" Type="String" />
+            <Parameter Name="DemoURL" Mode="In" Type="String" />
+            <Parameter Name="WorksCode" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="UpdateWorksExpert">
+            <Parameter Name="WorksExpertID" Mode="In" Type="Int64" />
+            <Parameter Name="WorksID" Mode="In" Type="Int64" />
+            <Parameter Name="ExpertID" Mode="In" Type="Int64" />
+            <Parameter Name="Score" Mode="In" Type="Single" />
+            <Parameter Name="Comments" Mode="In" Type="String" />
+            <Parameter Name="Modified" Mode="In" Type="DateTime" />
+            <Parameter Name="Flag" Mode="In" Type="Int64" />
+          </FunctionImport>
+          <FunctionImport Name="UpdateWorksFile">
+            <Parameter Name="WorksFileID" Mode="In" Type="Int64" />
+            <Parameter Name="Type" Mode="In" Type="Int32" />
+            <Parameter Name="FileName" Mode="In" Type="String" />
+            <Parameter Name="ModifiedBy" Mode="In" Type="Int64" />
+            <Parameter Name="Modified" Mode="In" Type="DateTime" />
+            <Parameter Name="FilePath" Mode="In" Type="String" />
+            <Parameter Name="FileSize" Mode="In" Type="Int32" />
+            <Parameter Name="Flag" Mode="In" Type="Int64" />
+          </FunctionImport>
+          <FunctionImport Name="UpdateWorksFileForSize">
+            <Parameter Name="WorksFileID" Mode="In" Type="Int64" />
+            <Parameter Name="Type" Mode="In" Type="Int32" />
+            <Parameter Name="FileName" Mode="In" Type="String" />
+            <Parameter Name="ModifiedBy" Mode="In" Type="Int64" />
+            <Parameter Name="Modified" Mode="In" Type="DateTime" />
+            <Parameter Name="FilePath" Mode="In" Type="String" />
+            <Parameter Name="FileSize" Mode="In" Type="Int32" />
+            <Parameter Name="Flag" Mode="In" Type="Int64" />
+          </FunctionImport>
+          <FunctionImport Name="UpdateWorksImages">
+            <Parameter Name="WorksImagesID" Mode="In" Type="Int64" />
+            <Parameter Name="ModifiedBy" Mode="In" Type="Int64" />
+            <Parameter Name="Modified" Mode="In" Type="DateTime" />
+          </FunctionImport>
+          <FunctionImport Name="UpdateWorksInfo">
+            <Parameter Name="WorksID" Mode="In" Type="Int64" />
+            <Parameter Name="WorksName" Mode="In" Type="String" />
+            <Parameter Name="WorksTypeID" Mode="In" Type="Int32" />
+            <Parameter Name="WorksCode" Mode="In" Type="String" />
+            <Parameter Name="Members" Mode="In" Type="String" />
+            <Parameter Name="PeriodID" Mode="In" Type="Int64" />
+            <Parameter Name="SubmitProfile" Mode="In" Type="String" />
+            <Parameter Name="DesignIdeas" Mode="In" Type="String" />
+            <Parameter Name="KeyPoints" Mode="In" Type="String" />
+            <Parameter Name="DemoURL" Mode="In" Type="String" />
+            <Parameter Name="Flag" Mode="In" Type="Int64" />
+            <Parameter Name="WorksState" Mode="In" Type="Int32" />
+            <Parameter Name="Score" Mode="In" Type="Single" />
+            <Parameter Name="CreatedBy" Mode="In" Type="Int64" />
+            <Parameter Name="Created" Mode="In" Type="DateTime" />
+          </FunctionImport>
+          <FunctionImport Name="UpdateWorksSubmit">
+            <Parameter Name="WorksID" Mode="In" Type="Int64" />
+            <Parameter Name="Score" Mode="In" Type="Single" />
+            <Parameter Name="WorksState" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="UpdateWorksType">
+            <Parameter Name="WorksTypeID" Mode="In" Type="Int32" />
+            <Parameter Name="WorksTypeName" Mode="In" Type="String" />
+            <Parameter Name="ParentID" Mode="In" Type="Int32" />
+            <Parameter Name="LevelID" Mode="In" Type="Int32" />
+            <Parameter Name="CreatedBy" Mode="In" Type="Int64" />
+            <Parameter Name="Created" Mode="In" Type="DateTime" />
+            <Parameter Name="Flag" Mode="In" Type="Int32" />
+            <Parameter Name="F" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="UpdateWorksTypeForSubmit">
+            <Parameter Name="WorksID" Mode="In" Type="Int64" />
+            <Parameter Name="WorksTypeID" Mode="In" Type="Int32" />
+            <Parameter Name="ModifiedBy" Mode="In" Type="Int64" />
+            <Parameter Name="Modified" Mode="In" Type="DateTime" />
+          </FunctionImport>
+          <FunctionImport Name="UpdateWorksTypeScoreStandard">
+            <Parameter Name="WorkTypeID" Mode="In" Type="Int32" />
+            <Parameter Name="StandardID" Mode="In" Type="Int32" />
+            <Parameter Name="Score" Mode="In" Type="Int32" />
+            <Parameter Name="StandardDescription" Mode="In" Type="String" />
+            <Parameter Name="Flag" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <EntitySet Name="Course" EntityType="VAExtensionModel.Course" />
+          <EntitySet Name="Favorites" EntityType="VAExtensionModel.Favorites" />
+          <EntitySet Name="Periods" EntityType="VAExtensionModel.Periods" />
+          <EntitySet Name="User" EntityType="VAExtensionModel.User" />
+          <EntitySet Name="UserWorks" EntityType="VAExtensionModel.UserWorks" />
+          <AssociationSet Name="FK_Periods_Course" Association="VAExtensionModel.FK_Periods_Course">
+            <End Role="Course" EntitySet="Course" />
+            <End Role="Periods" EntitySet="Periods" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Works_Periods" Association="VAExtensionModel.FK_Works_Periods">
+            <End Role="Periods" EntitySet="Periods" />
+            <End Role="Works" EntitySet="Works" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UserWorks_User" Association="VAExtensionModel.FK_UserWorks_User">
+            <End Role="User" EntitySet="User" />
+            <End Role="UserWorks" EntitySet="UserWorks" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UserWorks_Works" Association="VAExtensionModel.FK_UserWorks_Works">
+            <End Role="Works" EntitySet="Works" />
+            <End Role="UserWorks" EntitySet="UserWorks" />
+          </AssociationSet>
+          <EntitySet Name="FavoriteWorks" EntityType="VAExtensionModel.FavoriteWorks" />
+        </EntityContainer>
+        <EntityType Name="CSMyWorks">
+          <Key>
+            <PropertyRef Name="WorksID" />
+          </Key>
+          <Property Name="WorksID" Type="Int64" Nullable="false" />
+          <Property Name="WorksName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="CourseName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="PeriodTitle" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="WorksTypeName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="StateName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Score" Type="Single" />
+          <Property Name="Relationship" Type="Int32" />
+          <Property Name="UserID" Type="Int64" />
+          <Property Name="PeriodID" Type="Int64" />
+          <Property Name="WorksTypeID" Type="Int32" />
+          <Property Name="UserWorksID" Type="Int64" />
+          <Property Name="StateID" Type="Int32" />
+          <Property Name="CourseID" Type="Int64" />
+          <Property Name="DomainID" Type="Int64" />
+          <Property Name="WorksCode" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="DesignIdeas" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Created" Type="DateTime" Precision="3" />
+          <Property Name="Hits" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <ComplexType Name="GetUserByUserID_Result">
+          <Property Type="Int64" Name="UserID" Nullable="false" />
+          <Property Type="String" Name="Account" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="Name" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="IDCard" Nullable="true" MaxLength="18" />
+          <Property Type="Boolean" Name="Sex" Nullable="true" />
+          <Property Type="String" Name="Telephone" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="Email" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="Duty" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="ProfessionalTitle" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="Department" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="Major" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="Class" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="Grade" Nullable="true" MaxLength="50" />
+          <Property Type="Int32" Name="RoleID" Nullable="true" />
+          <Property Type="Int32" Name="SchoolID" Nullable="true" />
+          <Property Type="Int64" Name="CreatedBy" Nullable="true" />
+          <Property Type="DateTime" Name="Created" Nullable="true" Precision="23" />
+          <Property Type="Int64" Name="ModifiedBy" Nullable="true" />
+          <Property Type="DateTime" Name="Modified" Nullable="true" Precision="23" />
+          <Property Type="Int32" Name="StateID" Nullable="true" />
+          <Property Type="Int64" Name="ApprovedBy" Nullable="true" />
+          <Property Type="DateTime" Name="Approved" Nullable="true" Precision="23" />
+          <Property Type="Int64" Name="Flag" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="GetUserByWorksID_Result">
+          <Property Type="Int64" Name="UserID" Nullable="true" />
+          <Property Type="Int64" Name="WorksID" Nullable="true" />
+          <Property Type="Int32" Name="Relationship" Nullable="true" />
+          <Property Type="String" Name="Account" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="Name" Nullable="true" MaxLength="50" />
+        </ComplexType>
+        <ComplexType Name="GetUserIdWorksIdByPeriodId_Result">
+          <Property Type="Int64" Name="UserID" Nullable="true" />
+          <Property Type="Int64" Name="WorksID" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="GetUserRoleByUserID_Result">
+          <Property Type="Int64" Name="UserRoleID" Nullable="false" />
+          <Property Type="Int64" Name="UserID" Nullable="false" />
+          <Property Type="Int32" Name="RoleID" Nullable="false" />
+          <Property Type="Int64" Name="CreatedBy" Nullable="true" />
+          <Property Type="DateTime" Name="Created" Nullable="true" Precision="23" />
+          <Property Type="Int32" Name="StateID" Nullable="true" />
+          <Property Type="Int64" Name="ApprovedBy" Nullable="true" />
+          <Property Type="DateTime" Name="Approved" Nullable="true" Precision="23" />
+          <Property Type="Int64" Name="ContestID" Nullable="true" />
+          <Property Type="Int64" Name="Flag" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="GetWorksAllotTimesByWorsID_Result">
+          <Property Type="Int64" Name="WorksID" Nullable="false" />
+          <Property Type="Int32" Name="AllotTimes" Nullable="true" />
+          <Property Type="Int32" Name="WorksState" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="GetWorksByAccount_Result">
+          <Property Type="Int64" Name="UserID" Nullable="true" />
+          <Property Type="Int64" Name="WorksID" Nullable="true" />
+          <Property Type="Int64" Name="PeriodID" Nullable="true" />
+          <Property Type="String" Name="Account" Nullable="true" MaxLength="50" />
+        </ComplexType>
+        <ComplexType Name="GetWorksByPeriodID_Result">
+          <Property Type="Int64" Name="WorksID" Nullable="false" />
+          <Property Type="Int64" Name="PeriodID" Nullable="true" />
+          <Property Type="String" Name="WorksName" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="TeamName" Nullable="true" MaxLength="100" />
+          <Property Type="Int32" Name="WorksTypeID" Nullable="true" />
+          <Property Type="String" Name="WorksCode" Nullable="true" MaxLength="50" />
+          <Property Type="Int32" Name="OrgID" Nullable="true" />
+          <Property Type="Int32" Name="IsSample" Nullable="true" />
+          <Property Type="String" Name="Comment" Nullable="true" MaxLength="2000" />
+          <Property Type="String" Name="Profile" Nullable="true" MaxLength="8000" />
+          <Property Type="String" Name="SubmitProfile" Nullable="true" MaxLength="8000" />
+          <Property Type="String" Name="Suggestion" Nullable="true" MaxLength="2000" />
+          <Property Type="String" Name="InstallationGuide" Nullable="true" MaxLength="2000" />
+          <Property Type="String" Name="DesignIdeas" Nullable="true" />
+          <Property Type="String" Name="KeyPoints" Nullable="true" MaxLength="2500" />
+          <Property Type="String" Name="DemoURL" Nullable="true" MaxLength="2000" />
+          <Property Type="String" Name="SelfAssessment" Nullable="true" MaxLength="2000" />
+          <Property Type="String" Name="BackReason" Nullable="true" MaxLength="2000" />
+          <Property Type="Single" Name="Score" Nullable="true" />
+          <Property Type="Int64" Name="CreatedBy" Nullable="true" />
+          <Property Type="DateTime" Name="Created" Nullable="true" Precision="23" />
+          <Property Type="Int64" Name="ModifiedBy" Nullable="true" />
+          <Property Type="DateTime" Name="Modified" Nullable="true" Precision="23" />
+          <Property Type="Int32" Name="AllotTimes" Nullable="true" />
+          <Property Type="Int32" Name="WorksState" Nullable="true" />
+          <Property Type="Int64" Name="Flag" Nullable="true" />
+          <Property Type="String" Name="WorksTypeName" Nullable="true" MaxLength="100" />
+        </ComplexType>
+        <ComplexType Name="GetWorksByWorksID_Result">
+          <Property Type="Int64" Name="WorksID" Nullable="false" />
+          <Property Type="Int64" Name="PeriodID" Nullable="true" />
+          <Property Type="String" Name="WorksName" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="TeamName" Nullable="true" MaxLength="100" />
+          <Property Type="Int32" Name="WorksTypeID" Nullable="true" />
+          <Property Type="String" Name="WorksCode" Nullable="true" MaxLength="50" />
+          <Property Type="Int32" Name="OrgID" Nullable="true" />
+          <Property Type="Int32" Name="IsSample" Nullable="true" />
+          <Property Type="String" Name="Comment" Nullable="true" MaxLength="2000" />
+          <Property Type="String" Name="Profile" Nullable="true" MaxLength="8000" />
+          <Property Type="Int64" Name="Flag" Nullable="true" />
+          <Property Type="Int32" Name="WorksState" Nullable="true" />
+          <Property Type="DateTime" Name="Modified" Nullable="true" Precision="23" />
+          <Property Type="Int64" Name="ModifiedBy" Nullable="true" />
+          <Property Type="DateTime" Name="Created" Nullable="true" Precision="23" />
+          <Property Type="Int64" Name="CreatedBy" Nullable="true" />
+          <Property Type="Single" Name="Score" Nullable="true" />
+          <Property Type="String" Name="BackReason" Nullable="true" MaxLength="2000" />
+          <Property Type="String" Name="DemoURL" Nullable="true" MaxLength="2000" />
+          <Property Type="String" Name="SelfAssessment" Nullable="true" MaxLength="2000" />
+          <Property Type="String" Name="KeyPoints" Nullable="true" MaxLength="2500" />
+          <Property Type="String" Name="SubmitProfile" Nullable="true" MaxLength="8000" />
+          <Property Type="String" Name="Suggestion" Nullable="true" MaxLength="2000" />
+          <Property Type="String" Name="InstallationGuide" Nullable="true" MaxLength="2000" />
+          <Property Type="String" Name="DesignIdeas" Nullable="true" />
+          <Property Type="String" Name="WorksTypeName" Nullable="true" MaxLength="100" />
+          <Property Type="Int32" Name="Expr1" Nullable="true" />
+          <Property Type="Int32" Name="LevelID" Nullable="true" />
+          <Property Type="Int32" Name="ParentID" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="GetWorksCommentsByWorksID_Result">
+          <Property Type="Int64" Name="WorksID" Nullable="true" />
+          <Property Type="Int64" Name="ExpertID" Nullable="true" />
+          <Property Type="Single" Name="Score" Nullable="true" />
+          <Property Type="String" Name="Comments" Nullable="true" MaxLength="200" />
+          <Property Type="DateTime" Name="Created" Nullable="true" Precision="23" />
+          <Property Type="Int32" Name="ScoreState" Nullable="true" />
+          <Property Type="Int64" Name="Flag" Nullable="true" />
+          <Property Type="String" Name="Name" Nullable="true" MaxLength="50" />
+        </ComplexType>
+        <ComplexType Name="GetWorksEvaluated_Result">
+          <Property Type="Int64" Name="WorksExpertID" Nullable="false" />
+          <Property Type="Int64" Name="WorksID" Nullable="true" />
+          <Property Type="Int64" Name="ExpertID" Nullable="true" />
+          <Property Type="Single" Name="Score" Nullable="true" />
+          <Property Type="String" Name="ExpertName" Nullable="true" MaxLength="50" />
+          <Property Type="Int32" Name="WorksTypeID" Nullable="true" />
+          <Property Type="String" Name="WorksName" Nullable="true" MaxLength="100" />
+        </ComplexType>
+        <ComplexType Name="GetWorksExpertByID_Result">
+          <Property Type="Int64" Name="WorksExpertID" Nullable="false" />
+          <Property Type="Int64" Name="WorksID" Nullable="true" />
+          <Property Type="Int64" Name="ExpertID" Nullable="true" />
+          <Property Type="Single" Name="Score" Nullable="true" />
+          <Property Type="String" Name="Comments" Nullable="true" MaxLength="200" />
+          <Property Type="DateTime" Name="Created" Nullable="true" Precision="23" />
+          <Property Type="DateTime" Name="Modified" Nullable="true" Precision="23" />
+          <Property Type="Int32" Name="ScoreState" Nullable="true" />
+          <Property Type="Int64" Name="Flag" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="GetWorksExpertByWorksID_Result">
+          <Property Type="Int64" Name="WorksID" Nullable="true" />
+          <Property Type="Int64" Name="ExpertID" Nullable="true" />
+          <Property Type="Single" Name="Score" Nullable="true" />
+          <Property Type="String" Name="Comments" Nullable="true" MaxLength="200" />
+          <Property Type="Int64" Name="Flag" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="GetWorksFile_Result">
+          <Property Type="Int64" Name="WorksFileID" Nullable="false" />
+          <Property Type="Int64" Name="WorksID" Nullable="false" />
+          <Property Type="Int32" Name="Type" Nullable="true" />
+          <Property Type="String" Name="FileName" Nullable="true" MaxLength="200" />
+          <Property Type="String" Name="FilePath" Nullable="true" MaxLength="1000" />
+          <Property Type="Int32" Name="FileSize" Nullable="true" />
+          <Property Type="Int64" Name="CreatedBy" Nullable="true" />
+          <Property Type="DateTime" Name="Created" Nullable="true" Precision="23" />
+          <Property Type="Int64" Name="Flag" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="GetWorksForMeByPeriodID_Result">
+          <Property Type="Int64" Name="ExpertID" Nullable="true" />
+          <Property Type="Int64" Name="WorksID" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="GetWorksForMeToScore_Result">
+          <Property Type="Int64" Name="WorksID" Nullable="true" />
+          <Property Type="String" Name="PeriodTitle" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="WorksCode" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="StateName" Nullable="true" MaxLength="50" />
+        </ComplexType>
+        <ComplexType Name="GetWorksIDByPeriodIDAndUserID_Result">
+          <Property Type="Int64" Name="UserID" Nullable="true" />
+          <Property Type="Int64" Name="WorksID" Nullable="false" />
+        </ComplexType>
+        <ComplexType Name="GetWorksSubmitByID_Result">
+          <Property Type="Int64" Name="WorksID" Nullable="false" />
+          <Property Type="String" Name="WorksName" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="WorksCode" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="Profile" Nullable="true" MaxLength="8000" />
+          <Property Type="String" Name="SubmitProfile" Nullable="true" MaxLength="8000" />
+          <Property Type="String" Name="Suggestion" Nullable="true" MaxLength="2000" />
+          <Property Type="String" Name="InstallationGuide" Nullable="true" MaxLength="2000" />
+          <Property Type="String" Name="DesignIdeas" Nullable="true" />
+          <Property Type="String" Name="KeyPoints" Nullable="true" MaxLength="2500" />
+          <Property Type="String" Name="SelfAssessment" Nullable="true" MaxLength="2000" />
+          <Property Type="String" Name="Comment" Nullable="true" MaxLength="2000" />
+          <Property Type="String" Name="DemoURL" Nullable="true" MaxLength="2000" />
+          <Property Type="Int32" Name="WorksState" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="GetWorksToEvaluate_Result">
+          <Property Type="Int64" Name="WorksExpertID" Nullable="false" />
+          <Property Type="String" Name="Comments" Nullable="true" MaxLength="200" />
+          <Property Type="Int64" Name="Flag" Nullable="true" />
+          <Property Type="Int64" Name="WorksID" Nullable="true" />
+          <Property Type="Int32" Name="ScoreState" Nullable="true" />
+          <Property Type="Int64" Name="ExpertID" Nullable="true" />
+          <Property Type="String" Name="WorksCode" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="WorksName" Nullable="true" MaxLength="100" />
+          <Property Type="Int32" Name="IsSample" Nullable="true" />
+          <Property Type="Single" Name="Score" Nullable="true" />
+          <Property Type="Int32" Name="WorksTypeID" Nullable="true" />
+          <Property Type="String" Name="WorksTypeName" Nullable="true" MaxLength="100" />
+        </ComplexType>
+        <ComplexType Name="GetWorksType_Result">
+          <Property Type="Int32" Name="WorksTypeID" Nullable="false" />
+          <Property Type="String" Name="WorksTypeName" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="Description" Nullable="true" MaxLength="500" />
+          <Property Type="Int32" Name="ParentID" Nullable="true" />
+          <Property Type="Int32" Name="LevelID" Nullable="true" />
+          <Property Type="Int64" Name="CreatedBy" Nullable="true" />
+          <Property Type="DateTime" Name="Created" Nullable="true" Precision="23" />
+          <Property Type="Int64" Name="ModifiedBy" Nullable="true" />
+          <Property Type="DateTime" Name="Modified" Nullable="true" Precision="23" />
+          <Property Type="Int32" Name="Flag" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="GetWorksTypeByUserID_Result">
+          <Property Type="Int64" Name="ExpertWorksTypeID" Nullable="false" />
+          <Property Type="Int64" Name="UserID" Nullable="true" />
+          <Property Type="Int64" Name="WorksTypeID" Nullable="true" />
+          <Property Type="Int64" Name="Flag" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="GetWorksTypeForEnroll_Result">
+          <Property Type="Int32" Name="WorksTypeID" Nullable="false" />
+          <Property Type="String" Name="WorksTypeName" Nullable="true" MaxLength="100" />
+          <Property Type="Int32" Name="ParentID" Nullable="true" />
+          <Property Type="Int32" Name="LevelID" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="GetWorksTypeScoreStandardByTypeID_Result">
+          <Property Type="Int32" Name="WorkTypeID" Nullable="false" />
+          <Property Type="Int32" Name="StandardID" Nullable="false" />
+          <Property Type="Int32" Name="Score" Nullable="true" />
+          <Property Type="String" Name="StandardDescription" Nullable="true" MaxLength="200" />
+          <Property Type="Int32" Name="Flag" Nullable="true" />
+          <Property Type="String" Name="StandardName" Nullable="true" MaxLength="200" />
+          <Property Type="String" Name="Description" Nullable="true" MaxLength="500" />
+        </ComplexType>
+        <EntityType Name="Course">
+          <Key>
+            <PropertyRef Name="CourseID" />
+          </Key>
+          <Property Name="CourseID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CourseName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Guid" Type="Guid" />
+          <Property Name="SubjiectID" Type="Int64" />
+          <Property Name="Url" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="Flag" Type="Int32" />
+          <NavigationProperty Name="Periods" Relationship="VAExtensionModel.FK_Periods_Course" FromRole="Course" ToRole="Periods" />
+        </EntityType>
+        <EntityType Name="Favorites">
+          <Key>
+            <PropertyRef Name="UserID" />
+            <PropertyRef Name="ItemID" />
+            <PropertyRef Name="DomainID" />
+          </Key>
+          <Property Name="UserID" Type="Int64" Nullable="false" />
+          <Property Name="ItemID" Type="Int64" Nullable="false" />
+          <Property Name="DomainID" Type="Int64" Nullable="false" />
+          <Property Name="FavDate" Type="DateTime" Precision="3" />
+          <Property Name="ModifyDate" Type="DateTime" Precision="3" />
+          <Property Name="Flag" Type="Int32" />
+        </EntityType>
+        <EntityType Name="Periods">
+          <Key>
+            <PropertyRef Name="PeriodID" />
+          </Key>
+          <Property Name="PeriodID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="PeriodTitle" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="PeriodCode" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="CourseID" Type="Int64" />
+          <Property Name="Require" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="WorksTypeID" Type="Int32" />
+          <Property Name="Number" Type="Int32" />
+          <Property Name="StartSubmit" Type="DateTime" Precision="3" />
+          <Property Name="EndSubmit" Type="DateTime" Precision="3" />
+          <Property Name="StartScore" Type="DateTime" Precision="3" />
+          <Property Name="EndScore" Type="DateTime" Precision="3" />
+          <Property Name="StartPublic" Type="DateTime" Precision="3" />
+          <Property Name="EndPublic" Type="DateTime" Precision="3" />
+          <Property Name="CreatedBy" Type="Int64" />
+          <Property Name="Created" Type="DateTime" Precision="3" />
+          <Property Name="ModifiedBy" Type="Int64" />
+          <Property Name="Modified" Type="DateTime" Precision="3" />
+          <Property Name="Flag" Type="Int32" />
+          <NavigationProperty Name="Course" Relationship="VAExtensionModel.FK_Periods_Course" FromRole="Periods" ToRole="Course" />
+          <NavigationProperty Name="Works" Relationship="VAExtensionModel.FK_Works_Periods" FromRole="Periods" ToRole="Works" />
+        </EntityType>
+        <EntityType Name="User">
+          <Key>
+            <PropertyRef Name="UserID" />
+          </Key>
+          <Property Name="UserID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Account" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="IDCard" Type="String" MaxLength="18" FixedLength="false" Unicode="false" />
+          <Property Name="Sex" Type="Boolean" />
+          <Property Name="Telephone" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Email" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Duty" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="ProfessionalTitle" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Department" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Major" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Class" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Grade" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="RoleID" Type="Int32" />
+          <Property Name="DegreeID" Type="Int32" />
+          <Property Name="SchoolID" Type="Int32" />
+          <Property Name="CreatedBy" Type="Int64" />
+          <Property Name="Created" Type="DateTime" Precision="3" />
+          <Property Name="ModifiedBy" Type="Int64" />
+          <Property Name="Modified" Type="DateTime" Precision="3" />
+          <Property Name="StateID" Type="Int32" />
+          <Property Name="ApprovedBy" Type="Int64" />
+          <Property Name="Approved" Type="DateTime" Precision="3" />
+          <Property Name="Flag" Type="Int64" />
+          <Property Name="AppPwd" Type="String" MaxLength="16" FixedLength="false" Unicode="false" />
+          <Property Name="AppUserScore" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="OrgID" Type="Int32" />
+          <NavigationProperty Name="UserWorks" Relationship="VAExtensionModel.FK_UserWorks_User" FromRole="User" ToRole="UserWorks" />
+        </EntityType>
+        <EntityType Name="UserWorks">
+          <Key>
+            <PropertyRef Name="UserWorksID" />
+          </Key>
+          <Property Name="UserWorksID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="UserID" Type="Int64" />
+          <Property Name="WorksID" Type="Int64" />
+          <Property Name="Relationship" Type="Int32" />
+          <Property Name="Flag" Type="Int32" />
+          <NavigationProperty Name="User" Relationship="VAExtensionModel.FK_UserWorks_User" FromRole="UserWorks" ToRole="User" />
+          <NavigationProperty Name="Works" Relationship="VAExtensionModel.FK_UserWorks_Works" FromRole="UserWorks" ToRole="Works" />
+        </EntityType>
+        <Association Name="FK_Periods_Course">
+          <End Type="VAExtensionModel.Course" Role="Course" Multiplicity="0..1" />
+          <End Type="VAExtensionModel.Periods" Role="Periods" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Course">
+              <PropertyRef Name="CourseID" />
+            </Principal>
+            <Dependent Role="Periods">
+              <PropertyRef Name="CourseID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Works_Periods">
+          <End Type="VAExtensionModel.Periods" Role="Periods" Multiplicity="0..1" />
+          <End Type="VAExtensionModel.Works" Role="Works" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Periods">
+              <PropertyRef Name="PeriodID" />
+            </Principal>
+            <Dependent Role="Works">
+              <PropertyRef Name="PeriodID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UserWorks_User">
+          <End Type="VAExtensionModel.User" Role="User" Multiplicity="0..1" />
+          <End Type="VAExtensionModel.UserWorks" Role="UserWorks" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="UserID" />
+            </Principal>
+            <Dependent Role="UserWorks">
+              <PropertyRef Name="UserID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UserWorks_Works">
+          <End Type="VAExtensionModel.Works" Role="Works" Multiplicity="0..1" />
+          <End Type="VAExtensionModel.UserWorks" Role="UserWorks" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Works">
+              <PropertyRef Name="WorksID" />
+            </Principal>
+            <Dependent Role="UserWorks">
+              <PropertyRef Name="WorksID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="FavoriteWorks">
+          <Key>
+            <PropertyRef Name="UserID" />
+          </Key>
+          <Property Name="UserID" Type="Int64" Nullable="false" />
+          <Property Name="DomainID" Type="Int64" />
+          <Property Name="WorksID" Type="Int64" />
+          <Property Name="WorksName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="AuthorID" Type="Int64" />
+          <Property Name="AuthorName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="VAExtensionModelStoreContainer" CdmEntityContainer="VAExtensionEntities">
+          <EntitySetMapping Name="FileType">
+            <EntityTypeMapping TypeName="VAExtensionModel.FileType">
+              <MappingFragment StoreEntitySet="FileType">
+                <ScalarProperty Name="FileTypeID" ColumnName="FileTypeID" />
+                <ScalarProperty Name="TypeName" ColumnName="TypeName" />
+                <ScalarProperty Name="ParentID" ColumnName="ParentID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Works">
+            <EntityTypeMapping TypeName="VAExtensionModel.Works">
+              <MappingFragment StoreEntitySet="Works">
+                <ScalarProperty Name="WorksID" ColumnName="WorksID" />
+                <ScalarProperty Name="PeriodID" ColumnName="PeriodID" />
+                <ScalarProperty Name="DomainID" ColumnName="DomainID" />
+                <ScalarProperty Name="WorksName" ColumnName="WorksName" />
+                <ScalarProperty Name="TeamName" ColumnName="TeamName" />
+                <ScalarProperty Name="WorksTypeID" ColumnName="WorksTypeID" />
+                <ScalarProperty Name="WorksCode" ColumnName="WorksCode" />
+                <ScalarProperty Name="OrgID" ColumnName="OrgID" />
+                <ScalarProperty Name="IsSample" ColumnName="IsSample" />
+                <ScalarProperty Name="Comment" ColumnName="Comment" />
+                <ScalarProperty Name="Profile" ColumnName="Profile" />
+                <ScalarProperty Name="SubmitProfile" ColumnName="SubmitProfile" />
+                <ScalarProperty Name="Suggestion" ColumnName="Suggestion" />
+                <ScalarProperty Name="InstallationGuide" ColumnName="InstallationGuide" />
+                <ScalarProperty Name="DesignIdeas" ColumnName="DesignIdeas" />
+                <ScalarProperty Name="KeyPoints" ColumnName="KeyPoints" />
+                <ScalarProperty Name="SelfAssessment" ColumnName="SelfAssessment" />
+                <ScalarProperty Name="DemoURL" ColumnName="DemoURL" />
+                <ScalarProperty Name="BackReason" ColumnName="BackReason" />
+                <ScalarProperty Name="Score" ColumnName="Score" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="Created" ColumnName="Created" />
+                <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+                <ScalarProperty Name="Modified" ColumnName="Modified" />
+                <ScalarProperty Name="Hits" ColumnName="Hits" />
+                <ScalarProperty Name="AllotTimes" ColumnName="AllotTimes" />
+                <ScalarProperty Name="WorksState" ColumnName="WorksState" />
+                <ScalarProperty Name="Flag" ColumnName="Flag" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="WorksFile">
+            <EntityTypeMapping TypeName="VAExtensionModel.WorksFile">
+              <MappingFragment StoreEntitySet="WorksFile">
+                <ScalarProperty Name="WorksFileID" ColumnName="WorksFileID" />
+                <ScalarProperty Name="WorksID" ColumnName="WorksID" />
+                <ScalarProperty Name="Type" ColumnName="Type" />
+                <ScalarProperty Name="FileName" ColumnName="FileName" />
+                <ScalarProperty Name="FilePath" ColumnName="FilePath" />
+                <ScalarProperty Name="FileSize" ColumnName="FileSize" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="Created" ColumnName="Created" />
+                <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+                <ScalarProperty Name="Modified" ColumnName="Modified" />
+                <ScalarProperty Name="Flag" ColumnName="Flag" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="WorksType">
+            <EntityTypeMapping TypeName="VAExtensionModel.WorksType">
+              <MappingFragment StoreEntitySet="WorksType">
+                <ScalarProperty Name="WorksTypeID" ColumnName="WorksTypeID" />
+                <ScalarProperty Name="WorksTypeName" ColumnName="WorksTypeName" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="ParentID" ColumnName="ParentID" />
+                <ScalarProperty Name="LevelID" ColumnName="LevelID" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="Created" ColumnName="Created" />
+                <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+                <ScalarProperty Name="Modified" ColumnName="Modified" />
+                <ScalarProperty Name="Flag" ColumnName="Flag" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CSMyWorks">
+            <EntityTypeMapping TypeName="VAExtensionModel.CSMyWorks">
+              <MappingFragment StoreEntitySet="CSMyWorks">
+                <ScalarProperty Name="Hits" ColumnName="Hits" />
+                <ScalarProperty Name="Created" ColumnName="Created" />
+                <ScalarProperty Name="DesignIdeas" ColumnName="DesignIdeas" />
+                <ScalarProperty Name="WorksCode" ColumnName="WorksCode" />
+                <ScalarProperty Name="DomainID" ColumnName="DomainID" />
+                <ScalarProperty Name="CourseID" ColumnName="CourseID" />
+                <ScalarProperty Name="StateID" ColumnName="StateID" />
+                <ScalarProperty Name="UserWorksID" ColumnName="UserWorksID" />
+                <ScalarProperty Name="WorksTypeID" ColumnName="WorksTypeID" />
+                <ScalarProperty Name="PeriodID" ColumnName="PeriodID" />
+                <ScalarProperty Name="UserID" ColumnName="UserID" />
+                <ScalarProperty Name="Relationship" ColumnName="Relationship" />
+                <ScalarProperty Name="Score" ColumnName="Score" />
+                <ScalarProperty Name="StateName" ColumnName="StateName" />
+                <ScalarProperty Name="WorksTypeName" ColumnName="WorksTypeName" />
+                <ScalarProperty Name="PeriodTitle" ColumnName="PeriodTitle" />
+                <ScalarProperty Name="CourseName" ColumnName="CourseName" />
+                <ScalarProperty Name="WorksName" ColumnName="WorksName" />
+                <ScalarProperty Name="WorksID" ColumnName="WorksID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="GetUserByUserID" FunctionName="VAExtensionModel.Store.GetUserByUserID">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="VAExtensionModel.GetUserByUserID_Result">
+                <ScalarProperty Name="UserID" ColumnName="UserID" />
+                <ScalarProperty Name="Account" ColumnName="Account" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="IDCard" ColumnName="IDCard" />
+                <ScalarProperty Name="Sex" ColumnName="Sex" />
+                <ScalarProperty Name="Telephone" ColumnName="Telephone" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Duty" ColumnName="Duty" />
+                <ScalarProperty Name="ProfessionalTitle" ColumnName="ProfessionalTitle" />
+                <ScalarProperty Name="Department" ColumnName="Department" />
+                <ScalarProperty Name="Major" ColumnName="Major" />
+                <ScalarProperty Name="Class" ColumnName="Class" />
+                <ScalarProperty Name="Grade" ColumnName="Grade" />
+                <ScalarProperty Name="RoleID" ColumnName="RoleID" />
+                <ScalarProperty Name="SchoolID" ColumnName="SchoolID" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="Created" ColumnName="Created" />
+                <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+                <ScalarProperty Name="Modified" ColumnName="Modified" />
+                <ScalarProperty Name="StateID" ColumnName="StateID" />
+                <ScalarProperty Name="ApprovedBy" ColumnName="ApprovedBy" />
+                <ScalarProperty Name="Approved" ColumnName="Approved" />
+                <ScalarProperty Name="Flag" ColumnName="Flag" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="GetUserByWorksID" FunctionName="VAExtensionModel.Store.GetUserByWorksID">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="VAExtensionModel.GetUserByWorksID_Result">
+                <ScalarProperty Name="UserID" ColumnName="UserID" />
+                <ScalarProperty Name="WorksID" ColumnName="WorksID" />
+                <ScalarProperty Name="Relationship" ColumnName="Relationship" />
+                <ScalarProperty Name="Account" ColumnName="Account" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="GetUserIdWorksIdByPeriodId" FunctionName="VAExtensionModel.Store.GetUserIdWorksIdByPeriodId">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="VAExtensionModel.GetUserIdWorksIdByPeriodId_Result">
+                <ScalarProperty Name="UserID" ColumnName="UserID" />
+                <ScalarProperty Name="WorksID" ColumnName="WorksID" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="GetUserRoleByUserID" FunctionName="VAExtensionModel.Store.GetUserRoleByUserID">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="VAExtensionModel.GetUserRoleByUserID_Result">
+                <ScalarProperty Name="UserRoleID" ColumnName="UserRoleID" />
+                <ScalarProperty Name="UserID" ColumnName="UserID" />
+                <ScalarProperty Name="RoleID" ColumnName="RoleID" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="Created" ColumnName="Created" />
+                <ScalarProperty Name="StateID" ColumnName="StateID" />
+                <ScalarProperty Name="ApprovedBy" ColumnName="ApprovedBy" />
+                <ScalarProperty Name="Approved" ColumnName="Approved" />
+                <ScalarProperty Name="ContestID" ColumnName="ContestID" />
+                <ScalarProperty Name="Flag" ColumnName="Flag" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="GetUsersIDByPeriodID" FunctionName="VAExtensionModel.Store.GetUsersIDByPeriodID" />
+          <FunctionImportMapping FunctionImportName="GetWorksAllotTimesByWorsID" FunctionName="VAExtensionModel.Store.GetWorksAllotTimesByWorsID">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="VAExtensionModel.GetWorksAllotTimesByWorsID_Result">
+                <ScalarProperty Name="WorksID" ColumnName="WorksID" />
+                <ScalarProperty Name="AllotTimes" ColumnName="AllotTimes" />
+                <ScalarProperty Name="WorksState" ColumnName="WorksState" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="GetWorksByAccount" FunctionName="VAExtensionModel.Store.GetWorksByAccount">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="VAExtensionModel.GetWorksByAccount_Result">
+                <ScalarProperty Name="UserID" ColumnName="UserID" />
+                <ScalarProperty Name="WorksID" ColumnName="WorksID" />
+                <ScalarProperty Name="PeriodID" ColumnName="PeriodID" />
+                <ScalarProperty Name="Account" ColumnName="Account" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="GetWorksByPeriodID" FunctionName="VAExtensionModel.Store.GetWorksByPeriodID">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="VAExtensionModel.GetWorksByPeriodID_Result">
+                <ScalarProperty Name="WorksID" ColumnName="WorksID" />
+                <ScalarProperty Name="PeriodID" ColumnName="PeriodID" />
+                <ScalarProperty Name="WorksName" ColumnName="WorksName" />
+                <ScalarProperty Name="TeamName" ColumnName="TeamName" />
+                <ScalarProperty Name="WorksTypeID" ColumnName="WorksTypeID" />
+                <ScalarProperty Name="WorksCode" ColumnName="WorksCode" />
+                <ScalarProperty Name="OrgID" ColumnName="OrgID" />
+                <ScalarProperty Name="IsSample" ColumnName="IsSample" />
+                <ScalarProperty Name="Comment" ColumnName="Comment" />
+                <ScalarProperty Name="Profile" ColumnName="Profile" />
+                <ScalarProperty Name="SubmitProfile" ColumnName="SubmitProfile" />
+                <ScalarProperty Name="Suggestion" ColumnName="Suggestion" />
+                <ScalarProperty Name="InstallationGuide" ColumnName="InstallationGuide" />
+                <ScalarProperty Name="DesignIdeas" ColumnName="DesignIdeas" />
+                <ScalarProperty Name="KeyPoints" ColumnName="KeyPoints" />
+                <ScalarProperty Name="DemoURL" ColumnName="DemoURL" />
+                <ScalarProperty Name="SelfAssessment" ColumnName="SelfAssessment" />
+                <ScalarProperty Name="BackReason" ColumnName="BackReason" />
+                <ScalarProperty Name="Score" ColumnName="Score" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="Created" ColumnName="Created" />
+                <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+                <ScalarProperty Name="Modified" ColumnName="Modified" />
+                <ScalarProperty Name="AllotTimes" ColumnName="AllotTimes" />
+                <ScalarProperty Name="WorksState" ColumnName="WorksState" />
+                <ScalarProperty Name="Flag" ColumnName="Flag" />
+                <ScalarProperty Name="WorksTypeName" ColumnName="WorksTypeName" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="GetWorksByWorksID" FunctionName="VAExtensionModel.Store.GetWorksByWorksID">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="VAExtensionModel.GetWorksByWorksID_Result">
+                <ScalarProperty Name="WorksID" ColumnName="WorksID" />
+                <ScalarProperty Name="PeriodID" ColumnName="PeriodID" />
+                <ScalarProperty Name="WorksName" ColumnName="WorksName" />
+                <ScalarProperty Name="TeamName" ColumnName="TeamName" />
+                <ScalarProperty Name="WorksTypeID" ColumnName="WorksTypeID" />
+                <ScalarProperty Name="WorksCode" ColumnName="WorksCode" />
+                <ScalarProperty Name="OrgID" ColumnName="OrgID" />
+                <ScalarProperty Name="IsSample" ColumnName="IsSample" />
+                <ScalarProperty Name="Comment" ColumnName="Comment" />
+                <ScalarProperty Name="Profile" ColumnName="Profile" />
+                <ScalarProperty Name="Flag" ColumnName="Flag" />
+                <ScalarProperty Name="WorksState" ColumnName="WorksState" />
+                <ScalarProperty Name="Modified" ColumnName="Modified" />
+                <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+                <ScalarProperty Name="Created" ColumnName="Created" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="Score" ColumnName="Score" />
+                <ScalarProperty Name="BackReason" ColumnName="BackReason" />
+                <ScalarProperty Name="DemoURL" ColumnName="DemoURL" />
+                <ScalarProperty Name="SelfAssessment" ColumnName="SelfAssessment" />
+                <ScalarProperty Name="KeyPoints" ColumnName="KeyPoints" />
+                <ScalarProperty Name="SubmitProfile" ColumnName="SubmitProfile" />
+                <ScalarProperty Name="Suggestion" ColumnName="Suggestion" />
+                <ScalarProperty Name="InstallationGuide" ColumnName="InstallationGuide" />
+                <ScalarProperty Name="DesignIdeas" ColumnName="DesignIdeas" />
+                <ScalarProperty Name="WorksTypeName" ColumnName="WorksTypeName" />
+                <ScalarProperty Name="Expr1" ColumnName="Expr1" />
+                <ScalarProperty Name="LevelID" ColumnName="LevelID" />
+                <ScalarProperty Name="ParentID" ColumnName="ParentID" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="GetWorksCheck" FunctionName="VAExtensionModel.Store.GetWorksCheck" />
+          <FunctionImportMapping FunctionImportName="GetWorksCommentsByWorksID" FunctionName="VAExtensionModel.Store.GetWorksCommentsByWorksID">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="VAExtensionModel.GetWorksCommentsByWorksID_Result">
+                <ScalarProperty Name="WorksID" ColumnName="WorksID" />
+                <ScalarProperty Name="ExpertID" ColumnName="ExpertID" />
+                <ScalarProperty Name="Score" ColumnName="Score" />
+                <ScalarProperty Name="Comments" ColumnName="Comments" />
+                <ScalarProperty Name="Created" ColumnName="Created" />
+                <ScalarProperty Name="ScoreState" ColumnName="ScoreState" />
+                <ScalarProperty Name="Flag" ColumnName="Flag" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="GetWorksEvaluated" FunctionName="VAExtensionModel.Store.GetWorksEvaluated">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="VAExtensionModel.GetWorksEvaluated_Result">
+                <ScalarProperty Name="WorksExpertID" ColumnName="WorksExpertID" />
+                <ScalarProperty Name="WorksID" ColumnName="WorksID" />
+                <ScalarProperty Name="ExpertID" ColumnName="ExpertID" />
+                <ScalarProperty Name="Score" ColumnName="Score" />
+                <ScalarProperty Name="ExpertName" ColumnName="ExpertName" />
+                <ScalarProperty Name="WorksTypeID" ColumnName="WorksTypeID" />
+                <ScalarProperty Name="WorksName" ColumnName="WorksName" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="GetWorksExpertByID" FunctionName="VAExtensionModel.Store.GetWorksExpertByID">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="VAExtensionModel.GetWorksExpertByID_Result">
+                <ScalarProperty Name="WorksExpertID" ColumnName="WorksExpertID" />
+                <ScalarProperty Name="WorksID" ColumnName="WorksID" />
+                <ScalarProperty Name="ExpertID" ColumnName="ExpertID" />
+                <ScalarProperty Name="Score" ColumnName="Score" />
+                <ScalarProperty Name="Comments" ColumnName="Comments" />
+                <ScalarProperty Name="Created" ColumnName="Created" />
+                <ScalarProperty Name="Modified" ColumnName="Modified" />
+                <ScalarProperty Name="ScoreState" ColumnName="ScoreState" />
+                <ScalarProperty Name="Flag" ColumnName="Flag" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="GetWorksExpertByWorksID" FunctionName="VAExtensionModel.Store.GetWorksExpertByWorksID">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="VAExtensionModel.GetWorksExpertByWorksID_Result">
+                <ScalarProperty Name="WorksID" ColumnName="WorksID" />
+                <ScalarProperty Name="ExpertID" ColumnName="ExpertID" />
+                <ScalarProperty Name="Score" ColumnName="Score" />
+                <ScalarProperty Name="Comments" ColumnName="Comments" />
+                <ScalarProperty Name="Flag" ColumnName="Flag" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="GetWorksFile" FunctionName="VAExtensionModel.Store.GetWorksFile">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="VAExtensionModel.GetWorksFile_Result">
+                <ScalarProperty Name="WorksFileID" ColumnName="WorksFileID" />
+                <ScalarProperty Name="WorksID" ColumnName="WorksID" />
+                <ScalarProperty Name="Type" ColumnName="Type" />
+                <ScalarProperty Name="FileName" ColumnName="FileName" />
+                <ScalarProperty Name="FilePath" ColumnName="FilePath" />
+                <ScalarProperty Name="FileSize" ColumnName="FileSize" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="Created" ColumnName="Created" />
+                <ScalarProperty Name="Flag" ColumnName="Flag" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="GetWorksForCheck" FunctionName="VAExtensionModel.Store.GetWorksForCheck" />
+          <FunctionImportMapping FunctionImportName="GetWorksForMeByPeriodID" FunctionName="VAExtensionModel.Store.GetWorksForMeByPeriodID">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="VAExtensionModel.GetWorksForMeByPeriodID_Result">
+                <ScalarProperty Name="ExpertID" ColumnName="ExpertID" />
+                <ScalarProperty Name="WorksID" ColumnName="WorksID" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="GetWorksForMeToScore" FunctionName="VAExtensionModel.Store.GetWorksForMeToScore">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="VAExtensionModel.GetWorksForMeToScore_Result">
+                <ScalarProperty Name="WorksID" ColumnName="WorksID" />
+                <ScalarProperty Name="PeriodTitle" ColumnName="PeriodTitle" />
+                <ScalarProperty Name="WorksCode" ColumnName="WorksCode" />
+                <ScalarProperty Name="StateName" ColumnName="StateName" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="GetWorksForSummary" FunctionName="VAExtensionModel.Store.GetWorksForSummary" />
+          <FunctionImportMapping FunctionImportName="GetWorksIDByPeriodIDAndUserID" FunctionName="VAExtensionModel.Store.GetWorksIDByPeriodIDAndUserID">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="VAExtensionModel.GetWorksIDByPeriodIDAndUserID_Result">
+                <ScalarProperty Name="UserID" ColumnName="UserID" />
+                <ScalarProperty Name="WorksID" ColumnName="WorksID" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="GetWorksIDByUserAccountAndPeriodTitle" FunctionName="VAExtensionModel.Store.GetWorksIDByUserAccountAndPeriodTitle" />
+          <FunctionImportMapping FunctionImportName="GetWorksNumByPeriodID" FunctionName="VAExtensionModel.Store.GetWorksNumByPeriodID" />
+          <FunctionImportMapping FunctionImportName="GetWorksPublic" FunctionName="VAExtensionModel.Store.GetWorksPublic" />
+          <FunctionImportMapping FunctionImportName="GetWorksSubmitByID" FunctionName="VAExtensionModel.Store.GetWorksSubmitByID">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="VAExtensionModel.GetWorksSubmitByID_Result">
+                <ScalarProperty Name="WorksID" ColumnName="WorksID" />
+                <ScalarProperty Name="WorksName" ColumnName="WorksName" />
+                <ScalarProperty Name="WorksCode" ColumnName="WorksCode" />
+                <ScalarProperty Name="Profile" ColumnName="Profile" />
+                <ScalarProperty Name="SubmitProfile" ColumnName="SubmitProfile" />
+                <ScalarProperty Name="Suggestion" ColumnName="Suggestion" />
+                <ScalarProperty Name="InstallationGuide" ColumnName="InstallationGuide" />
+                <ScalarProperty Name="DesignIdeas" ColumnName="DesignIdeas" />
+                <ScalarProperty Name="KeyPoints" ColumnName="KeyPoints" />
+                <ScalarProperty Name="SelfAssessment" ColumnName="SelfAssessment" />
+                <ScalarProperty Name="Comment" ColumnName="Comment" />
+                <ScalarProperty Name="DemoURL" ColumnName="DemoURL" />
+                <ScalarProperty Name="WorksState" ColumnName="WorksState" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="GetWorksToEvaluate" FunctionName="VAExtensionModel.Store.GetWorksToEvaluate">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="VAExtensionModel.GetWorksToEvaluate_Result">
+                <ScalarProperty Name="WorksExpertID" ColumnName="WorksExpertID" />
+                <ScalarProperty Name="Comments" ColumnName="Comments" />
+                <ScalarProperty Name="Flag" ColumnName="Flag" />
+                <ScalarProperty Name="WorksID" ColumnName="WorksID" />
+                <ScalarProperty Name="ScoreState" ColumnName="ScoreState" />
+                <ScalarProperty Name="ExpertID" ColumnName="ExpertID" />
+                <ScalarProperty Name="WorksCode" ColumnName="WorksCode" />
+                <ScalarProperty Name="WorksName" ColumnName="WorksName" />
+                <ScalarProperty Name="IsSample" ColumnName="IsSample" />
+                <ScalarProperty Name="Score" ColumnName="Score" />
+                <ScalarProperty Name="WorksTypeID" ColumnName="WorksTypeID" />
+                <ScalarProperty Name="WorksTypeName" ColumnName="WorksTypeName" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="GetWorksType" FunctionName="VAExtensionModel.Store.GetWorksType">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="VAExtensionModel.GetWorksType_Result">
+                <ScalarProperty Name="WorksTypeID" ColumnName="WorksTypeID" />
+                <ScalarProperty Name="WorksTypeName" ColumnName="WorksTypeName" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="ParentID" ColumnName="ParentID" />
+                <ScalarProperty Name="LevelID" ColumnName="LevelID" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="Created" ColumnName="Created" />
+                <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+                <ScalarProperty Name="Modified" ColumnName="Modified" />
+                <ScalarProperty Name="Flag" ColumnName="Flag" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="GetWorksTypeByUserID" FunctionName="VAExtensionModel.Store.GetWorksTypeByUserID">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="VAExtensionModel.GetWorksTypeByUserID_Result">
+                <ScalarProperty Name="ExpertWorksTypeID" ColumnName="ExpertWorksTypeID" />
+                <ScalarProperty Name="UserID" ColumnName="UserID" />
+                <ScalarProperty Name="WorksTypeID" ColumnName="WorksTypeID" />
+                <ScalarProperty Name="Flag" ColumnName="Flag" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="GetWorksTypeForEnroll" FunctionName="VAExtensionModel.Store.GetWorksTypeForEnroll">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="VAExtensionModel.GetWorksTypeForEnroll_Result">
+                <ScalarProperty Name="WorksTypeID" ColumnName="WorksTypeID" />
+                <ScalarProperty Name="WorksTypeName" ColumnName="WorksTypeName" />
+                <ScalarProperty Name="ParentID" ColumnName="ParentID" />
+                <ScalarProperty Name="LevelID" ColumnName="LevelID" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="GetWorksTypeScoreStandardByTypeID" FunctionName="VAExtensionModel.Store.GetWorksTypeScoreStandardByTypeID">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="VAExtensionModel.GetWorksTypeScoreStandardByTypeID_Result">
+                <ScalarProperty Name="WorkTypeID" ColumnName="WorkTypeID" />
+                <ScalarProperty Name="StandardID" ColumnName="StandardID" />
+                <ScalarProperty Name="Score" ColumnName="Score" />
+                <ScalarProperty Name="StandardDescription" ColumnName="StandardDescription" />
+                <ScalarProperty Name="Flag" ColumnName="Flag" />
+                <ScalarProperty Name="StandardName" ColumnName="StandardName" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="InsertUser" FunctionName="VAExtensionModel.Store.InsertUser" />
+          <FunctionImportMapping FunctionImportName="InsertWorks" FunctionName="VAExtensionModel.Store.InsertWorks" />
+          <FunctionImportMapping FunctionImportName="InsertWorksComments" FunctionName="VAExtensionModel.Store.InsertWorksComments" />
+          <FunctionImportMapping FunctionImportName="InsertWorksExpert" FunctionName="VAExtensionModel.Store.InsertWorksExpert" />
+          <FunctionImportMapping FunctionImportName="InsertWorksImages" FunctionName="VAExtensionModel.Store.InsertWorksImages" />
+          <FunctionImportMapping FunctionImportName="InsertWorksSubmit" FunctionName="VAExtensionModel.Store.InsertWorksSubmit" />
+          <FunctionImportMapping FunctionImportName="InsertWorksType" FunctionName="VAExtensionModel.Store.InsertWorksType" />
+          <FunctionImportMapping FunctionImportName="InsertWorksTypeScoreStandard" FunctionName="VAExtensionModel.Store.InsertWorksTypeScoreStandard" />
+          <FunctionImportMapping FunctionImportName="JudgeWorksSubmit" FunctionName="VAExtensionModel.Store.JudgeWorksSubmit" />
+          <FunctionImportMapping FunctionImportName="UpdateUser" FunctionName="VAExtensionModel.Store.UpdateUser" />
+          <FunctionImportMapping FunctionImportName="UpdateUserWorks" FunctionName="VAExtensionModel.Store.UpdateUserWorks" />
+          <FunctionImportMapping FunctionImportName="UpdateWorksAllotTimes" FunctionName="VAExtensionModel.Store.UpdateWorksAllotTimes" />
+          <FunctionImportMapping FunctionImportName="UpdateWorksCheck" FunctionName="VAExtensionModel.Store.UpdateWorksCheck" />
+          <FunctionImportMapping FunctionImportName="UpdateWorksCode" FunctionName="VAExtensionModel.Store.UpdateWorksCode" />
+          <FunctionImportMapping FunctionImportName="UpdateWorksExpert" FunctionName="VAExtensionModel.Store.UpdateWorksExpert" />
+          <FunctionImportMapping FunctionImportName="UpdateWorksFile" FunctionName="VAExtensionModel.Store.UpdateWorksFile" />
+          <FunctionImportMapping FunctionImportName="UpdateWorksFileForSize" FunctionName="VAExtensionModel.Store.UpdateWorksFileForSize" />
+          <FunctionImportMapping FunctionImportName="UpdateWorksImages" FunctionName="VAExtensionModel.Store.UpdateWorksImages" />
+          <FunctionImportMapping FunctionImportName="UpdateWorksInfo" FunctionName="VAExtensionModel.Store.UpdateWorksInfo" />
+          <FunctionImportMapping FunctionImportName="UpdateWorksSubmit" FunctionName="VAExtensionModel.Store.UpdateWorksSubmit" />
+          <FunctionImportMapping FunctionImportName="UpdateWorksType" FunctionName="VAExtensionModel.Store.UpdateWorksType" />
+          <FunctionImportMapping FunctionImportName="UpdateWorksTypeForSubmit" FunctionName="VAExtensionModel.Store.UpdateWorksTypeForSubmit" />
+          <FunctionImportMapping FunctionImportName="UpdateWorksTypeScoreStandard" FunctionName="VAExtensionModel.Store.UpdateWorksTypeScoreStandard" />
+          <EntitySetMapping Name="Course">
+            <EntityTypeMapping TypeName="VAExtensionModel.Course">
+              <MappingFragment StoreEntitySet="Course">
+                <ScalarProperty Name="Flag" ColumnName="Flag" />
+                <ScalarProperty Name="Url" ColumnName="Url" />
+                <ScalarProperty Name="SubjiectID" ColumnName="SubjiectID" />
+                <ScalarProperty Name="Guid" ColumnName="Guid" />
+                <ScalarProperty Name="CourseName" ColumnName="CourseName" />
+                <ScalarProperty Name="CourseID" ColumnName="CourseID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Favorites">
+            <EntityTypeMapping TypeName="VAExtensionModel.Favorites">
+              <MappingFragment StoreEntitySet="Favorites">
+                <ScalarProperty Name="Flag" ColumnName="Flag" />
+                <ScalarProperty Name="ModifyDate" ColumnName="ModifyDate" />
+                <ScalarProperty Name="FavDate" ColumnName="FavDate" />
+                <ScalarProperty Name="DomainID" ColumnName="DomainID" />
+                <ScalarProperty Name="ItemID" ColumnName="ItemID" />
+                <ScalarProperty Name="UserID" ColumnName="UserID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Periods">
+            <EntityTypeMapping TypeName="VAExtensionModel.Periods">
+              <MappingFragment StoreEntitySet="Periods">
+                <ScalarProperty Name="Flag" ColumnName="Flag" />
+                <ScalarProperty Name="Modified" ColumnName="Modified" />
+                <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+                <ScalarProperty Name="Created" ColumnName="Created" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="EndPublic" ColumnName="EndPublic" />
+                <ScalarProperty Name="StartPublic" ColumnName="StartPublic" />
+                <ScalarProperty Name="EndScore" ColumnName="EndScore" />
+                <ScalarProperty Name="StartScore" ColumnName="StartScore" />
+                <ScalarProperty Name="EndSubmit" ColumnName="EndSubmit" />
+                <ScalarProperty Name="StartSubmit" ColumnName="StartSubmit" />
+                <ScalarProperty Name="Number" ColumnName="Number" />
+                <ScalarProperty Name="WorksTypeID" ColumnName="WorksTypeID" />
+                <ScalarProperty Name="Require" ColumnName="Require" />
+                <ScalarProperty Name="CourseID" ColumnName="CourseID" />
+                <ScalarProperty Name="PeriodCode" ColumnName="PeriodCode" />
+                <ScalarProperty Name="PeriodTitle" ColumnName="PeriodTitle" />
+                <ScalarProperty Name="PeriodID" ColumnName="PeriodID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="User">
+            <EntityTypeMapping TypeName="VAExtensionModel.User">
+              <MappingFragment StoreEntitySet="User">
+                <ScalarProperty Name="OrgID" ColumnName="OrgID" />
+                <ScalarProperty Name="AppUserScore" ColumnName="AppUserScore" />
+                <ScalarProperty Name="AppPwd" ColumnName="AppPwd" />
+                <ScalarProperty Name="Flag" ColumnName="Flag" />
+                <ScalarProperty Name="Approved" ColumnName="Approved" />
+                <ScalarProperty Name="ApprovedBy" ColumnName="ApprovedBy" />
+                <ScalarProperty Name="StateID" ColumnName="StateID" />
+                <ScalarProperty Name="Modified" ColumnName="Modified" />
+                <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+                <ScalarProperty Name="Created" ColumnName="Created" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="SchoolID" ColumnName="SchoolID" />
+                <ScalarProperty Name="DegreeID" ColumnName="DegreeID" />
+                <ScalarProperty Name="RoleID" ColumnName="RoleID" />
+                <ScalarProperty Name="Grade" ColumnName="Grade" />
+                <ScalarProperty Name="Class" ColumnName="Class" />
+                <ScalarProperty Name="Major" ColumnName="Major" />
+                <ScalarProperty Name="Department" ColumnName="Department" />
+                <ScalarProperty Name="ProfessionalTitle" ColumnName="ProfessionalTitle" />
+                <ScalarProperty Name="Duty" ColumnName="Duty" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Telephone" ColumnName="Telephone" />
+                <ScalarProperty Name="Sex" ColumnName="Sex" />
+                <ScalarProperty Name="IDCard" ColumnName="IDCard" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Account" ColumnName="Account" />
+                <ScalarProperty Name="UserID" ColumnName="UserID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="UserWorks">
+            <EntityTypeMapping TypeName="VAExtensionModel.UserWorks">
+              <MappingFragment StoreEntitySet="UserWorks">
+                <ScalarProperty Name="Flag" ColumnName="Flag" />
+                <ScalarProperty Name="Relationship" ColumnName="Relationship" />
+                <ScalarProperty Name="WorksID" ColumnName="WorksID" />
+                <ScalarProperty Name="UserID" ColumnName="UserID" />
+                <ScalarProperty Name="UserWorksID" ColumnName="UserWorksID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="FavoriteWorks">
+            <EntityTypeMapping TypeName="VAExtensionModel.FavoriteWorks">
+              <MappingFragment StoreEntitySet="FavoriteWorks">
+                <ScalarProperty Name="AuthorName" ColumnName="AuthorName" />
+                <ScalarProperty Name="AuthorID" ColumnName="AuthorID" />
+                <ScalarProperty Name="WorksName" ColumnName="WorksName" />
+                <ScalarProperty Name="WorksID" ColumnName="WorksID" />
+                <ScalarProperty Name="DomainID" ColumnName="DomainID" />
+                <ScalarProperty Name="UserID" ColumnName="UserID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="无" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

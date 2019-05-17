@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<webParts>
+  <webPart xmlns="http://schemas.microsoft.com/WebPart/v3">
+    <metaData>
+      <type name="VSProject.PlanManager.PlanManager, $SharePoint.Project.AssemblyFullName$" />
+      <importErrorMessage>$Resources:core,ImportErrorMessage;</importErrorMessage>
+    </metaData>
+    <data>
+      <properties>
+        <property name="Title" type="string">VSProject - 计划管理</property>
+        <property name="Description" type="string">计划管理：包括个人周期计划于日常短计划</property>
+      </properties>
+    </data>
+  </webPart>
+</webParts>

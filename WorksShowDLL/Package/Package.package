@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package dslVersion="1.0.0.0" 
+        Id="408ac5c7-9496-4881-9475-cd676e4a06da" 
+        solutionId="408ac5c7-9496-4881-9475-cd676e4a06da" 
+        xmlns="http://schemas.microsoft.com/VisualStudio/2008/SharePointTools/PackageModel" 
+        name="WorksShowDLL"
+        sharePointProductVersion="15.0">
+</package>

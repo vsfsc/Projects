@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" dslVersion="1.0.0.0" Id="748e7220-8697-4300-9259-5f3910cfdb1b" solutionId="748e7220-8697-4300-9259-5f3910cfdb1b" resetWebServer="false" sharePointProductVersion="15.0" name="VAListTree" xmlns="http://schemas.microsoft.com/VisualStudio/2008/SharePointTools/PackageModel">
+  <features>
+    <featureReference itemId="0263d812-614e-41e5-aed7-20d95ba26a18" />
+  </features>
+</package>

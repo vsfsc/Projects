@@ -1,0 +1,264 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{BC0BFF9F-4875-46F3-953B-61E163D21BDC}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>VAWebParts</RootNamespace>
+    <AssemblyName>VAWebParts</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetOfficeVersion>15.0</TargetOfficeVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{C1CDDADD-2546-481F-9697-4EA41081F2FC};{14822709-B5A1-4724-98CA-57A101D1B079};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <SandboxedSolution>False</SandboxedSolution>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>key.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.Office.Server, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files\Common Files\microsoft shared\Web Server Extensions\15\ISAPI\Microsoft.Office.Server.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Office.Server.UserProfiles, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files\Common Files\microsoft shared\Web Server Extensions\15\ISAPI\Microsoft.Office.Server.UserProfiles.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SharePoint.Client, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.SharePoint.Client.Runtime, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.SharePoint.Linq, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.DirectoryServices" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.DataVisualization" />
+    <Reference Include="System.Web.DataVisualization.Design" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="Microsoft.SharePoint" />
+    <Reference Include="Microsoft.SharePoint.Client.ServerRuntime" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="DLL\SPListQuery.cs" />
+    <Compile Include="GetList\GetList.cs" />
+    <Compile Include="GetList\GetListUserControl.ascx.cs">
+      <DependentUpon>GetListUserControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GetList\GetListUserControl.ascx.designer.cs">
+      <DependentUpon>GetListUserControl.ascx.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HotTopics\HotTopics.cs" />
+    <Compile Include="HotTopics\HotTopicsUserControl.ascx.cs">
+      <DependentUpon>HotTopicsUserControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HotTopics\HotTopicsUserControl.ascx.designer.cs">
+      <DependentUpon>HotTopicsUserControl.ascx.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ListCalendar\ListCalendar.cs" />
+    <Compile Include="ListCalendar\ListCalendarUserControl.ascx.cs">
+      <DependentUpon>ListCalendarUserControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ListCalendar\ListCalendarUserControl.ascx.designer.cs">
+      <DependentUpon>ListCalendarUserControl.ascx.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ListData\ListData.cs" />
+    <Compile Include="ListData\ListDataUserControl.ascx.cs">
+      <DependentUpon>ListDataUserControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ListData\ListDataUserControl.ascx.designer.cs">
+      <DependentUpon>ListDataUserControl.ascx.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ListItemNav\ConvertHelper.cs" />
+    <Compile Include="ListItemNav\ListItemNav.cs" />
+    <Compile Include="ListItemNav\ListItemNavUserControl.ascx.cs">
+      <DependentUpon>ListItemNavUserControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ListItemNav\ListItemNavUserControl.ascx.designer.cs">
+      <DependentUpon>ListItemNavUserControl.ascx.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SignIn\SignIn.cs" />
+    <Compile Include="SignIn\SignInUserControl.ascx.cs">
+      <DependentUpon>SignInUserControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SignIn\SignInUserControl.ascx.designer.cs">
+      <DependentUpon>SignInUserControl.ascx.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserActivities\UserActivities.cs" />
+    <Compile Include="UserActivities\UserActivitiesUserControl.ascx.cs">
+      <DependentUpon>UserActivitiesUserControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserActivities\UserActivitiesUserControl.ascx.designer.cs">
+      <DependentUpon>UserActivitiesUserControl.ascx.cs</DependentUpon>
+    </Compile>
+    <Compile Include="VALists\DLL\SPListQuery.cs" />
+    <Compile Include="VALists\VALists.cs" />
+    <Compile Include="VALists\VAListsUserControl.ascx.cs">
+      <DependentUpon>VAListsUserControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="VALists\VAListsUserControl.ascx.designer.cs">
+      <DependentUpon>VAListsUserControl.ascx.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\ListsWebReference\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Features\Feature1\Feature1.feature">
+      <FeatureId>{0f79acd3-81e5-4f9f-8b87-198bfa696f13}</FeatureId>
+    </None>
+    <None Include="GetList\GetList.webpart" />
+    <None Include="GetList\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{e553a1d8-b1eb-4556-9dcc-07c47d830e76}</SharePointProjectItemId>
+    </None>
+    <None Include="HotTopics\HotTopics.webpart" />
+    <None Include="HotTopics\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{2aebdef4-b9d7-437c-a1d4-303df12ac3a6}</SharePointProjectItemId>
+    </None>
+    <None Include="key.snk" />
+    <None Include="Layouts\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{bb5dff00-8840-4a90-a0ff-a65de4703f1e}</SharePointProjectItemId>
+    </None>
+    <None Include="ListCalendar\ListCalendar.webpart" />
+    <None Include="ListCalendar\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{38466016-4956-4a11-9aac-3c76b7994096}</SharePointProjectItemId>
+    </None>
+    <None Include="ListData\ListData.webpart" />
+    <None Include="ListData\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{44189556-8076-44e4-9996-1591950bb502}</SharePointProjectItemId>
+    </None>
+    <None Include="ListItemNav\ListItemNav.webpart" />
+    <None Include="ListItemNav\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{aee87172-8069-4e8a-b03e-0045126ff9a4}</SharePointProjectItemId>
+    </None>
+    <None Include="Package\Package.package">
+      <PackageId>{fa2df9e1-c01a-4a3c-b64e-b1e7f7563619}</PackageId>
+    </None>
+    <None Include="Package\Package.Template.xml">
+      <DependentUpon>Package.package</DependentUpon>
+    </None>
+    <None Include="SignIn\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{9f568fb3-bc67-4f02-b1b3-65a725e7f6fd}</SharePointProjectItemId>
+    </None>
+    <None Include="SignIn\SignIn.webpart" />
+    <None Include="UserActivities\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{7f8c85cf-5bba-4da4-ac8b-295206368223}</SharePointProjectItemId>
+    </None>
+    <None Include="UserActivities\UserActivities.webpart" />
+    <None Include="VALists\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{09b70983-e70a-4ee2-8ab1-a604c967f162}</SharePointProjectItemId>
+    </None>
+    <None Include="VALists\VALists.webpart" />
+    <None Include="Web References\ListsWebReference\Lists.wsdl" />
+    <None Include="Web References\ListsWebReference\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Features\Feature1\Feature1.Template.xml">
+      <DependentUpon>Feature1.feature</DependentUpon>
+    </Content>
+    <Content Include="GetList\Elements.xml" />
+    <Content Include="GetList\GetListUserControl.ascx" />
+    <Content Include="HotTopics\Elements.xml" />
+    <Content Include="HotTopics\HotTopicsUserControl.ascx" />
+    <Content Include="HotTopics\images\Like.png" />
+    <Content Include="Layouts\VAWebParts\Canlendar\images\body-bg.jpg" />
+    <Content Include="Layouts\VAWebParts\Canlendar\images\jalendar-sprite.png" />
+    <Content Include="Layouts\VAWebParts\Canlendar\images\jalendar-wood-bg.png" />
+    <Content Include="Layouts\VAWebParts\Canlendar\js\jalendar.js" />
+    <Content Include="Layouts\VAWebParts\Canlendar\js\jquery-1.10.2.min.js" />
+    <Content Include="Layouts\VAWebParts\Canlendar\style\documentation.css" />
+    <Content Include="Layouts\VAWebParts\Canlendar\style\jalendar.css" />
+    <Content Include="Layouts\VAWebParts\images\si.png" />
+    <Content Include="Layouts\VAWebParts\images\Signed.png" />
+    <Content Include="Layouts\VAWebParts\images\SignIn.png" />
+    <Content Include="ListCalendar\Elements.xml" />
+    <Content Include="ListCalendar\ListCalendarUserControl.ascx" />
+    <Content Include="ListData\Elements.xml" />
+    <Content Include="ListData\ListDataUserControl.ascx" />
+    <Content Include="ListItemNav\Elements.xml" />
+    <Content Include="ListItemNav\ListItemNavUserControl.ascx" />
+    <Content Include="SignIn\Elements.xml" />
+    <Content Include="SignIn\SignInUserControl.ascx" />
+    <Content Include="UserActivities\Elements.xml" />
+    <Content Include="UserActivities\UserActivitiesUserControl.ascx" />
+    <Content Include="VALists\Elements.xml" />
+    <Content Include="VALists\VAListsUserControl.ascx" />
+    <None Include="Web References\ListsWebReference\Lists.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferences Include="Web References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferenceUrl Include="http://localhost:40848/_vti_bin/Lists.asmx">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\ListsWebReference\</RelPath>
+      <UpdateFromURL>http://localhost:40848/_vti_bin/Lists.asmx</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>
+      </CachedAppSettingsObjectName>
+      <CachedSettingsPropName>
+      </CachedSettingsPropName>
+    </WebReferenceUrl>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(VSToolsPath)\SharePointTools\Microsoft.VisualStudio.SharePoint.targets" Condition="'$(VSToolsPath)' != ''" />
+</Project>

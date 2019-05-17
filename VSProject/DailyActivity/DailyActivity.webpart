@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<webParts>
+  <webPart xmlns="http://schemas.microsoft.com/WebPart/v3">
+    <metaData>
+      <type name="VSProject.DailyActivity.DailyActivity, $SharePoint.Project.AssemblyFullName$" />
+      <importErrorMessage>$Resources:core,ImportErrorMessage;</importErrorMessage>
+    </metaData>
+    <data>
+      <properties>
+        <property name="Title" type="string">VSProject - 每日活动</property>
+        <property name="Description" type="string">快速记录或修改每日活动</property>
+      </properties>
+    </data>
+  </webPart>
+</webParts>

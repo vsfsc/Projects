@@ -1,0 +1,268 @@
+﻿.content {
+			width: 902px;
+			margin: 0px auto;
+			margin-bottom: 10px;
+			float: left;
+			/*text-align: center;*/
+			padding: 0
+		}
+
+		#showDiv {
+			margin: 0;
+			text-align: left;
+			background-color: #fff;
+			padding: 10px 20px 5px;
+		}
+
+		.worktitle {
+			width: 800px;
+			height: 25px;
+			border: 0;
+			padding: 0;
+			margin: 0;
+			border-bottom: 1px solid #ff6633;
+			color: #4a4a4a;
+			text-align: left;
+			vertical-align: middle;
+			line-height: 25px;
+			overflow: hidden;
+		}
+
+		.h3css {
+			font-family: 微软雅黑;
+			color: #ff6633;
+			font-size: 20px;
+			font-weight: bold;
+			text-align: left;
+		}
+
+		.titlea {
+			width: 800px;
+			height: 22px;
+			padding-left: 20px;
+			color: #4a4a4a;
+			text-align: left;
+		}
+
+		.titlebga {
+			background: url("../images/titlebga.gif") repeat-x bottom left;
+			width: 800px;
+			height: 32px;
+			padding: 0;
+			margin: 0;
+			color: #4a4a4a;
+		}
+
+		.titleaspan {
+			font-weight: bold
+		}
+
+		.titlebg {
+			text-align: center;
+			height: 32px;
+			line-height: 32px;
+			vertical-align: middle;
+			overflow: hidden;
+			color: #fff;
+			font-weight: bold;
+			background: url("../images/titlebg.gif") no-repeat bottom left;
+			width: 96px;
+		}
+
+		.titlebgaa {
+			text-align: center;
+			height: 32px;
+			line-height: 32px;
+			vertical-align: middle;
+			overflow: hidden;
+			color: #fff;
+			font-weight: bold;
+			width: 96px;
+		}
+
+		.buttoncss {
+			width: 120px;
+			height: 40px;
+			color: #777;
+			font-family: 微软雅黑;
+			font-size: 20px;
+			border: 1px solid #ccc;
+			cursor: pointer;
+			text-align: center;
+			line-height: 40px;
+			vertical-align: middle;
+			overflow: hidden;
+			-webkit-transition: background-color 0.5s linear, color 1s linear;
+			-o-transition: background-color 0.5s linear, color 1s linear;
+			-moz-transition: background-color 0.5s linear, color 1s linear;
+			transition: background-color 0.5s linear, color 1s linear;
+			display: none;
+		}
+
+		.buttoncss:hover {
+			background-color: #61a4da;
+			color: #fff;
+		}
+
+		.buttoncssa {
+			background-color: #61a4da;
+			width: 120px;
+			height: 40px;
+			color: #fff;
+			font-family: 微软雅黑;
+			font-size: 20px;
+			cursor: pointer;
+			text-align: center;
+			line-height: 40px;
+			vertical-align: middle;
+			overflow: hidden;
+		}
+
+		ul,
+		ol {
+			list-style: none;
+		}
+
+		.lblcss {
+			padding: 5;
+			margin: 5px;
+			line-height: 1.5;
+			text-indent: 20px;
+			color: #555;
+			max-height: 400px;
+			overflow-x: hidden;
+			overflow-y: auto;
+		}
+
+		#floatposition {
+			height: 260px;
+			width: 120px;
+			position: absolute;
+			position: fixed;
+			top: 300px;
+			right: 50px;
+			z-index: 999;
+			background-color: #a9a9a9;
+			color: #fff;
+			/*background: url(../images/floatng.gif) no-repeat top left;*/
+		}
+
+		.f {
+			color: #FFFFFF;
+			text-align: center;
+		}
+
+		.f ul {
+			margin: 0;
+			padding: 0;
+			text-align: left;
+			margin-left: 10px;
+			margin-top: 15px;
+		}
+
+		.f ul li {
+			padding: 2px 0;
+		}
+
+		.f ul li a {
+			font-size: 13px;
+			font-family: '微软雅黑';
+			color: #fff;
+			text-decoration: none;
+		}
+
+		.f ul li a:hover {
+			color: #ff6633
+		}
+
+		.grouptd {
+			text-align: left;
+			height: 25px;
+			padding: 0;
+			margin: 0;
+		}
+
+		.buttoncssb {
+			color: #4141a4;
+			width: 50px;
+			height: 25px;
+			background: #fff;
+			font-size: 14px;
+			cursor: pointer;
+			text-decoration: underline;
+			float: left;
+		}
+
+		.liuyan {
+			font-weight: bold;
+			font-size: 13px;
+		}
+
+		.fenshu {
+			color: #f00;
+		}
+
+		.neirong {
+			color: #666;
+		}
+
+		.nvWorksLnk {
+			color: #00bfff;
+			text-decoration: none;
+		}
+
+		.nvWorksLnk:link {
+			color: #00bfff;
+			text-decoration: none;
+		}
+
+		.nvWorksLnk:visited {
+			color: #00bfff;
+			text-decoration: none;
+		}
+
+		.nvWorksLnk:hover {
+			color: #ff0000;
+			font-weight: bold;
+			text-decoration: underline;
+		}
+
+		.nvWorksLnk:active {
+			COLOR: #ff7f24;
+			text-decoration: none;
+		}
+
+		#bottomNav {
+			background-color: #0072c6;
+			z-index: 999;
+			position: fixed;
+			bottom: 0;
+			left: 0;
+			width: 100%;
+			_position: absolute;
+			_top: expression_r(documentElement.scrollTop+ documentElement.clientHeight-this.offsetHeight);
+			overflow: visible;
+		}
+
+		.LeftLayer {
+			position: fixed;
+			left: 250px;
+			top: 50%;
+			background: #D1D1D1;
+			border: 1px solid #EAEAEA;
+			padding: 5px;
+		}
+
+		.RightLayer {
+			position: fixed;
+			left: 1090px;
+			top: 50%;
+			background: #D1D1D1;
+			border: 1px solid #EAEAEA;
+			padding: 5px;
+		}
+
+		.exampleImg {
+			height: 100px;
+			cursor: pointer;
+		}

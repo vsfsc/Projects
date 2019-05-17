@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<webParts>
+  <webPart xmlns="http://schemas.microsoft.com/WebPart/v3">
+    <metaData>
+      <type name="PowerPA.CurrentActivity.CurrentActivity, $SharePoint.Project.AssemblyFullName$" />
+      <importErrorMessage>$Resources:core,ImportErrorMessage;</importErrorMessage>
+    </metaData>
+    <data>
+      <properties>
+        <property name="Title" type="string">PowerPA - CurrentActivity</property>
+        <property name="Description" type="string">展示用户设定的计划，当前活动</property>
+      </properties>
+    </data>
+  </webPart>
+</webParts>

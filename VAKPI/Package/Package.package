@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" dslVersion="1.0.0.0" Id="bd7fa13a-0655-4ee4-afda-f0871ca25a40" solutionId="bd7fa13a-0655-4ee4-afda-f0871ca25a40" resetWebServer="false" sharePointProductVersion="15.0" name="VAKPI" xmlns="http://schemas.microsoft.com/VisualStudio/2008/SharePointTools/PackageModel">
+  <features>
+    <featureReference itemId="e8e2aa6f-be50-4efb-9449-2c389e5802d1" />
+  </features>
+  <projectItems>
+    <projectItemReference itemId="55f0b219-3560-4d45-8153-5c84e799726c" />
+  </projectItems>
+</package>
